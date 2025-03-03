@@ -42,13 +42,13 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
+          <div className="flex flex-col items-start">
             <a href="/" className="flex items-center hover-scale">
               <span className={`text-2xl font-bold text-gradient`}>
                 Ai<span className="text-white">DoctorGPT</span>
               </span>
             </a>
-            <p className="text-neutral-500 text-xs ml-4 hidden sm:flex items-center">
+            <p className="text-neutral-500 text-xs mt-1 flex items-center">
               Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
             </p>
           </div>
