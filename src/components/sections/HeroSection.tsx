@@ -7,6 +7,10 @@ const HeroSection = () => {
   const handleChatRedirect = () => {
     window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
   };
+  
+  const handleVetGPTRedirect = () => {
+    window.open('https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt', '_blank');
+  };
 
   return (
     <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
@@ -44,9 +48,9 @@ const HeroSection = () => {
               <AnimatedButton 
                 variant="secondary" 
                 size="lg"
-                onClick={handleChatRedirect}
+                onClick={handleVetGPTRedirect}
               >
-                Learn More
+                Veterinarian GPT
               </AnimatedButton>
             </div>
             
