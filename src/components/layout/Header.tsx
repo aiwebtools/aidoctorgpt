@@ -32,16 +32,16 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-black/50 backdrop-blur-md shadow-md border-b border-white/10 py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
-              <span className={`text-2xl font-bold ${isScrolled ? 'text-medical-500' : 'text-medical-500'}`}>
-                Ai<span className="text-neutral-700">DoctorGPT</span>
+            <a href="/" className="flex items-center hover-scale">
+              <span className={`text-2xl font-bold text-gradient`}>
+                Ai<span className="text-white">DoctorGPT</span>
               </span>
             </a>
           </div>
@@ -50,19 +50,19 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a 
               href="#features" 
-              className="text-neutral-600 hover:text-medical-500 transition-colors text-sm font-medium"
+              className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
             >
               Features
             </a>
             <a 
               href="#how-it-works" 
-              className="text-neutral-600 hover:text-medical-500 transition-colors text-sm font-medium"
+              className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
             >
               How It Works
             </a>
             <a 
               href="#faq" 
-              className="text-neutral-600 hover:text-medical-500 transition-colors text-sm font-medium"
+              className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
             >
               FAQ
             </a>
@@ -70,6 +70,7 @@ const Header = () => {
               variant="primary" 
               size="sm"
               onClick={handleChatRedirect}
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
             >
               Try Doctor GPT
             </AnimatedButton>
@@ -79,7 +80,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className={`p-2 rounded-md ${isScrolled ? 'text-neutral-700' : 'text-neutral-700'}`}
+              className={`p-2 rounded-md text-white hover:bg-white/10 transition-colors`}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -93,28 +94,28 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div 
-        className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-40 bg-black/90 backdrop-blur-lg transform transition-transform duration-500 ease-in-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden pt-20`}
       >
-        <nav className="flex flex-col items-center space-y-6 pt-6">
+        <nav className="flex flex-col items-center space-y-8 pt-6">
           <a 
             href="#features" 
-            className="text-neutral-700 hover:text-medical-500 transition-colors text-lg font-medium"
+            className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
             onClick={toggleMenu}
           >
             Features
           </a>
           <a 
             href="#how-it-works" 
-            className="text-neutral-700 hover:text-medical-500 transition-colors text-lg font-medium"
+            className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
             onClick={toggleMenu}
           >
             How It Works
           </a>
           <a 
             href="#faq" 
-            className="text-neutral-700 hover:text-medical-500 transition-colors text-lg font-medium"
+            className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
             onClick={toggleMenu}
           >
             FAQ
@@ -125,6 +126,7 @@ const Header = () => {
               toggleMenu();
               handleChatRedirect();
             }}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow mt-4"
           >
             Try Doctor GPT
           </AnimatedButton>

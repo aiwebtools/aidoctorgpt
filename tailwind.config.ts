@@ -63,24 +63,40 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Doctor GPT custom colors
+				// Doctor GPT custom colors with new dark theme colors
 				medical: {
 					100: '#E6F1F9',
 					200: '#C0DFFF',
 					300: '#7CB9E8',
 					400: '#4682B4',
-					500: '#1E5F9F',
-					600: '#0A4B8F',
-					700: '#073B70',
+					500: '#8B5CF6', // Updated to purple
+					600: '#7C3AED', // Darker purple
+					700: '#6D28D9', // Even darker purple
 				},
 				neutral: {
-					100: '#F9FAFB',
-					200: '#F1F1F3',
-					300: '#DCDEE5',
-					400: '#8E9196',
-					500: '#555962',
-					600: '#333740',
-					700: '#1F2328',
+					100: '#1F2937',
+					200: '#374151',
+					300: '#4B5563',
+					400: '#6B7280',
+					500: '#9CA3AF',
+					600: '#D1D5DB',
+					700: '#F3F4F6',
+				},
+				purple: {
+					100: '#EDE9FE',
+					300: '#C4B5FD',
+					500: '#8B5CF6',
+					700: '#6D28D9',
+				},
+				cyan: {
+					300: '#67E8F9',
+					400: '#22D3EE',
+					500: '#06B6D4',
+				},
+				pink: {
+					400: '#F472B6',
+					500: '#EC4899',
+					600: '#DB2777',
 				}
 			},
 			borderRadius: {
@@ -89,9 +105,11 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			boxShadow: {
-				'soft': '0 2px 15px 0 rgba(0, 0, 0, 0.05)',
-				'medium': '0 4px 25px 0 rgba(0, 0, 0, 0.1)',
-				'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.10)'
+				'soft': '0 2px 15px 0 rgba(0, 0, 0, 0.2)',
+				'medium': '0 4px 25px 0 rgba(0, 0, 0, 0.3)',
+				'glass': '0 8px 32px 0 rgba(139, 92, 246, 0.15)',
+				'neon': '0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3)',
+				'glow': '0 0 15px rgba(139, 92, 246, 0.5)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -137,6 +155,10 @@ export default {
 				'blur-in': {
 					'0%': { opacity: '0', filter: 'blur(10px)' },
 					'100%': { opacity: '1', filter: 'blur(0)' },
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' },
 				}
 			},
 			animation: {
@@ -149,10 +171,12 @@ export default {
 				'fade-in-down': 'fade-in-down 0.5s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
 				'blur-in': 'blur-in 0.5s ease-out',
+				'rotate-slow': 'rotate-slow 15s linear infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'gradient-shine': 'linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent)',
 			}
 		}
 	},

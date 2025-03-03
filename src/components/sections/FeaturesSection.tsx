@@ -45,15 +45,21 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="section-padding bg-neutral-50 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="section-padding bg-black/30 backdrop-blur-md relative">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl" style={{animationDelay: '1s', animationDuration: '6s'}}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-medical-100 text-medical-700 mb-4">
-            <span className="flex h-2 w-2 rounded-full bg-medical-500 mr-2"></span>
+          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-4 backdrop-blur-sm border border-purple-500/20">
+            <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
             Comprehensive AI Healthcare
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Powerful Features for Your Health</h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">Powerful Features for Your Health</h2>
+          <p className="text-neutral-400 max-w-2xl mx-auto">
             Doctor GPT combines advanced AI technology with medical expertise to provide you with a comprehensive virtual healthcare experience.
           </p>
         </div>

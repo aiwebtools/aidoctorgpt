@@ -27,25 +27,29 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="section-padding relative">
+    <section id="how-it-works" className="section-padding relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute -bottom-40 -right-40 w-80 h-80 rounded-full bg-medical-100 opacity-70 blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-pink-500/5 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-cyan-500/5 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-purple-500/10 opacity-20 animate-rotate-slow"></div>
+      </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-medical-100 text-medical-700 mb-4">
-            <span className="flex h-2 w-2 rounded-full bg-medical-500 mr-2"></span>
+          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-cyan-900/50 text-cyan-300 mb-4 backdrop-blur-sm border border-cyan-500/20">
+            <span className="flex h-2 w-2 rounded-full bg-cyan-500 mr-2"></span>
             Simple Process
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">How Doctor GPT Works</h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">How Doctor GPT Works</h2>
+          <p className="text-neutral-400 max-w-2xl mx-auto">
             Getting started with Doctor GPT is quick and easy. Follow these simple steps to receive personalized medical advice.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -ml-px w-0.5 bg-medical-200"></div>
+          {/* Connecting line with glow effect */}
+          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -ml-px w-0.5 bg-gradient-to-b from-purple-500/50 via-cyan-400/50 to-pink-500/50 shadow-glow"></div>
           
           {steps.map((step, index) => (
             <div 

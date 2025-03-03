@@ -46,23 +46,27 @@ const Index = () => {
         <HowItWorksSection />
         
         {/* Call to Action Section */}
-        <section className="py-20 bg-gradient-to-r from-medical-500 to-medical-700 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.2),_transparent)]"></div>
+        <section className="py-20 relative overflow-hidden">
+          {/* Background effects */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-pink-900/80"></div>
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmZmZmYxMCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-20"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
           </div>
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 max-w-3xl mx-auto">
-                Ready to experience the future of healthcare consultation?
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 max-w-3xl mx-auto text-balance">
+                Ready to experience the <span className="text-gradient">future of healthcare</span> consultation?
               </h2>
-              <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
                 Join thousands of users who have already discovered the benefits of AI-powered medical guidance.
               </p>
               <AnimatedButton 
                 variant="secondary"
                 size="lg"
-                className="bg-white text-medical-600 hover:bg-medical-50 border-none"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow"
                 icon={<ArrowRight className="ml-1" />}
                 onClick={handleChatRedirect}
               >
