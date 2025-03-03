@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { Heart, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,11 +63,13 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-neutral-500">
                 <span className="block">Email:</span>
-                <a href="mailto:contact@doctorgpt.com" className="text-medical-500 hover:underline">contact@doctorgpt.com</a>
+                <a href="mailto:Contact@ai-webtools.com" className="text-medical-500 hover:underline">Contact@ai-webtools.com</a>
               </li>
               <li className="text-neutral-500">
                 <span className="block">Support:</span>
-                <a href="mailto:support@doctorgpt.com" className="text-medical-500 hover:underline">support@doctorgpt.com</a>
+                <a href="tel:4758008096" className="text-medical-500 hover:underline flex items-center">
+                  <Phone className="h-4 w-4 mr-1" /> (475) 800-8096
+                </a>
               </li>
             </ul>
           </div>
