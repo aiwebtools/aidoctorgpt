@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Heart, Phone } from 'lucide-react';
 
@@ -16,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gradient mb-4">
-              Doctor<span className="text-white">GPT</span>
+              Ai<span className="text-white">DoctorGPT</span>
             </h2>
             <p className="text-neutral-400 mb-4 max-w-xs hover:text-neutral-300 transition-colors duration-300">
               Your AI healthcare companion, providing personalized medical consultation 24/7.
@@ -79,7 +78,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-neutral-400 text-sm">
-            © {currentYear} Doctor GPT. All rights reserved.
+            © {currentYear} AiDoctorGPT. All rights reserved.
           </p>
           <p className="text-neutral-500 text-xs mt-2 flex items-center justify-center">
             Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better healthcare
