@@ -37,7 +37,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <span className={`text-2xl font-bold ${isScrolled ? 'text-medical-500' : 'text-medical-500'}`}>
-                Doctor<span className="text-neutral-700">GPT</span>
+                Ai<span className="text-neutral-700">DoctorGPT</span>
               </span>
             </a>
           </div>
