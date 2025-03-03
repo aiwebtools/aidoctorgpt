@@ -15,6 +15,10 @@ const Header = () => {
     window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
   };
 
+  const handleVetGPTRedirect = () => {
+    window.open('https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt', '_blank');
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -49,10 +53,11 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a 
-              href="#features" 
+              href="#"
+              onClick={handleVetGPTRedirect}
               className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
             >
-              Features
+              Veterinarian GPT
             </a>
             <a 
               href="#how-it-works" 
@@ -100,11 +105,14 @@ const Header = () => {
       >
         <nav className="flex flex-col items-center space-y-8 pt-6">
           <a 
-            href="#features" 
+            href="#"
+            onClick={() => {
+              toggleMenu();
+              handleVetGPTRedirect();
+            }}
             className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
-            onClick={toggleMenu}
           >
-            Features
+            Veterinarian GPT
           </a>
           <a 
             href="#how-it-works" 
