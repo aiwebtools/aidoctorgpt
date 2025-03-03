@@ -49,7 +49,7 @@ const Header = () => {
               </span>
             </a>
             <p className="text-neutral-500 text-xs ml-4 hidden sm:flex items-center">
-              Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better healthcare
+              Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
             </p>
           </div>
 
@@ -142,7 +142,7 @@ const Header = () => {
             Try Doctor GPT
           </AnimatedButton>
           <p className="text-neutral-500 text-xs flex items-center mt-6">
-            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better healthcare
+            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
           </p>
         </nav>
       </div>

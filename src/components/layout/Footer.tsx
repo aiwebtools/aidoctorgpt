@@ -81,7 +81,7 @@ const Footer = () => {
             © {currentYear} AiDoctorGPT. All rights reserved.
           </p>
           <p className="text-neutral-500 text-xs mt-2 flex items-center justify-center">
-            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better healthcare
+            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
           </p>
         </div>
       </div>
