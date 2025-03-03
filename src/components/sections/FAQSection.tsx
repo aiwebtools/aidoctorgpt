@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import CustomAccordion from '../ui/Accordion';
 
 const FAQSection = () => {
   const faqItems = [
@@ -45,18 +45,7 @@ const FAQSection = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="bg-white shadow-soft rounded-xl">
-            {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b last:border-0">
-                <AccordionTrigger className="px-4 text-neutral-700 hover:text-medical-600 hover:no-underline">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-4 text-neutral-600">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <CustomAccordion items={faqItems} />
         </div>
       </div>
     </section>
