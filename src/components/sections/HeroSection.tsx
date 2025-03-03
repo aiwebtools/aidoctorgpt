@@ -44,6 +44,7 @@ const HeroSection = () => {
               <AnimatedButton 
                 variant="secondary" 
                 size="lg"
+                onClick={handleChatRedirect}
               >
                 Learn More
               </AnimatedButton>
