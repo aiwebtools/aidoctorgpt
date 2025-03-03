@@ -4,6 +4,10 @@ import { ArrowRight, Heart, Shield, Star, Users, FileText } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const HeroSection = () => {
+  const handleChatRedirect = () => {
+    window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
+  };
+
   return (
     <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
       {/* Background gradient */}
@@ -33,6 +37,7 @@ const HeroSection = () => {
                 variant="primary" 
                 size="lg"
                 icon={<ArrowRight className="ml-1" />}
+                onClick={handleChatRedirect}
               >
                 Try Doctor GPT Now
               </AnimatedButton>
@@ -109,8 +114,13 @@ const HeroSection = () => {
                     type="text"
                     placeholder="Describe your symptoms..."
                     className="w-full bg-transparent border-none focus:outline-none text-sm py-2"
+                    onClick={handleChatRedirect}
+                    readOnly
                   />
-                  <button className="ml-2 bg-medical-500 text-white rounded-full p-2">
+                  <button 
+                    className="ml-2 bg-medical-500 text-white rounded-full p-2"
+                    onClick={handleChatRedirect}
+                  >
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </div>

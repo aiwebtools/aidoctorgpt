@@ -33,6 +33,10 @@ const Index = () => {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
+  const handleChatRedirect = () => {
+    window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -61,6 +65,7 @@ const Index = () => {
                 size="lg"
                 className="bg-white text-medical-600 hover:bg-medical-50 border-none"
                 icon={<ArrowRight className="ml-1" />}
+                onClick={handleChatRedirect}
               >
                 Get Started Now
               </AnimatedButton>

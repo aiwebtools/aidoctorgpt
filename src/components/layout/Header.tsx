@@ -11,6 +11,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleChatRedirect = () => {
+    window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -62,7 +66,11 @@ const Header = () => {
             >
               FAQ
             </a>
-            <AnimatedButton variant="primary" size="sm">
+            <AnimatedButton 
+              variant="primary" 
+              size="sm"
+              onClick={handleChatRedirect}
+            >
               Try Doctor GPT
             </AnimatedButton>
           </nav>
@@ -111,7 +119,13 @@ const Header = () => {
           >
             FAQ
           </a>
-          <AnimatedButton variant="primary" onClick={toggleMenu}>
+          <AnimatedButton 
+            variant="primary" 
+            onClick={() => {
+              toggleMenu();
+              handleChatRedirect();
+            }}
+          >
             Try Doctor GPT
           </AnimatedButton>
         </nav>
