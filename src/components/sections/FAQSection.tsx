@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/Accordion';
 
 const FAQSection = () => {
   const faqItems = [
