@@ -47,7 +47,7 @@ const Footer = () => {
                 <a href="#how-it-works" className="text-neutral-500 hover:text-medical-500 transition-colors">How It Works</a>
               </li>
               <li>
-                <a href="#faq" className="text-neutral-500 hover:text-medical-500 transition-colors">FAQ</a>
+                <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-medical-500 transition-colors">Veterinarian GPT</a>
               </li>
               <li>
                 <a href="#" className="text-neutral-500 hover:text-medical-500 transition-colors">Privacy Policy</a>
