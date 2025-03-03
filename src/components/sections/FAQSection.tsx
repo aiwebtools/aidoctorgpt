@@ -1,6 +1,6 @@
 
 import React from 'react';
-import CustomAccordion from '../ui/Accordion';
+import CustomAccordion from '../ui/accordion';
 
 const FAQSection = () => {
   const faqItems = [
