@@ -65,7 +65,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center group hover-scale">
                 <Users className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                <span className="group-hover:text-neutral-300 transition-colors">90,000+ Users</span>
+                <span className="group-hover:text-neutral-300 transition-colors">50,000+ Users</span>
               </div>
               <div className="flex items-center group hover-scale">
                 <Heart className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
