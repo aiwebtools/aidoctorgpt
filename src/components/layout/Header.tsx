@@ -66,10 +66,10 @@ const Header = () => {
               How It Works
             </a>
             <a 
-              href="#faq" 
+              href="#disclaimer" 
               className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
             >
-              FAQ
+              Disclaimer
             </a>
             <AnimatedButton 
               variant="primary" 
@@ -122,11 +122,11 @@ const Header = () => {
             How It Works
           </a>
           <a 
-            href="#faq" 
+            href="#disclaimer" 
             className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
             onClick={toggleMenu}
           >
-            FAQ
+            Disclaimer
           </a>
           <AnimatedButton 
             variant="primary" 

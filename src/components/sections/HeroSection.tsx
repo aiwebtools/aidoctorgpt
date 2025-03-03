@@ -144,7 +144,7 @@ const HeroSection = () => {
             </div>
             
             {/* Disclaimer Section */}
-            <div className="mt-6 p-4 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
+            <div id="disclaimer" className="mt-6 p-4 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
               <h3 className="text-lg font-bold text-neutral-300 mb-2">Disclaimer:</h3>
               <p className="text-neutral-400 font-medium text-sm leading-relaxed">
                 Doctor GPT provides general medical information and guidance based on the symptoms and details you provide. However, this tool is not a substitute for professional medical advice, diagnosis, or treatment from a licensed healthcare provider. Always consult a doctor or healthcare professional for serious, persistent, or worsening symptoms. If you are experiencing a medical emergency, call emergency services or seek immediate medical attention.
