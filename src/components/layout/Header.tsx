@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   const handleVetGPTRedirect = () => {
-    window.open('https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt', '_blank');
+    window.open('https://petcaregpt.lovable.app/', '_blank');
   };
 
   useEffect(() => {

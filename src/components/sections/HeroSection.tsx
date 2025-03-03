@@ -1,13 +1,17 @@
+
 import React from 'react';
 import { ArrowRight, Heart, Shield, Star, Users, FileText } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
+
 const HeroSection = () => {
   const handleChatRedirect = () => {
     window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
   };
+  
   const handleVetGPTRedirect = () => {
-    window.open('https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt', '_blank');
+    window.open('https://petcaregpt.lovable.app/', '_blank');
   };
+  
   return <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -144,4 +148,5 @@ const HeroSection = () => {
       </div>
     </div>;
 };
+
 export default HeroSection;
