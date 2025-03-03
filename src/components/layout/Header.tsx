@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const Header = () => {
@@ -48,6 +48,9 @@ const Header = () => {
                 Ai<span className="text-white">DoctorGPT</span>
               </span>
             </a>
+            <p className="text-neutral-500 text-xs ml-4 hidden sm:flex items-center">
+              Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better healthcare
+            </p>
           </div>
 
           {/* Desktop Navigation */}
@@ -138,6 +141,9 @@ const Header = () => {
           >
             Try Doctor GPT
           </AnimatedButton>
+          <p className="text-neutral-500 text-xs flex items-center mt-6">
+            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better healthcare
+          </p>
         </nav>
       </div>
     </header>
