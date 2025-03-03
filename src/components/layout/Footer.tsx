@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Heart, Phone } from 'lucide-react';
 
@@ -50,10 +49,7 @@ const Footer = () => {
                 <a href="https://chatgpt.com/g/g-QEBg6FdHT-veterinarian-gpt" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-medical-500 transition-colors">Veterinarian GPT</a>
               </li>
               <li>
-                <a href="#" className="text-neutral-500 hover:text-medical-500 transition-colors">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" className="text-neutral-500 hover:text-medical-500 transition-colors">Terms of Service</a>
+                <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-medical-500 transition-colors">Terms of Service</a>
               </li>
             </ul>
           </div>
