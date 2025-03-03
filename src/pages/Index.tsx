@@ -5,7 +5,6 @@ import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
-import FAQSection from '@/components/sections/FAQSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { ArrowRight } from 'lucide-react';
 
@@ -72,8 +71,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
-        <FAQSection />
       </main>
       
       <Footer />
