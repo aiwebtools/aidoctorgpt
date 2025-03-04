@@ -58,20 +58,43 @@ const Index = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 max-w-3xl mx-auto text-balance">
-                Ready to experience the <span className="text-gradient">future of healthcare</span> consultation?
+                Get Started with <span className="text-gradient">AI Doctor GPT</span>
               </h2>
               <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
-                Join thousands of users who have already discovered the benefits of AI-powered medical guidance.
+                Join 50,000+ users who have already discovered the benefits of AI-powered healthcare insights.
               </p>
-              <AnimatedButton 
-                variant="secondary"
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow"
-                icon={<ArrowRight className="ml-1" />}
-                onClick={handleChatRedirect}
-              >
-                Get Started Now
-              </AnimatedButton>
+              
+              <div className="mb-10">
+                <AnimatedButton 
+                  variant="secondary"
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow"
+                  icon={<ArrowRight className="ml-1" />}
+                  onClick={handleChatRedirect}
+                >
+                  Try AI Doctor GPT Now
+                </AnimatedButton>
+              </div>
+              
+              <div className="max-w-3xl mx-auto p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
+                <h3 className="text-xl font-bold text-white/90 mb-3">⚠️ Important Disclaimer</h3>
+                <p className="text-neutral-400 mb-4">
+                  Doctor GPT is NOT a licensed medical professional. The information provided is for informational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment.
+                </p>
+                <p className="text-neutral-400 mb-4">
+                  If you are experiencing severe, persistent, or worsening symptoms, consult a licensed doctor immediately.
+                  For medical emergencies, call emergency services or visit the nearest hospital.
+                </p>
+                <p className="text-neutral-400">
+                  By using this tool, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
+                </p>
+              </div>
+              
+              <div className="mt-8">
+                <p className="text-neutral-300 mb-2">📞 Contact Us</p>
+                <p className="text-neutral-400">📧 Email: Contact@ai-webtools.com</p>
+                <p className="text-neutral-400">☎ Support: (475) 800-8096</p>
+              </div>
             </div>
           </div>
         </section>

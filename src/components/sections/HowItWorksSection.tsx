@@ -7,22 +7,22 @@ const HowItWorksSection = () => {
     {
       number: 1,
       title: "Describe Your Symptoms",
-      description: "Enter your symptoms, age, gender, and relevant medical history in the chat interface."
+      description: "Enter your symptoms, age, gender, and relevant medical history into the chat interface."
     },
     {
       number: 2,
-      title: "Get AI Diagnosis",
-      description: "Doctor GPT analyzes your information and provides potential diagnoses based on medical knowledge."
+      title: "Receive AI-Powered Insights",
+      description: "Doctor GPT analyzes your details and suggests possible causes based on medical knowledge."
     },
     {
       number: 3,
-      title: "Review Treatment Options",
-      description: "Receive both pharmaceutical and holistic treatment recommendations tailored to your condition."
+      title: "Explore Treatment Options",
+      description: "Get recommendations for both pharmaceutical treatments and holistic remedies tailored to your condition."
     },
     {
       number: 4,
       title: "Upload Images (Optional)",
-      description: "For visible conditions, upload images to enhance the accuracy of the diagnosis."
+      description: "For visible conditions, upload images to enhance AI's symptom analysis."
     }
   ];
 
@@ -39,11 +39,11 @@ const HowItWorksSection = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-cyan-900/50 text-cyan-300 mb-4 backdrop-blur-sm border border-cyan-500/20">
             <span className="flex h-2 w-2 rounded-full bg-cyan-500 mr-2"></span>
-            Simple Process
+            How It Works
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">How Doctor GPT Works</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Getting started with Doctor GPT is quick and easy. Follow these simple steps to receive personalized medical advice.
+            Getting started with Doctor GPT is quick and easy. Follow these simple steps to receive informational health insights.
           </p>
         </div>
 
@@ -63,6 +63,12 @@ const HowItWorksSection = () => {
               />
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <p className="text-neutral-300 max-w-3xl mx-auto">
+            🔹 Doctor GPT is designed to provide informational support only. Always consult a licensed healthcare provider before making medical decisions.
+          </p>
         </div>
       </div>
     </section>

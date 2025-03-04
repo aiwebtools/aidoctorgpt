@@ -15,32 +15,32 @@ const FeaturesSection = () => {
     {
       icon: <Stethoscope className="h-6 w-6" />,
       title: "Personalized Consultations",
-      description: "Get personalized medical advice based on your symptoms, age, gender, and medical history."
+      description: "Get tailored health insights based on your symptoms, age, gender, and medical history."
     },
     {
       icon: <FileSearch className="h-6 w-6" />,
-      title: "Detailed Information",
-      description: "Receive comprehensive information about medical conditions, medications, side effects, and interactions."
+      title: "Comprehensive Medical Information",
+      description: "Understand medical conditions, medications, side effects, and potential interactions."
     },
     {
       icon: <Calendar className="h-6 w-6" />,
       title: "Daily Health Tips",
-      description: "Access daily health tips and insights to promote well-being and preventive measures."
+      description: "Stay informed with wellness and preventive care recommendations."
     },
     {
       icon: <Image className="h-6 w-6" />,
-      title: "Visual Analysis",
-      description: "Upload images of injuries, rashes, or conditions for AI-powered analysis and diagnosis suggestions."
+      title: "Visual Symptom Analysis",
+      description: "Upload images of skin conditions, injuries, or rashes for AI-powered assessment and suggestions."
     },
     {
       icon: <AlertCircle className="h-6 w-6" />,
       title: "Emergency Guidance",
-      description: "Receive immediate advice on whether to seek emergency care for potentially serious conditions."
+      description: "Learn when to seek urgent medical care for serious or worsening symptoms."
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "Holistic Approach",
-      description: "Get both pharmaceutical and holistic remedies for a comprehensive treatment approach."
+      title: "Holistic & Pharmaceutical Remedies",
+      description: "Receive suggestions for both traditional and natural treatments for a well-rounded approach."
     }
   ];
 
@@ -56,11 +56,11 @@ const FeaturesSection = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-4 backdrop-blur-sm border border-purple-500/20">
             <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-            Comprehensive AI Healthcare
+            Why Choose AI Doctor GPT?
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">Powerful Features for Your Health</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Doctor GPT combines advanced AI technology with medical expertise to provide you with a comprehensive virtual healthcare experience.
+            Doctor GPT combines advanced AI technology with medical knowledge to provide you with informational health insights.
           </p>
         </div>
 

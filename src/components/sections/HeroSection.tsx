@@ -44,14 +44,16 @@ const HeroSection = () => {
           <div className="flex-1 animate-fade-in-up">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-5 backdrop-blur-sm border border-purple-500/20">
               <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2 animate-pulse-slow"></span>
-              Your Personal AI Medical Assistant
+              AI-Powered Health Information
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
               <span className="text-gradient">Healthcare</span> Reimagined with AI
             </h1>
             
-            <p className="text-xl text-neutral-400 mb-8 max-w-2xl">Doctor GPT provides personalized medical consultations, potential diagnoses, and treatment recommendations based on your symptoms and medical history.</p>
+            <p className="text-xl text-neutral-400 mb-8 max-w-2xl">
+              Doctor GPT provides AI-powered health guidance by analyzing your symptoms and medical history to offer informational insights, potential diagnoses, and treatment suggestions. While Doctor GPT can support your healthcare journey, it does not replace professional medical advice.
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
@@ -73,7 +75,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center group hover-scale">
                 <Heart className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                <span className="group-hover:text-neutral-300 transition-colors">AI-Powered Care</span>
+                <span className="group-hover:text-neutral-300 transition-colors">AI-Powered Insights</span>
               </div>
               <div className="flex items-center group hover-scale">
                 <Star className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
@@ -135,12 +137,15 @@ const HeroSection = () => {
             
             {/* Disclaimer Section */}
             <div id="disclaimer" className="mt-6 p-4 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
-              <h3 className="text-lg font-bold text-neutral-300 mb-2">Disclaimer:</h3>
+              <h3 className="text-lg font-bold text-neutral-300 mb-2">Important Disclaimer:</h3>
               <p className="text-neutral-400 font-medium text-sm leading-relaxed">
-                Doctor GPT provides general medical information and guidance based on the symptoms and details you provide. However, this tool is not a substitute for professional medical advice, diagnosis, or treatment from a licensed healthcare provider. Always consult a doctor or healthcare professional for serious, persistent, or worsening symptoms. If you are experiencing a medical emergency, call emergency services or seek immediate medical attention.
+                Doctor GPT is NOT a licensed medical professional. The information provided is for informational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment.
               </p>
               <p className="text-neutral-400 font-medium text-sm mt-2 leading-relaxed">
-                By using this tool, you acknowledge that any advice given is for informational purposes only and should not be used as a definitive medical diagnosis.
+                If you are experiencing severe, persistent, or worsening symptoms, consult a licensed doctor immediately. For medical emergencies, call emergency services or visit the nearest hospital.
+              </p>
+              <p className="text-neutral-400 font-medium text-sm mt-2 leading-relaxed">
+                By using this tool, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
               </p>
             </div>
           </div>
