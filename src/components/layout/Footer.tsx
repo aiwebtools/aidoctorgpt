@@ -46,6 +46,9 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
+                <a href="https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Doctor GPT</a>
+              </li>
+              <li>
                 <a href="https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Dental GPT</a>
               </li>
               <li>

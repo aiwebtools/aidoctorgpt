@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Heart, Tooth } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const Header = () => {
