@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X, Heart, Tooth } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const Header = () => {
@@ -17,6 +17,10 @@ const Header = () => {
 
   const handleVetGPTRedirect = () => {
     window.open('https://petcaregpt.lovable.app/', '_blank');
+  };
+
+  const handleDentalGPTRedirect = () => {
+    window.open('https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert', '_blank');
   };
 
   useEffect(() => {
@@ -55,6 +59,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <a 
+              href="#"
+              onClick={handleDentalGPTRedirect}
+              className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+            >
+              Dental GPT
+            </a>
             <a 
               href="#"
               onClick={handleVetGPTRedirect}
@@ -107,6 +118,16 @@ const Header = () => {
         } md:hidden pt-20`}
       >
         <nav className="flex flex-col items-center space-y-8 pt-6">
+          <a 
+            href="#"
+            onClick={() => {
+              toggleMenu();
+              handleDentalGPTRedirect();
+            }}
+            className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
+          >
+            Dental GPT
+          </a>
           <a 
             href="#"
             onClick={() => {
