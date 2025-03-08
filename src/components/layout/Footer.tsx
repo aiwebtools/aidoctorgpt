@@ -52,13 +52,13 @@ const Footer = () => {
                 <a href="https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Dental GPT</a>
               </li>
               <li>
+                <a href="https://petcaregpt.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Veterinarian GPT</a>
+              </li>
+              <li>
                 <a href="#features" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Features</a>
               </li>
               <li>
                 <a href="#how-it-works" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">How It Works</a>
-              </li>
-              <li>
-                <a href="https://petcaregpt.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Veterinarian GPT</a>
               </li>
               <li>
                 <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Terms of Service</a>
