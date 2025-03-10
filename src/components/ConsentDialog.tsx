@@ -44,12 +44,12 @@ const ConsentDialog = () => {
         </DialogHeader>
         
         <div className="py-4">
-          <div className="mb-6 p-4 bg-red-950/40 border border-red-800/50 rounded-md text-white">
-            <p className="mb-3 font-semibold text-red-200">I understand and acknowledge that:</p>
+          <div className="mb-6 p-4 bg-purple-950/40 border border-purple-500/50 rounded-md text-white">
+            <p className="mb-3 font-semibold text-purple-200">I understand and acknowledge that:</p>
             <ul className="space-y-2 text-sm text-neutral-200">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>This is <strong className="text-red-300">NOT</strong> an actual doctor and provides no medical diagnosis or treatment.</span>
+                <span>This is <strong className="text-purple-300">NOT</strong> an actual doctor and provides no medical diagnosis or treatment.</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
