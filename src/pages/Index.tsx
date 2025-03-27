@@ -7,6 +7,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
+import ElevenLabsWidget from '@/components/ElevenLabsWidget';
 import { ArrowRight } from 'lucide-react';
 
 const Index = () => {
@@ -41,6 +42,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <ConsentDialog />
+      <ElevenLabsWidget />
       
       <main className="flex-grow">
         <HeroSection />
