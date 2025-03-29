@@ -1,38 +1,76 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const HeyGenAvatar = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Create and inject the HeyGen script
-    const script = document.createElement('script');
-    script.textContent = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJBbm5fRG9jdG9yX1NpdHRpbmdfcHVibGlj%0D%0AIiwicHJldmlld0ltZyI6Imh0dHBzOi8vZmlsZXMyLmhleWdlbi5haS9hdmF0YXIvdjMvMjZkZTM2%0D%0AOWIyZDQ0NDNlNTg2ZGVkZjI3YWYxZTBjMWRfNDU1NzAvcHJldmlld190YWxrXzEud2VicCIsIm5l%0D%0AZWRSZW1vdmVCYWNrZ3JvdW5kIjpmYWxzZSwia25vd2xlZGdlQmFzZUlkIjoiNTZmYmY3MTJjNThi%0D%0ANDQxMzg0MTNhOTliOWMzZmQwNGUiLCJ1c2VybmFtZSI6IjlkNjcxNjU4ZjFmOTRiNzE5YjJlNTg4%0D%0ANjM1ZDAxZjdiIn0%3D&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`\\n  #heygen-streaming-embed {\\n    z-index: 9999;\\n    position: fixed;\\n    left: 40px;\\n    bottom: 40px;\\n    width: 200px;\\n    height: 200px;\\n    border-radius: 50%;\\n    border: 2px solid #fff;\\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\\n    transition: all linear 0.1s;\\n    overflow: hidden;\\n\\n    opacity: 0;\\n    visibility: hidden;\\n  }\\n  #heygen-streaming-embed.show {\\n    opacity: 1;\\n    visibility: visible;\\n  }\\n  #heygen-streaming-embed.expand {\\n    \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\\n    border: 0;\\n    border-radius: 8px;\\n  }\\n  #heygen-streaming-container {\\n    width: 100%;\\n    height: 100%;\\n  }\\n  #heygen-streaming-container iframe {\\n    width: 100%;\\n    height: 100%;\\n    border: 0;\\n  }\\n  \`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
+    // Only create the script if the container exists
+    if (!containerRef.current) return;
+
+    const host = "https://labs.heygen.com";
+    const url = host + "/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJBbm5fRG9jdG9yX1NpdHRpbmdfcHVibGlj%0D%0AIiwicHJldmlld0ltZyI6Imh0dHBzOi8vZmlsZXMyLmhleWdlbi5haS9hdmF0YXIvdjMvMjZkZTM2%0D%0AOWIyZDQ0NDNlNTg2ZGVkZjI3YWYxZTBjMWRfNDU1NzAvcHJldmlld190YWxrXzEud2VicCIsIm5l%0D%0AZWRSZW1vdmVCYWNrZ3JvdW5kIjpmYWxzZSwia25vd2xlZGdlQmFzZUlkIjoiNTZmYmY3MTJjNThi%0D%0ANDQxMzg0MTNhOTliOWMzZmQwNGUiLCJ1c2VybmFtZSI6IjlkNjcxNjU4ZjFmOTRiNzE5YjJlNTg4%0D%0ANjM1ZDAxZjdiIn0%3D&inIFrame=1";
     
-    document.body.appendChild(script);
+    // Create the iframe
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.title = "Doctor GPT Avatar";
+    iframe.allow = "microphone";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.style.borderRadius = "8px";
     
-    // Clean up function to remove the script when component unmounts
-    return () => {
-      // Find and remove the HeyGen elements if they exist
-      const heygenEmbed = document.getElementById('heygen-streaming-embed');
-      if (heygenEmbed) {
-        document.body.removeChild(heygenEmbed);
+    // Clear the container and append the iframe
+    if (containerRef.current) {
+      containerRef.current.innerHTML = '';
+      containerRef.current.appendChild(iframe);
+    }
+    
+    // Set up message listener to handle avatar interactions
+    window.addEventListener("message", (e) => {
+      if (e.origin === host && e.data && e.data.type && e.data.type === "streaming-embed") {
+        if (e.data.action === "init" || e.data.action === "show") {
+          // Make sure the avatar is visible
+          if (iframe.style.display === 'none') {
+            iframe.style.display = 'block';
+          }
+        }
       }
-      
-      document.body.removeChild(script);
+    });
+
+    // Clean up on unmount
+    return () => {
+      window.removeEventListener("message", () => {});
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+      }
     };
   }, []);
 
   return (
-    <div className="w-full relative py-8">
+    <div className="w-full relative py-8 bg-black/30">
       <div className="container mx-auto px-4 text-center">
         <h3 className="text-xl font-semibold text-purple-400 mb-4">
           Meet Your AI Doctor Assistant
         </h3>
-        <p className="text-neutral-300 mb-4">
+        <p className="text-neutral-300 mb-6">
           Interactive AI doctor powered by HeyGen - click on the avatar to interact
         </p>
-        {/* This is a placeholder div to reserve space for the HeyGen avatar 
-            The actual avatar is injected via script into the body */}
-        <div className="h-20"></div>
+        
+        {/* Container for the HeyGen Avatar iframe */}
+        <div 
+          ref={containerRef}
+          className="mx-auto rounded-lg border border-purple-500/40 shadow-lg overflow-hidden"
+          style={{ 
+            height: "400px", 
+            maxWidth: "650px", 
+            aspectRatio: "16/9",
+            backgroundColor: "#111827"
+          }}
+        >
+          {/* The iframe will be injected here */}
+        </div>
       </div>
     </div>
   );
