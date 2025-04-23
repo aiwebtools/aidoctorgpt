@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight, Heart, Shield, Star, Users, FileText } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
+import VideoEmbed from '../VideoEmbed';
 
 const HeroSection = () => {
   const handleChatRedirect = () => {
@@ -12,7 +13,8 @@ const HeroSection = () => {
     window.open('https://petcaregpt.lovable.app/', '_blank');
   };
   
-  return <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
+  return (
+    <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(139,92,246,0.15),_transparent_70%)]"></div>
@@ -41,7 +43,8 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center">
-          <div className="flex-1 animate-fade-in-up">
+          {/* --- LEFT COLUMN: Hero Content --- */}
+          <div className="flex-1 animate-fade-in-up w-full">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-5 backdrop-blur-sm border border-purple-500/20">
               <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2 animate-pulse-slow"></span>
               AI-Powered Health Information
@@ -64,7 +67,7 @@ const HeroSection = () => {
               </AnimatedButton>
             </div>
             
-            <div className="flex flex-wrap gap-6 text-sm text-neutral-400">
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-400 mb-8">
               <div className="flex items-center group hover-scale">
                 <Shield className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                 <span className="group-hover:text-neutral-300 transition-colors">Secure & Confidential</span>
@@ -84,57 +87,60 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="flex-1 animate-fade-in-up" style={{
-          animationDelay: '0.2s'
-        }}>
-            <div className="glass-card p-6 rounded-2xl shadow-xl relative overflow-hidden border border-white/10 hover:border-purple-500/30 transition-all duration-500">
-              <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-bl-lg">
-                Live Demo
+          {/* --- RIGHT COLUMN: Video Embed --- */}
+          <div className="flex-1 animate-fade-in-up w-full max-w-xl mx-auto lg:mx-0" style={{ animationDelay: '0.2s' }}>
+            {/* Responsive: Place video above on mobile, right on desktop */}
+            <div className="w-full h-full flex items-center justify-center">
+              <VideoEmbed />
+            </div>
+            {/* The following Live Demo chat-card/disclaimer previously here is now moved below for clarity */}
+          </div>
+        </div>
+        {/* DEMO/Disclaimer below on desktop, below both columns on mobile */}
+        <div className="flex flex-col lg:flex-row gap-8 mt-6">
+          <div className="flex-1" />
+          <div className="flex-1 glass-card p-6 rounded-2xl shadow-xl relative overflow-hidden border border-white/10 hover:border-purple-500/30 transition-all duration-500 mt-6">
+            <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs px-3 py-1 rounded-bl-lg">
+              Live Demo
+            </div>
+            <div className="flex items-start space-x-4 mb-4">
+              <div className="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center shrink-0 hover-scale">
+                <FileText className="h-5 w-5 text-purple-300" />
               </div>
-              
-              <div className="flex items-start space-x-4 mb-4">
-                <div className="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center shrink-0 hover-scale">
-                  <FileText className="h-5 w-5 text-purple-300" />
-                </div>
-                <div className="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-4 max-w-xs border border-white/10">
-                  <p className="text-neutral-300">
-                    Hi, I'm Doctor GPT. What symptoms are you experiencing today? Please provide your age, gender, and relevant medical history.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4 mb-4 justify-end">
-                <div className="bg-purple-900/30 backdrop-blur-sm rounded-2xl rounded-tr-none p-4 max-w-xs border border-purple-500/20">
-                  <p className="text-neutral-300">
-                    I've been having headaches, fatigue, and dizziness for the past 3 days. I'm a 34-year-old male with no pre-existing conditions.
-                  </p>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center shrink-0 hover-scale">
-                  <Users className="h-5 w-5 text-neutral-400" />
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4 animate-pulse">
-                <div className="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center shrink-0">
-                  <FileText className="h-5 w-5 text-purple-300" />
-                </div>
-                <div className="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-4 max-w-xs border border-white/10">
-                  <p className="text-neutral-300">
-                    Based on your symptoms, you might be experiencing...
-                  </p>
-                </div>
-              </div>
-              
-              <div className="mt-6 pt-4 border-t border-neutral-800">
-                <div className="flex items-center rounded-full border border-purple-500/30 pl-4 focus-within:ring-2 focus-within:ring-purple-500 focus-within:border-purple-500 backdrop-blur-sm bg-black/20">
-                  <input type="text" placeholder="Describe your symptoms..." className="w-full bg-transparent border-none focus:outline-none text-sm py-2 text-neutral-300" onClick={handleChatRedirect} readOnly />
-                  <button className="ml-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full p-2 hover:shadow-glow transition-shadow duration-300" onClick={handleChatRedirect}>
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
+              <div className="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-4 max-w-xs border border-white/10">
+                <p className="text-neutral-300">
+                  Hi, I'm Doctor GPT. What symptoms are you experiencing today? Please provide your age, gender, and relevant medical history.
+                </p>
               </div>
             </div>
-            
+            <div className="flex items-start space-x-4 mb-4 justify-end">
+              <div className="bg-purple-900/30 backdrop-blur-sm rounded-2xl rounded-tr-none p-4 max-w-xs border border-purple-500/20">
+                <p className="text-neutral-300">
+                  I've been having headaches, fatigue, and dizziness for the past 3 days. I'm a 34-year-old male with no pre-existing conditions.
+                </p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center shrink-0 hover-scale">
+                <Users className="h-5 w-5 text-neutral-400" />
+              </div>
+            </div>
+            <div className="flex items-start space-x-4 animate-pulse">
+              <div className="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center shrink-0">
+                <FileText className="h-5 w-5 text-purple-300" />
+              </div>
+              <div className="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-4 max-w-xs border border-white/10">
+                <p className="text-neutral-300">
+                  Based on your symptoms, you might be experiencing...
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-neutral-800">
+              <div className="flex items-center rounded-full border border-purple-500/30 pl-4 focus-within:ring-2 focus-within:ring-purple-500 focus-within:border-purple-500 backdrop-blur-sm bg-black/20">
+                <input type="text" placeholder="Describe your symptoms..." className="w-full bg-transparent border-none focus:outline-none text-sm py-2 text-neutral-300" onClick={handleChatRedirect} readOnly />
+                <button className="ml-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full p-2 hover:shadow-glow transition-shadow duration-300" onClick={handleChatRedirect}>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
             {/* Disclaimer Section */}
             <div id="disclaimer" className="mt-6 p-4 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
               <h3 className="text-lg font-bold text-neutral-300 mb-2">Important Disclaimer:</h3>
@@ -151,7 +157,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default HeroSection;
