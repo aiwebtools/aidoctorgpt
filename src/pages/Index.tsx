@@ -48,7 +48,12 @@ const Index = () => {
       
       <main className="flex-grow">
         <HeroSection />
-        <VideoEmbed />
+        
+        {/* Video Embed Section */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <VideoEmbed />
+        </div>
+        
         <HeyGenAvatar />
         <FeaturesSection />
         <HowItWorksSection />
