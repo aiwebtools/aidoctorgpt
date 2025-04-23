@@ -1,6 +1,17 @@
 
 import React, { useEffect, useRef } from "react";
 
+// Declare global YouTube API types
+declare global {
+  interface Window {
+    YT: {
+      Player: any;
+      PlayerState: any;
+    };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
 /**
  * Embeds a YouTube video player which auto-plays, unmutes, and tries to set 1080p as quality.
  */
@@ -79,3 +90,4 @@ const VideoEmbed: React.FC = () => {
 };
 
 export default VideoEmbed;
+
