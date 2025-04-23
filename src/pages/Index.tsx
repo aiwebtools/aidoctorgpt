@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -9,6 +8,7 @@ import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
 import ElevenLabsWidget from '@/components/ElevenLabsWidget';
 import HeyGenAvatar from '@/components/HeyGenAvatar';
+import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight } from 'lucide-react';
 
 const Index = () => {
@@ -48,6 +48,7 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <HeyGenAvatar />
+        <VideoEmbed />
         <FeaturesSection />
         <HowItWorksSection />
         
