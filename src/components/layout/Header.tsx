@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
@@ -35,6 +36,27 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+  }, []);
+
+  // Ensure all external links open in new windows
+  useEffect(() => {
+    const updateExternalLinks = () => {
+      document.querySelectorAll('a[href^="http"]').forEach(link => {
+        if (!(link as HTMLElement).getAttribute('target')) {
+          (link as HTMLElement).setAttribute('target', '_blank');
+          (link as HTMLElement).setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    };
+    
+    // Apply initially
+    updateExternalLinks();
+    
+    // Set up an observer to catch dynamically added links
+    const observer = new MutationObserver(updateExternalLinks);
+    observer.observe(document.body, { childList: true, subtree: true });
+    
+    return () => observer.disconnect();
   }, []);
 
   return (

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -33,6 +34,17 @@ const Index = () => {
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
+  // Ensure all external links open in new tabs
+  useEffect(() => {
+    const externalLinks = document.querySelectorAll('a[href^="http"]');
+    externalLinks.forEach(link => {
+      if (!(link as HTMLElement).getAttribute('target')) {
+        (link as HTMLElement).setAttribute('target', '_blank');
+        (link as HTMLElement).setAttribute('rel', 'noopener noreferrer');
+      }
+    });
   }, []);
 
   const handleChatRedirect = () => {
@@ -94,6 +106,19 @@ const Index = () => {
                 <p className="text-neutral-400">
                   By using this tool, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
                 </p>
+                <div className="mt-4 p-3 bg-purple-900/30 rounded-lg border border-purple-500/30">
+                  <h4 className="font-medium text-purple-200 mb-2">Access Information:</h4>
+                  <ul className="text-sm text-neutral-300">
+                    <li className="flex items-center mb-1">
+                      <span className="h-2 w-2 bg-green-400 rounded-full mr-2"></span>
+                      <span><strong>Unlimited access</strong> with ChatGPT Plus or higher tier accounts</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="h-2 w-2 bg-yellow-400 rounded-full mr-2"></span>
+                      <span><strong>Limited interactions</strong> with free ChatGPT accounts</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
               
               <div className="mt-8">

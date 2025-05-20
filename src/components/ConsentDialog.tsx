@@ -65,6 +65,20 @@ const ConsentDialog = () => {
               </li>
             </ul>
           </div>
+          
+          <div className="mt-4 p-4 bg-purple-950/40 border border-purple-500/50 rounded-md text-white">
+            <p className="mb-2 font-semibold text-purple-200">Usage Information:</p>
+            <ul className="space-y-2 text-sm text-white">
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span><strong className="text-green-300">Unlimited access</strong> is available for ChatGPT Plus subscribers and higher tier accounts.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Free ChatGPT accounts have <strong className="text-yellow-300">limited interactions</strong> (may be rate-limited after several messages).</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <DialogFooter>
