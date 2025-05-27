@@ -24,13 +24,21 @@ const Header = () => {
 
   const handleDisclaimerClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const disclaimerElement = document.getElementById('disclaimer');
-    if (disclaimerElement) {
-      disclaimerElement.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+    e.stopPropagation();
+    
+    // Use setTimeout to ensure the page is fully loaded before scrolling
+    setTimeout(() => {
+      const disclaimerElement = document.getElementById('disclaimer');
+      if (disclaimerElement) {
+        const headerHeight = 80; // Adjust for fixed header
+        const elementPosition = disclaimerElement.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   useEffect(() => {
@@ -110,13 +118,12 @@ const Header = () => {
             >
               How It Works
             </a>
-            <a 
-              href="#disclaimer" 
+            <button 
               onClick={handleDisclaimerClick}
-              className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+              className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link bg-transparent border-none cursor-pointer"
             >
               Disclaimer
-            </a>
+            </button>
             <AnimatedButton 
               variant="primary" 
               size="sm"
@@ -177,16 +184,15 @@ const Header = () => {
           >
             How It Works
           </a>
-          <a 
-            href="#disclaimer" 
+          <button 
             onClick={(e) => {
               toggleMenu();
               handleDisclaimerClick(e);
             }}
-            className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
+            className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link bg-transparent border-none cursor-pointer"
           >
             Disclaimer
-          </a>
+          </button>
           <AnimatedButton 
             variant="primary" 
             onClick={() => {
