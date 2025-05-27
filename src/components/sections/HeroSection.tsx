@@ -156,7 +156,7 @@ const HeroSection = () => {
               </div>
             </div>
             {/* Comprehensive Disclaimer Section */}
-            <div id="disclaimer" className="mt-6 p-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg space-y-4">
+            <div id="comprehensive-disclaimer" className="mt-6 p-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg space-y-4">
               <h3 className="text-xl font-bold text-red-300 mb-3 flex items-center">
                 <AlertTriangle className="h-5 w-5 mr-2" />
                 🚨 COMPREHENSIVE MEDICAL DISCLAIMER

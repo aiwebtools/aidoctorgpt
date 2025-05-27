@@ -15,9 +15,9 @@ export const handleDisclaimerClick = (e: React.MouseEvent) => {
   e.preventDefault();
   e.stopPropagation();
   
-  // Target the main disclaimer section at the bottom of the page
+  // Target the comprehensive disclaimer section in the HeroSection
   setTimeout(() => {
-    const disclaimerElement = document.getElementById('main-disclaimer');
+    const disclaimerElement = document.getElementById('comprehensive-disclaimer');
     if (disclaimerElement) {
       const headerHeight = 80; // Adjust for fixed header
       const elementPosition = disclaimerElement.offsetTop - headerHeight;
