@@ -47,28 +47,96 @@ const HowItWorksSection = () => {
           </p>
         </div>
 
+        {/* Prominent disclaimer before steps */}
+        <div className="mb-12 p-6 bg-red-900/30 backdrop-blur-sm border border-red-500/50 rounded-2xl shadow-glow">
+          <h3 className="text-xl font-bold text-red-300 mb-3 flex items-center">
+            ⚠️ CRITICAL MEDICAL DISCLAIMER
+          </h3>
+          <p className="text-red-200 font-medium">
+            Doctor GPT is NOT a substitute for professional medical advice. This AI tool provides INFORMATIONAL content only. 
+            Always consult licensed healthcare professionals for medical decisions.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
           {/* Connecting line with glow effect */}
           <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -ml-px w-0.5 bg-gradient-to-b from-purple-500/50 via-cyan-400/50 to-pink-500/50 shadow-glow"></div>
           
           {steps.map((step, index) => (
-            <div 
-              key={index} 
-              className={`${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12 md:translate-y-24'}`}
-            >
-              <StepCard
-                number={step.number}
-                title={step.title}
-                description={step.description}
-              />
+            <div key={index}>
+              <div 
+                className={`${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12 md:translate-y-24'}`}
+              >
+                <StepCard
+                  number={step.number}
+                  title={step.title}
+                  description={step.description}
+                />
+              </div>
+              
+              {/* Disclaimer after each step */}
+              {index === 1 && (
+                <div className="mt-8 p-4 bg-yellow-900/20 backdrop-blur-sm border border-yellow-500/30 rounded-lg">
+                  <p className="text-yellow-200 text-sm font-medium">
+                    🔔 Remember: AI insights are not medical diagnoses. Severe symptoms require immediate professional medical attention.
+                  </p>
+                </div>
+              )}
+              
+              {index === 3 && (
+                <div className="mt-8 p-4 bg-orange-900/20 backdrop-blur-sm border border-orange-500/30 rounded-lg">
+                  <p className="text-orange-200 text-sm font-medium">
+                    📋 Important: Never use AI recommendations to replace prescribed medications or treatments without consulting your doctor.
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
         
-        <div className="mt-16 text-center">
-          <p className="text-neutral-300 max-w-3xl mx-auto">
-            🔹 Doctor GPT is designed to provide informational support only. Always consult a licensed healthcare provider before making medical decisions.
-          </p>
+        {/* Final comprehensive disclaimer */}
+        <div className="mt-16 p-8 bg-purple-900/30 backdrop-blur-sm border border-purple-500/40 rounded-2xl shadow-glow">
+          <h3 className="text-2xl font-bold text-purple-200 mb-4 text-center">⚠️ ESSENTIAL MEDICAL DISCLAIMERS ⚠️</h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="p-4 bg-red-900/40 rounded-lg border border-red-500/30">
+                <h4 className="font-bold text-red-300 mb-2">🚨 Emergency Warning</h4>
+                <p className="text-red-200 text-sm">
+                  For chest pain, difficulty breathing, severe bleeding, loss of consciousness, or other emergencies - call 911 immediately. Do NOT use AI tools for emergencies.
+                </p>
+              </div>
+              
+              <div className="p-4 bg-yellow-900/40 rounded-lg border border-yellow-500/30">
+                <h4 className="font-bold text-yellow-300 mb-2">⚖️ Legal Notice</h4>
+                <p className="text-yellow-200 text-sm">
+                  This AI is not licensed to practice medicine. Information provided is for educational purposes only and does not constitute medical advice.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="p-4 bg-blue-900/40 rounded-lg border border-blue-500/30">
+                <h4 className="font-bold text-blue-300 mb-2">👨‍⚕️ Professional Consultation Required</h4>
+                <p className="text-blue-200 text-sm">
+                  Always consult qualified healthcare professionals for diagnosis, treatment, and medical decisions. AI cannot replace human medical expertise.
+                </p>
+              </div>
+              
+              <div className="p-4 bg-green-900/40 rounded-lg border border-green-500/30">
+                <h4 className="font-bold text-green-300 mb-2">🔒 Privacy & Accuracy</h4>
+                <p className="text-green-200 text-sm">
+                  AI responses may contain errors. Never share sensitive medical information. This tool is for general information only.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-6 p-4 bg-black/50 rounded-lg border border-white/20">
+            <p className="text-neutral-300 text-center font-medium">
+              By using Doctor GPT, you acknowledge these disclaimers and agree to seek professional medical care for all health concerns.
+            </p>
+          </div>
         </div>
       </div>
     </section>
