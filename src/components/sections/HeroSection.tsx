@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { ArrowRight, Heart, Shield, Star, Users, FileText } from 'lucide-react';
+import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 import VideoEmbed from '../VideoEmbed';
 
@@ -54,9 +53,23 @@ const HeroSection = () => {
               <span className="text-gradient">Healthcare</span> Reimagined with AI
             </h1>
             
-            <p className="text-xl text-neutral-400 mb-8 max-w-2xl">
+            <p className="text-xl text-neutral-400 mb-6 max-w-2xl">
               Doctor GPT provides AI-powered health guidance by analyzing your symptoms and medical history to offer informational insights, potential diagnoses, and treatment suggestions. While Doctor GPT can support your healthcare journey, it does not replace professional medical advice.
             </p>
+
+            {/* Compact Disclaimer */}
+            <div className="mb-6 p-4 bg-red-950/30 border border-red-500/40 rounded-lg backdrop-blur-sm">
+              <div className="flex items-start space-x-2">
+                <AlertTriangle className="h-5 w-5 text-red-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-red-200 font-semibold text-sm mb-1">⚠️ Medical Disclaimer:</p>
+                  <p className="text-neutral-300 text-sm leading-relaxed">
+                    <strong>NOT a licensed medical professional.</strong> Information provided is for educational purposes only and should NOT replace professional medical advice, diagnosis, or treatment. 
+                    <strong className="text-red-300"> For emergencies, call 911 immediately.</strong> Always consult qualified healthcare providers for medical concerns.
+                  </p>
+                </div>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
@@ -67,6 +80,7 @@ const HeroSection = () => {
               </AnimatedButton>
             </div>
             
+            {/* ... keep existing code (stats section with Shield, Users, Heart, Star icons) */}
             <div className="flex flex-wrap gap-6 text-sm text-neutral-400 mb-8">
               <div className="flex items-center group hover-scale">
                 <Shield className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
@@ -141,18 +155,75 @@ const HeroSection = () => {
                 </button>
               </div>
             </div>
-            {/* Disclaimer Section */}
-            <div id="disclaimer" className="mt-6 p-4 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
-              <h3 className="text-lg font-bold text-neutral-300 mb-2">Important Disclaimer:</h3>
-              <p className="text-neutral-400 font-medium text-sm leading-relaxed">
-                Doctor GPT is NOT a licensed medical professional. The information provided is for informational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment.
-              </p>
-              <p className="text-neutral-400 font-medium text-sm mt-2 leading-relaxed">
-                If you are experiencing severe, persistent, or worsening symptoms, consult a licensed doctor immediately. For medical emergencies, call emergency services or visit the nearest hospital.
-              </p>
-              <p className="text-neutral-400 font-medium text-sm mt-2 leading-relaxed">
-                By using this tool, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
-              </p>
+            {/* Comprehensive Disclaimer Section */}
+            <div id="disclaimer" className="mt-6 p-6 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg space-y-4">
+              <h3 className="text-xl font-bold text-red-300 mb-3 flex items-center">
+                <AlertTriangle className="h-5 w-5 mr-2" />
+                🚨 COMPREHENSIVE MEDICAL DISCLAIMER
+              </h3>
+              
+              <div className="space-y-3 text-sm">
+                <div className="p-3 bg-red-950/40 border border-red-500/30 rounded">
+                  <p className="font-bold text-red-200 mb-2">🚨 EMERGENCY WARNING:</p>
+                  <p className="text-neutral-300">IF YOU ARE EXPERIENCING A MEDICAL EMERGENCY, call 911 (US) or your local emergency number IMMEDIATELY. DO NOT use this AI tool for emergency situations.</p>
+                </div>
+
+                <div className="p-3 bg-purple-950/40 border border-purple-500/30 rounded">
+                  <p className="font-bold text-purple-200 mb-2">⚠️ NOT A MEDICAL PROFESSIONAL:</p>
+                  <p className="text-neutral-300">Doctor GPT is NOT a licensed medical professional, doctor, nurse, or healthcare provider. This AI does not provide medical advice, diagnosis, or treatment. All information is for educational and research purposes ONLY.</p>
+                </div>
+
+                <div className="p-3 bg-orange-950/40 border border-orange-500/30 rounded">
+                  <p className="font-bold text-orange-200 mb-2">🛡️ NO LIABILITY:</p>
+                  <p className="text-neutral-300">The creators, developers, and operators of this tool are not liable for any health outcomes, medical decisions, or consequences resulting from use of this AI. You use this tool at your own risk.</p>
+                </div>
+
+                <div className="p-3 bg-yellow-950/40 border border-yellow-500/30 rounded">
+                  <p className="font-bold text-yellow-200 mb-2">⚠️ ACCURACY NOT GUARANTEED:</p>
+                  <p className="text-neutral-300">AI responses may contain errors, inaccuracies, or outdated medical information. Medical practices vary by location and this tool cannot account for local standards or regulations.</p>
+                </div>
+
+                <div className="p-3 bg-blue-950/40 border border-blue-500/30 rounded">
+                  <p className="font-bold text-blue-200 mb-2">👩‍⚕️ WHAT TO DO INSTEAD:</p>
+                  <ul className="text-neutral-300 space-y-1 ml-4">
+                    <li>• Consult licensed physicians for medical concerns</li>
+                    <li>• Visit urgent care for non-emergency health issues</li>
+                    <li>• Use telehealth services from licensed providers</li>
+                    <li>• Call your doctor's office for medical questions</li>
+                    <li>• Consult pharmacists for medication questions</li>
+                  </ul>
+                </div>
+
+                <div className="p-3 bg-green-950/40 border border-green-500/30 rounded">
+                  <p className="font-bold text-green-200 mb-2">📊 USAGE INFORMATION:</p>
+                  <ul className="text-neutral-300 space-y-1">
+                    <li className="flex items-center">
+                      <span className="h-2 w-2 bg-green-400 rounded-full mr-2"></span>
+                      <span><strong>ChatGPT Plus/Pro Users:</strong> Unlimited access to Doctor GPT</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="h-2 w-2 bg-yellow-400 rounded-full mr-2"></span>
+                      <span><strong>Free ChatGPT Users:</strong> Limited interactions (rate-limited after several messages every few hours)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="p-3 bg-gray-950/40 border border-gray-500/30 rounded">
+                  <p className="font-bold text-gray-200 mb-2">📞 CONTACT INFORMATION:</p>
+                  <p className="text-neutral-300">
+                    📧 Email: Contact@ai-webtools.com<br/>
+                    ☎ Support: (475) 800-8096
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-neutral-700">
+                <p className="text-xs text-neutral-400 italic">
+                  By using this tool, you acknowledge that you have read, understood, and agree to all terms in this disclaimer. 
+                  You agree to hold harmless the creators from any claims, damages, or losses. Use of this service constitutes 
+                  acceptance of these terms and conditions.
+                </p>
+              </div>
             </div>
           </div>
         </div>
