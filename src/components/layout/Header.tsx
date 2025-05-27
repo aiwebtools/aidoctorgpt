@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
@@ -21,6 +20,17 @@ const Header = () => {
 
   const handleDentalGPTRedirect = () => {
     window.open('https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert', '_blank');
+  };
+
+  const handleDisclaimerClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const disclaimerElement = document.getElementById('disclaimer');
+    if (disclaimerElement) {
+      disclaimerElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   useEffect(() => {
@@ -102,6 +112,7 @@ const Header = () => {
             </a>
             <a 
               href="#disclaimer" 
+              onClick={handleDisclaimerClick}
               className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
             >
               Disclaimer
@@ -168,8 +179,11 @@ const Header = () => {
           </a>
           <a 
             href="#disclaimer" 
+            onClick={(e) => {
+              toggleMenu();
+              handleDisclaimerClick(e);
+            }}
             className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
-            onClick={toggleMenu}
           >
             Disclaimer
           </a>
