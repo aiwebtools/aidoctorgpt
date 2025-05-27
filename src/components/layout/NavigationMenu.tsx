@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleDisclaimerClick } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect } from './headerUtils';
 
 const NavigationMenu = () => {
   return (
@@ -26,12 +26,6 @@ const NavigationMenu = () => {
       >
         How It Works
       </a>
-      <button 
-        onClick={handleDisclaimerClick}
-        className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link bg-transparent border-none cursor-pointer"
-      >
-        Disclaimer
-      </button>
       <AnimatedButton 
         variant="primary" 
         size="sm"
