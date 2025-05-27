@@ -15,9 +15,9 @@ export const handleDisclaimerClick = (e: React.MouseEvent) => {
   e.preventDefault();
   e.stopPropagation();
   
-  // Use setTimeout to ensure the page is fully loaded before scrolling
+  // Target the main disclaimer section at the bottom of the page
   setTimeout(() => {
-    const disclaimerElement = document.getElementById('disclaimer');
+    const disclaimerElement = document.getElementById('main-disclaimer');
     if (disclaimerElement) {
       const headerHeight = 80; // Adjust for fixed header
       const elementPosition = disclaimerElement.offsetTop - headerHeight;

@@ -94,7 +94,7 @@ const Index = () => {
                 </AnimatedButton>
               </div>
               
-              <div id="disclaimer" className="max-w-3xl mx-auto p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
+              <div id="main-disclaimer" className="max-w-3xl mx-auto p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
                 <h3 className="text-xl font-bold text-white/90 mb-3">⚠️ Important Disclaimer</h3>
                 <p className="text-neutral-400 mb-4">
                   Doctor GPT is NOT a licensed medical professional. The information provided is for informational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment.
