@@ -2,7 +2,7 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleDisclaimerClick } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect } from './headerUtils';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -44,15 +44,6 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         >
           How It Works
         </a>
-        <button 
-          onClick={(e) => {
-            toggleMenu();
-            handleDisclaimerClick(e);
-          }}
-          className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link bg-transparent border-none cursor-pointer"
-        >
-          Disclaimer
-        </button>
         <AnimatedButton 
           variant="primary" 
           onClick={() => {
