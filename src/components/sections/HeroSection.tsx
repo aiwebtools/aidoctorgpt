@@ -54,7 +54,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl text-neutral-400 mb-6 max-w-2xl">
-              Doctor GPT provides AI-powered health guidance by analyzing your symptoms and medical history to offer informational insights, potential diagnoses, and treatment suggestions. While Doctor GPT can support your healthcare journey, it does not replace professional medical advice.
+              Doctor GPT provides AI-powered health guidance by analyzing your symptoms and medical history to offer informational insights, personal healthcare advice, and treatment suggestions. While Doctor GPT can support your healthcare journey, it does not replace professional medical advice.
             </p>
 
             {/* Compact Disclaimer */}
