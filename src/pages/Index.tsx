@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -53,18 +52,20 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* SEO-optimized page structure */}
       <Header />
       <ConsentDialog />
       <ElevenLabsWidget />
       
       <main className="flex-grow">
+        {/* H1 is in HeroSection for SEO */}
         <HeroSection />
         <HeyGenAvatar />
         <FeaturesSection />
         <HowItWorksSection />
         
-        {/* Call to Action Section */}
-        <section className="py-20 relative overflow-hidden">
+        {/* SEO-optimized Call to Action Section */}
+        <section className="py-20 relative overflow-hidden" aria-label="Get started with AI Doctor GPT">
           {/* Background effects */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-pink-900/80"></div>
@@ -76,10 +77,10 @@ const Index = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 max-w-3xl mx-auto text-balance">
-                Get Started with <span className="text-gradient">AI Doctor GPT</span>
+                Start Your Free AI Health Consultation with <span className="text-gradient">AI Doctor GPT</span>
               </h2>
               <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
-                Join 50,000+ users who have already discovered the benefits of AI-powered healthcare insights.
+                Join over 50,000+ users who trust AI Doctor GPT for free health guidance, symptom analysis, and medical information. Available 24/7 with instant responses.
               </p>
               
               <div className="mb-10">
@@ -89,42 +90,53 @@ const Index = () => {
                   className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow"
                   icon={<ArrowRight className="ml-1" />}
                   onClick={handleChatRedirect}
+                  aria-label="Try AI Doctor GPT Now - Free Health Assistant"
                 >
-                  Try AI Doctor GPT Now
+                  Try AI Doctor GPT Now - Free
                 </AnimatedButton>
               </div>
               
+              {/* SEO-optimized disclaimer with better structure */}
               <div id="main-disclaimer" className="max-w-3xl mx-auto p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg">
-                <h3 className="text-xl font-bold text-white/90 mb-3">⚠️ Important Disclaimer</h3>
-                <p className="text-neutral-400 mb-4">
-                  Doctor GPT is NOT a licensed medical professional. The information provided is for informational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment.
-                </p>
-                <p className="text-neutral-400 mb-4">
-                  If you are experiencing severe, persistent, or worsening symptoms, consult a licensed doctor immediately.
-                  For medical emergencies, call emergency services or visit the nearest hospital.
-                </p>
-                <p className="text-neutral-400">
-                  By using this tool, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
-                </p>
+                <h3 className="text-xl font-bold text-white/90 mb-3">⚠️ Important Medical Disclaimer</h3>
+                <div className="text-left space-y-3">
+                  <p className="text-neutral-400">
+                    <strong>AI Doctor GPT is NOT a licensed medical professional.</strong> This AI health assistant provides information for educational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment from qualified healthcare providers.
+                  </p>
+                  <p className="text-neutral-400">
+                    <strong>For medical emergencies:</strong> Call 911 (US), 999 (UK), or your local emergency services immediately. Do not use this AI tool for emergency situations.
+                  </p>
+                  <p className="text-neutral-400">
+                    <strong>Always consult healthcare professionals:</strong> If you are experiencing persistent, severe, or worsening symptoms, consult a licensed doctor, physician, or qualified medical professional immediately.
+                  </p>
+                  <p className="text-neutral-400">
+                    By using AI Doctor GPT, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
+                  </p>
+                </div>
+                
+                {/* SEO-optimized pricing information */}
                 <div className="mt-4 p-3 bg-purple-900/30 rounded-lg border border-purple-500/30">
-                  <h4 className="font-medium text-purple-200 mb-2">Access Information:</h4>
-                  <ul className="text-sm text-neutral-300">
-                    <li className="flex items-center mb-1">
+                  <h4 className="font-medium text-purple-200 mb-2">Free AI Health Assistant - Access Information:</h4>
+                  <ul className="text-sm text-neutral-300 space-y-1">
+                    <li className="flex items-center">
                       <span className="h-2 w-2 bg-green-400 rounded-full mr-2"></span>
-                      <span><strong>Unlimited access</strong> with ChatGPT Plus or higher tier accounts</span>
+                      <span><strong>Unlimited free access</strong> with ChatGPT Plus or Pro subscription</span>
                     </li>
                     <li className="flex items-center">
                       <span className="h-2 w-2 bg-yellow-400 rounded-full mr-2"></span>
-                      <span><strong>Limited interactions</strong> with free ChatGPT accounts</span>
+                      <span><strong>Limited free interactions</strong> with standard ChatGPT accounts</span>
                     </li>
                   </ul>
                 </div>
               </div>
               
+              {/* Contact information for SEO */}
               <div className="mt-8">
-                <p className="text-neutral-300 mb-2">📞 Contact Us</p>
-                <p className="text-neutral-400">📧 Email: Contact@ai-webtools.com</p>
-                <p className="text-neutral-400">☎ Support: (475) 800-8096</p>
+                <h3 className="text-neutral-300 mb-2 font-semibold">📞 Contact AI Web Tools LLC</h3>
+                <address className="not-italic">
+                  <p className="text-neutral-400">📧 Email: <a href="mailto:Contact@ai-webtools.com" className="text-purple-400 hover:text-purple-300">Contact@ai-webtools.com</a></p>
+                  <p className="text-neutral-400">☎ Support: <a href="tel:+14758008096" className="text-purple-400 hover:text-purple-300">(475) 800-8096</a></p>
+                </address>
               </div>
             </div>
           </div>
