@@ -2,7 +2,7 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect } from './headerUtils';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -36,6 +36,16 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
           className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
         >
           Veterinarian GPT
+        </a>
+        <a 
+          href="#"
+          onClick={() => {
+            toggleMenu();
+            handleMentalWellnessGPTRedirect();
+          }}
+          className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
+        >
+          Mental Wellness GPT
         </a>
         <a 
           href="#how-it-works" 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect } from './headerUtils';
 
 const NavigationMenu = () => {
   return (
@@ -19,6 +19,13 @@ const NavigationMenu = () => {
         className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
       >
         Veterinarian GPT
+      </a>
+      <a 
+        href="#"
+        onClick={handleMentalWellnessGPTRedirect}
+        className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+      >
+        Mental Wellness GPT
       </a>
       <a 
         href="#how-it-works" 

@@ -55,6 +55,9 @@ const Footer = () => {
                 <a href="https://petcaregpt.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Veterinarian GPT</a>
               </li>
               <li>
+                <a href="https://mentalwellnessgpt.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Mental Wellness GPT</a>
+              </li>
+              <li>
                 <a href="#features" className="text-neutral-400 hover:text-purple-400 transition-colors interactive-link inline-block">Features</a>
               </li>
               <li>
