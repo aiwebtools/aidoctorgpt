@@ -29,8 +29,8 @@ const ConsentDialog = () => {
     localStorage.setItem('user-consent', 'true');
     setOpen(false);
     toast({
-      title: "Consent Acknowledged",
-      description: "Thank you for acknowledging our comprehensive disclaimer.",
+      title: "Thank You for Agreeing To Our Disclaimer",
+      description: "We wish you well. - Enjoy KB",
       duration: 4000, // 4 seconds
     });
   };
