@@ -11,7 +11,7 @@ const Logo = () => {
         </span>
       </a>
       <p className="text-neutral-500 text-xs mt-1 flex items-center">
-        Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better & better access to healthcare
+        Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better access to healthcare
       </p>
       <a 
         href="https://aiwebtools.ai" 
