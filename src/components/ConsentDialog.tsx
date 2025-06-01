@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -36,115 +37,86 @@ const ConsentDialog = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto border border-purple-500/30 bg-black/95 backdrop-blur">
+      <DialogContent className="sm:max-w-lg max-w-[95vw] max-h-[85vh] overflow-y-auto border border-purple-500/30 bg-black/95 backdrop-blur">
         <DialogHeader>
-          <DialogTitle className="text-xl text-white">⚠️ CRITICAL MEDICAL DISCLAIMER - READ CAREFULLY</DialogTitle>
-          <DialogDescription className="text-neutral-300">
-            This disclaimer is legally binding. Please read and acknowledge before continuing.
+          <div className="flex justify-between items-start mb-2">
+            <DialogTitle className="text-lg text-white flex-1">⚠️ MEDICAL DISCLAIMER</DialogTitle>
+            <Button 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-sm px-4 py-1 ml-2"
+              onClick={handleConsent}
+            >
+              I AGREE
+            </Button>
+          </div>
+          <DialogDescription className="text-neutral-300 text-sm">
+            Please read and acknowledge before continuing.
           </DialogDescription>
         </DialogHeader>
         
-        <div className="py-4 space-y-4">
-          <div className="p-4 bg-red-950/40 border border-red-500/50 rounded-md text-white">
-            <p className="mb-3 font-bold text-red-200 text-lg">🚨 EMERGENCY WARNING 🚨</p>
-            <p className="mb-2 font-semibold">IF YOU ARE EXPERIENCING A MEDICAL EMERGENCY:</p>
-            <ul className="space-y-1 text-sm text-white ml-4">
+        <div className="py-2 space-y-3">
+          <div className="p-3 bg-red-950/40 border border-red-500/50 rounded-md text-white">
+            <p className="mb-2 font-bold text-red-200 text-base">🚨 EMERGENCY WARNING 🚨</p>
+            <p className="mb-2 font-semibold text-sm">IF YOU ARE EXPERIENCING A MEDICAL EMERGENCY:</p>
+            <ul className="space-y-1 text-xs text-white ml-4">
               <li>• Call 911 (US) or your local emergency number IMMEDIATELY</li>
               <li>• Go to the nearest emergency room</li>
-              <li>• Contact emergency medical services</li>
               <li>• DO NOT rely on this AI tool for emergency situations</li>
             </ul>
           </div>
 
-          <div className="p-4 bg-purple-950/40 border border-purple-500/50 rounded-md text-white">
-            <p className="mb-3 font-bold text-purple-200">I UNDERSTAND AND ACKNOWLEDGE:</p>
-            <ul className="space-y-2 text-sm text-white">
+          <div className="p-3 bg-purple-950/40 border border-purple-500/50 rounded-md text-white">
+            <p className="mb-2 font-bold text-purple-200 text-sm">I UNDERSTAND AND ACKNOWLEDGE:</p>
+            <ul className="space-y-1 text-xs text-white">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">NOT A DOCTOR:</strong> This AI is NOT a licensed medical professional, doctor, nurse, or healthcare provider.</span>
+                <span><strong className="text-purple-300">NOT A DOCTOR:</strong> This AI is NOT a licensed medical professional.</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">NO MEDICAL ADVICE:</strong> Information provided is for educational/research purposes ONLY and does not constitute medical advice, diagnosis, or treatment.</span>
+                <span><strong className="text-purple-300">NO MEDICAL ADVICE:</strong> Information is for educational purposes ONLY.</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">NO DOCTOR-PATIENT RELATIONSHIP:</strong> Use of this tool does not create any doctor-patient relationship.</span>
+                <span><strong className="text-purple-300">CONSULT PROFESSIONALS:</strong> Always consult licensed healthcare professionals.</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">CONSULT PROFESSIONALS:</strong> I will consult licensed healthcare professionals for all medical concerns, symptoms, or health decisions.</span>
+                <span><strong className="text-purple-300">NO LIABILITY:</strong> Creators are not liable for any health outcomes.</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">NO LIABILITY:</strong> The creators, developers, and operators of this tool are not liable for any health outcomes, decisions, or consequences.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">ACCURACY NOT GUARANTEED:</strong> AI responses may contain errors, inaccuracies, or outdated information.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span><strong className="text-purple-300">LOCATION SPECIFIC:</strong> Medical practices vary by location. This tool cannot account for local medical standards or regulations.</span>
+                <span><strong className="text-purple-300">ACCURACY NOT GUARANTEED:</strong> AI responses may contain errors.</span>
               </li>
             </ul>
           </div>
           
-          <div className="p-4 bg-yellow-950/40 border border-yellow-500/50 rounded-md text-white">
-            <p className="mb-2 font-bold text-yellow-200">⚠️ USAGE LIMITATIONS:</p>
-            <ul className="space-y-2 text-sm text-white">
+          <div className="p-3 bg-yellow-950/40 border border-yellow-500/50 rounded-md text-white">
+            <p className="mb-2 font-bold text-yellow-200 text-sm">⚠️ USAGE LIMITATIONS:</p>
+            <ul className="space-y-1 text-xs text-white">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-green-300">ChatGPT Plus/Pro Users:</strong> Unlimited access to Doctor GPT</span>
+                <span><strong className="text-green-300">ChatGPT Plus/Pro:</strong> Unlimited access</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span><strong className="text-yellow-300">Free ChatGPT Users:</strong> Limited interactions (rate-limited after several messages every few hours)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Usage limits are determined by OpenAI's ChatGPT policies, not by us</span>
+                <span><strong className="text-yellow-300">Free ChatGPT:</strong> Limited interactions</span>
               </li>
             </ul>
           </div>
 
-          <div className="p-4 bg-orange-950/40 border border-orange-500/50 rounded-md text-white">
-            <p className="mb-2 font-bold text-orange-200">🛡️ LEGAL DISCLAIMERS:</p>
-            <ul className="space-y-2 text-sm text-white">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span><strong>USE AT YOUR OWN RISK:</strong> You assume all risks associated with using this tool.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span><strong>NO WARRANTIES:</strong> This service is provided "as is" without any warranties or guarantees.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span><strong>INDEMNIFICATION:</strong> You agree to hold harmless the creators from any claims, damages, or losses.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span><strong>JURISDICTION:</strong> Any disputes will be governed by applicable laws in our jurisdiction.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-4 bg-blue-950/40 border border-blue-500/50 rounded-md text-white">
-            <p className="mb-2 font-bold text-blue-200">📋 WHAT TO DO INSTEAD:</p>
-            <ul className="space-y-1 text-sm text-white">
+          <div className="p-3 bg-blue-950/40 border border-blue-500/50 rounded-md text-white">
+            <p className="mb-2 font-bold text-blue-200 text-sm">📋 WHAT TO DO INSTEAD:</p>
+            <ul className="space-y-1 text-xs text-white">
               <li>• Schedule appointments with licensed physicians</li>
               <li>• Visit urgent care for non-emergency concerns</li>
-              <li>• Call your doctor's office for medical questions</li>
               <li>• Use telehealth services from licensed providers</li>
-              <li>• Consult pharmacists for medication questions</li>
             </ul>
           </div>
         </div>
 
         <DialogFooter>
           <Button 
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-lg py-3"
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-base py-2"
             onClick={handleConsent}
           >
             I HAVE READ, UNDERSTAND, AND AGREE TO ALL TERMS ABOVE
