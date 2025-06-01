@@ -16,11 +16,22 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gradient mb-4">
-              Ai<span className="text-white">DoctorGPT</span>
+              AiDoctorGPT
             </h2>
             <p className="text-neutral-400 mb-4 max-w-xs hover:text-neutral-300 transition-colors duration-300">
               Your AI healthcare companion, providing personalized medical consultation 24/7.
             </p>
+            <p className="text-neutral-500 text-xs mb-2 flex items-center">
+              Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better & better access to healthcare
+            </p>
+            <a 
+              href="https://aiwebtools.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-neutral-500 text-xs hover:text-purple-400 transition-colors interactive-link inline-block mb-4"
+            >
+              Presented by AiWebTools.Ai
+            </a>
             <div className="flex space-x-4">
               <a href="#" className="text-neutral-400 hover:text-purple-400 transition-colors hover-scale">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -91,7 +102,7 @@ const Footer = () => {
             © {currentYear} <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
           <p className="text-neutral-500 text-xs mt-2 flex items-center justify-center">
-            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
+            Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better & better access to healthcare
           </p>
         </div>
       </div>

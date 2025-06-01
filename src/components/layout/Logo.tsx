@@ -7,12 +7,20 @@ const Logo = () => {
     <div className="flex flex-col items-start">
       <a href="/" className="flex items-center hover-scale">
         <span className={`text-2xl font-bold text-gradient`}>
-          Ai<span className="text-white">DoctorGPT</span>
+          AiDoctorGPT
         </span>
       </a>
       <p className="text-neutral-500 text-xs mt-1 flex items-center">
-        Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
+        Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better & better access to healthcare
       </p>
+      <a 
+        href="https://aiwebtools.ai" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-neutral-500 text-xs mt-1 hover:text-purple-400 transition-colors interactive-link"
+      >
+        Presented by AiWebTools.Ai
+      </a>
     </div>
   );
 };
