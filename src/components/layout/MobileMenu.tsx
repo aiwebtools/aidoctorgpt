@@ -16,37 +16,40 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       } md:hidden pt-20`}
     >
-      <nav className="flex flex-col items-center space-y-8 pt-6">
-        <a 
-          href="#"
+      <nav className="flex flex-col items-center space-y-6 pt-6">
+        <AnimatedButton 
+          variant="primary" 
+          size="sm"
           onClick={() => {
             toggleMenu();
             handleDentalGPTRedirect();
           }}
-          className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
+          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:shadow-glow"
         >
           Dental GPT
-        </a>
-        <a 
-          href="#"
+        </AnimatedButton>
+        <AnimatedButton 
+          variant="primary" 
+          size="sm"
           onClick={() => {
             toggleMenu();
             handleVetGPTRedirect();
           }}
-          className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
+          className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none hover:shadow-glow"
         >
           Veterinarian GPT
-        </a>
-        <a 
-          href="#"
+        </AnimatedButton>
+        <AnimatedButton 
+          variant="primary" 
+          size="sm"
           onClick={() => {
             toggleMenu();
             handleMentalWellnessGPTRedirect();
           }}
-          className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
+          className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow"
         >
           Mental Wellness GPT
-        </a>
+        </AnimatedButton>
         <a 
           href="#how-it-works" 
           className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"

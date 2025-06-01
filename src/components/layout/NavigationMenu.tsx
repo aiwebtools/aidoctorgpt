@@ -5,28 +5,31 @@ import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, hand
 
 const NavigationMenu = () => {
   return (
-    <nav className="hidden md:flex items-center space-x-8">
-      <a 
-        href="#"
+    <nav className="hidden md:flex items-center space-x-4">
+      <AnimatedButton 
+        variant="primary" 
+        size="sm"
         onClick={handleDentalGPTRedirect}
-        className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+        className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
         Dental GPT
-      </a>
-      <a 
-        href="#"
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="primary" 
+        size="sm"
         onClick={handleVetGPTRedirect}
-        className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+        className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
         Veterinarian GPT
-      </a>
-      <a 
-        href="#"
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="primary" 
+        size="sm"
         onClick={handleMentalWellnessGPTRedirect}
-        className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+        className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
         Mental Wellness GPT
-      </a>
+      </AnimatedButton>
       <a 
         href="#how-it-works" 
         className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
