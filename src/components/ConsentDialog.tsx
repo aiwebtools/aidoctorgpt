@@ -39,16 +39,16 @@ const ConsentDialog = () => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-lg max-w-[95vw] max-h-[85vh] overflow-y-auto border border-purple-500/30 bg-black/95 backdrop-blur">
         <DialogHeader>
-          <div className="flex justify-between items-start mb-2">
-            <DialogTitle className="text-lg text-white flex-1">⚠️ MEDICAL DISCLAIMER</DialogTitle>
+          <DialogTitle className="text-lg text-white text-center mb-4">⚠️ MEDICAL DISCLAIMER</DialogTitle>
+          <div className="flex justify-center mb-4">
             <Button 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-sm px-4 py-1 ml-2"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-sm px-6 py-2"
               onClick={handleConsent}
             >
               I AGREE
             </Button>
           </div>
-          <DialogDescription className="text-neutral-300 text-sm">
+          <DialogDescription className="text-neutral-300 text-sm text-center">
             Please read and acknowledge before continuing.
           </DialogDescription>
         </DialogHeader>
