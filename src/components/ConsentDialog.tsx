@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -31,6 +30,7 @@ const ConsentDialog = () => {
     toast({
       title: "Consent Acknowledged",
       description: "Thank you for acknowledging our comprehensive disclaimer.",
+      duration: 4000, // 4 seconds
     });
   };
 
