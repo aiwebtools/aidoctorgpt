@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Heart, Phone } from 'lucide-react';
 
@@ -82,25 +81,46 @@ const Footer = () => {
             <h3 className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <a href="https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">Doctor GPT</a>
+                <a href="https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Doctor GPT
+                </a>
               </li>
               <li>
-                <a href="https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">Dental GPT</a>
+                <a href="https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Dental GPT
+                </a>
               </li>
               <li>
-                <a href="https://petcaregpt.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:bg-gradient-to-r hover:from-green-400 hover:to-emerald-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">Veterinarian GPT</a>
+                <a href="https://petcaregpt.lovable.app/" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Veterinarian GPT
+                </a>
               </li>
               <li>
-                <a href="https://mentalwellnessgpt.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">Mental Wellness GPT</a>
+                <a href="https://mentalwellnessgpt.lovable.app/" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Mental Wellness GPT
+                </a>
               </li>
               <li>
-                <a href="#features" className="text-neutral-300 hover:bg-gradient-to-r hover:from-pink-400 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">Features</a>
+                <a href="#features" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Features
+                </a>
               </li>
               <li>
-                <a href="#how-it-works" className="text-neutral-300 hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">How It Works</a>
+                <a href="#how-it-works" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  How It Works
+                </a>
               </li>
               <li>
-                <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block hover-scale">Terms of Service</a>
+                <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Terms of Service
+                </a>
               </li>
             </ul>
           </div>
