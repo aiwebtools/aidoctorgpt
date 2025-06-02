@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -67,8 +68,10 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
-    background-image: radial-gradient(circle at top right, rgba(91, 33, 182, 0.1), transparent 60%),
-                      radial-gradient(circle at bottom left, rgba(79, 209, 197, 0.1), transparent 60%);
+    background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15), transparent 70%),
+                radial-gradient(ellipse at bottom right, rgba(79, 209, 197, 0.12), transparent 70%),
+                radial-gradient(ellipse at bottom left, rgba(236, 72, 153, 0.10), transparent 70%),
+                linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
     min-height: 100%;
     width: 100%;
     overflow-x: hidden;
@@ -78,7 +81,6 @@
   /* Fix for Facebook in-app browser */
   @supports (-webkit-touch-callout: none) {
     body {
-      /* The hack for Safari */
       height: -webkit-fill-available;
     }
   }
@@ -98,16 +100,18 @@
   }
 
   .glass-card {
-    @apply bg-black/30 backdrop-blur-lg backdrop-saturate-150 border border-white/10 shadow-glass rounded-2xl transition-all duration-300;
+    @apply bg-black/30 backdrop-blur-lg backdrop-saturate-150 border border-white/10 shadow-glass rounded-2xl transition-all duration-500;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 
   .glass-card:hover {
-    @apply shadow-lg bg-black/40 border-purple-500/30;
-    transform: translateY(-5px);
+    @apply shadow-2xl bg-black/40 border-purple-500/40;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.25), 0 0 0 1px rgba(139, 92, 246, 0.3);
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-32;
   }
 }
 
@@ -117,25 +121,37 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-cyan-400 to-pink-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400;
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   .btn-glow {
     @apply relative overflow-hidden;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
   }
 
   .btn-glow::after {
-    @apply absolute inset-0 rounded-lg;
+    @apply absolute inset-0 rounded-xl;
     content: '';
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     top: -100%;
     left: -100%;
     height: 300%;
     width: 300%;
-    animation: btn-glow 3s linear infinite;
+    animation: btn-glow-sweep 3s linear infinite;
   }
 
-  @keyframes btn-glow {
+  @keyframes btn-glow-sweep {
     0% {
       transform: rotate(0deg);
     }
@@ -145,55 +161,198 @@
   }
 
   .hover-scale {
-    @apply transition-transform duration-300;
+    @apply transition-all duration-500;
   }
 
   .hover-scale:hover {
-    transform: scale(1.05);
+    transform: scale(1.08) translateY(-2px);
+    filter: drop-shadow(0 10px 20px rgba(139, 92, 246, 0.3));
   }
 
   .hover-rotate {
-    @apply transition-transform duration-300;
+    @apply transition-transform duration-500;
   }
 
   .hover-rotate:hover {
-    transform: rotate(5deg);
+    transform: rotate(8deg) scale(1.05);
   }
 
   .floating {
-    animation: floating 3s ease-in-out infinite;
+    animation: floating 6s ease-in-out infinite;
   }
 
   @keyframes floating {
     0%, 100% {
-      transform: translateY(0);
+      transform: translateY(0) rotate(0deg);
     }
-    50% {
-      transform: translateY(-10px);
+    33% {
+      transform: translateY(-15px) rotate(1deg);
+    }
+    66% {
+      transform: translateY(-8px) rotate(-1deg);
     }
   }
 
   .pulse-slow {
-    animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse-divine 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  @keyframes pulse-slow {
+  @keyframes pulse-divine {
     0%, 100% {
       opacity: 1;
+      transform: scale(1);
     }
     50% {
       opacity: 0.7;
+      transform: scale(1.05);
     }
   }
 
-  /* Ensure hardware acceleration for animations in WebKit browsers */
+  .animate-float {
+    animation: divine-float 8s ease-in-out infinite;
+  }
+
+  @keyframes divine-float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px) rotate(1deg);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-5px) rotate(-0.5deg);
+    }
+    75% {
+      transform: translateY(-15px) translateX(8px) rotate(0.8deg);
+    }
+  }
+
+  /* Enhanced interactive link effects */
+  .interactive-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s ease;
+  }
+
+  .interactive-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #8B5CF6, #06B6D4, #EC4899);
+    background-size: 200% 200%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .interactive-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Divine glow effects */
+  .glow-on-hover {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+
+  .glow-on-hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+      rgba(139, 92, 246, 0) 0%, 
+      rgba(139, 92, 246, 0.2) 30%,
+      rgba(6, 182, 212, 0.2) 50%,
+      rgba(236, 72, 153, 0.2) 70%,
+      rgba(139, 92, 246, 0) 100%);
+    transform: rotate(45deg);
+    transition: all 0.8s;
+    opacity: 0;
+  }
+
+  .glow-on-hover:hover::before {
+    opacity: 1;
+    animation: divine-glow-sweep 2s infinite;
+  }
+
+  @keyframes divine-glow-sweep {
+    0% {
+      transform: rotate(45deg) translateX(-200%);
+    }
+    100% {
+      transform: rotate(45deg) translateX(200%);
+    }
+  }
+
+  /* GPU acceleration for smooth animations */
   .gpu-accelerated {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
+    will-change: transform;
   }
+
+  /* Divine sparkle effects */
+  .sparkle {
+    position: relative;
+  }
+
+  .sparkle::before {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.8rem;
+    animation: sparkle-twinkle 2s ease-in-out infinite;
+    opacity: 0;
+  }
+
+  .sparkle:hover::before {
+    opacity: 1;
+  }
+
+  @keyframes sparkle-twinkle {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2) rotate(180deg);
+    }
+  }
+}
+
+/* Divine scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #8B5CF6, #06B6D4);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #7C3AED, #0891B2);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 /* Facebook in-app browser specific fixes */
