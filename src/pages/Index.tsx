@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -10,7 +9,7 @@ import ConsentDialog from '@/components/ConsentDialog';
 import ElevenLabsWidget from '@/components/ElevenLabsWidget';
 import HeyGenAvatar from '@/components/HeyGenAvatar';
 import VideoEmbed from '@/components/VideoEmbed';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
 
 const Index = () => {
   // For smooth scrolling to sections
@@ -90,6 +89,52 @@ const Index = () => {
           {/* H1 is in HeroSection for SEO */}
           <HeroSection />
           <HeyGenAvatar />
+          
+          {/* SEO-optimized AI Tools Section */}
+          <section className="py-20 relative overflow-hidden" aria-label="Free AI Tools by AI Web Tools">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-900/70 via-indigo-900/60 to-cyan-900/70 backdrop-blur-sm"></div>
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/60 to-transparent shadow-lg shadow-purple-500/30"></div>
+            </div>
+            
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl sm:text-5xl font-bold mb-8 max-w-4xl mx-auto text-balance leading-tight">
+                  <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Web Tools</span> - Free AI Tools Platform
+                </h2>
+                <p className="text-neutral-200 text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                  Discover our comprehensive suite of free AI tools designed to revolutionize how you work, learn, and live. AI Web Tools provides cutting-edge artificial intelligence solutions accessible to everyone.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                  <div className="p-6 bg-gradient-to-br from-purple-900/40 via-indigo-900/30 to-purple-900/40 rounded-2xl border border-purple-400/30 backdrop-blur-lg hover:border-purple-300/50 transition-all duration-500 hover:scale-105">
+                    <Shield className="h-12 w-12 text-purple-400 mb-4 mx-auto" />
+                    <h3 className="text-xl font-bold text-purple-200 mb-2">75,000+</h3>
+                    <p className="text-neutral-300">Active AI Tool Users</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-cyan-900/40 via-blue-900/30 to-cyan-900/40 rounded-2xl border border-cyan-400/30 backdrop-blur-lg hover:border-cyan-300/50 transition-all duration-500 hover:scale-105">
+                    <Zap className="h-12 w-12 text-cyan-400 mb-4 mx-auto" />
+                    <h3 className="text-xl font-bold text-cyan-200 mb-2">4.8/5</h3>
+                    <p className="text-neutral-300">User Satisfaction Rating</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-pink-900/40 via-purple-900/30 to-pink-900/40 rounded-2xl border border-pink-400/30 backdrop-blur-lg hover:border-pink-300/50 transition-all duration-500 hover:scale-105">
+                    <Globe className="h-12 w-12 text-pink-400 mb-4 mx-auto" />
+                    <h3 className="text-xl font-bold text-pink-200 mb-2">24/7</h3>
+                    <p className="text-neutral-300">AI Availability</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-green-900/40 via-emerald-900/30 to-green-900/40 rounded-2xl border border-green-400/30 backdrop-blur-lg hover:border-green-300/50 transition-all duration-500 hover:scale-105">
+                    <Heart className="h-12 w-12 text-green-400 mb-4 mx-auto" />
+                    <h3 className="text-xl font-bold text-green-200 mb-2">100%</h3>
+                    <p className="text-neutral-300">Free AI Access</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
           <FeaturesSection />
           <HowItWorksSection />
           
@@ -114,7 +159,7 @@ const Index = () => {
                   Start Your Free AI Health Consultation with <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Doctor GPT</span>
                 </h2>
                 <p className="text-neutral-200 text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
-                  Join over 50,000+ users who trust AI Doctor GPT for free health guidance, symptom analysis, and medical information. Available 24/7 with instant responses.
+                  Join over 75,000+ users who trust AI Doctor GPT for free health guidance, symptom analysis, and medical information. Available 24/7 with instant responses powered by advanced AI technology.
                 </p>
                 
                 {/* Educational Disclaimer */}

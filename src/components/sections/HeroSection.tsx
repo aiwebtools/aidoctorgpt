@@ -46,15 +46,15 @@ const HeroSection = () => {
           <div className="flex-1 animate-fade-in-up w-full">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-5 backdrop-blur-sm border border-purple-500/20">
               <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2 animate-pulse-slow"></span>
-              AI-Powered Health Information
+              Free AI Tools by AI Web Tools
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
-              <span className="text-gradient">Healthcare</span> Reimagined with AI
+              <span className="text-gradient">AI Doctor GPT</span> - Free AI Medical Assistant & Healthcare Tools
             </h1>
             
             <p className="text-xl text-neutral-400 mb-6 max-w-2xl">
-              Doctor GPT provides AI-powered health guidance by analyzing your symptoms and medical history to offer informational insights, personal healthcare advice, and treatment suggestions. While Doctor GPT can support your healthcare journey, it does not replace professional medical advice.
+              Experience the power of AI Web Tools with our flagship AI Doctor GPT. Get instant medical guidance, symptom analysis, and healthcare insights powered by advanced artificial intelligence. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide.
             </p>
 
             {/* Compact Disclaimer */}
@@ -73,30 +73,30 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
-                Try Doctor GPT Now
+                Try AI Doctor GPT - Free
               </AnimatedButton>
               <AnimatedButton variant="secondary" size="lg" onClick={handleVetGPTRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
-                Veterinarian GPT
+                More AI Tools
               </AnimatedButton>
             </div>
             
-            {/* ... keep existing code (stats section with Shield, Users, Heart, Star icons) */}
+            {/* Enhanced stats section with AI Web Tools branding */}
             <div className="flex flex-wrap gap-6 text-sm text-neutral-400 mb-8">
               <div className="flex items-center group hover-scale">
                 <Shield className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                <span className="group-hover:text-neutral-300 transition-colors">Secure & Confidential</span>
+                <span className="group-hover:text-neutral-300 transition-colors">AI Web Tools Certified</span>
               </div>
               <div className="flex items-center group hover-scale">
                 <Users className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                <span className="group-hover:text-neutral-300 transition-colors">50,000+ Users</span>
+                <span className="group-hover:text-neutral-300 transition-colors">75,000+ AI Tool Users</span>
               </div>
               <div className="flex items-center group hover-scale">
                 <Heart className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                <span className="group-hover:text-neutral-300 transition-colors">AI-Powered Insights</span>
+                <span className="group-hover:text-neutral-300 transition-colors">Free AI Platform</span>
               </div>
               <div className="flex items-center group hover-scale">
                 <Star className="h-5 w-5 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                <span className="group-hover:text-neutral-300 transition-colors">4.7/5 Rating</span>
+                <span className="group-hover:text-neutral-300 transition-colors">4.8/5 Rating</span>
               </div>
             </div>
           </div>
