@@ -29,97 +29,43 @@ const ConsentDialog = () => {
     localStorage.setItem('user-consent', 'true');
     setOpen(false);
     toast({
-      title: "Thank You for Agreeing To Our Disclaimer",
-      description: "We wish you well. - Enjoy KB",
-      duration: 4000, // 4 seconds
+      title: "Welcome to AI Web Tools!",
+      description: "Ready to explore our AI-powered features.",
+      duration: 3000,
     });
   };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="w-[96vw] max-w-[96vw] h-[90vh] max-h-[90vh] mx-auto my-auto overflow-y-auto border border-purple-500/30 bg-black/95 backdrop-blur-lg p-4 sm:p-6 rounded-lg sm:rounded-xl">
-        <DialogHeader className="space-y-3">
-          <DialogTitle className="text-base sm:text-lg text-white text-center mb-2 sm:mb-4">⚠️ MEDICAL DISCLAIMER</DialogTitle>
-          <div className="flex justify-center mb-3 sm:mb-4">
-            <Button 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-xs sm:text-sm px-4 sm:px-6 py-2"
-              onClick={handleConsent}
-            >
-              I AGREE
-            </Button>
-          </div>
-          <DialogDescription className="text-neutral-300 text-xs sm:text-sm text-center">
-            Please read and acknowledge before continuing.
+      <DialogContent className="w-[95vw] max-w-md mx-auto border border-purple-500/30 bg-black/95 backdrop-blur-lg p-6 rounded-xl">
+        <DialogHeader className="space-y-4 text-center">
+          <DialogTitle className="text-xl text-white">Welcome to AI Web Tools! 🚀</DialogTitle>
+          <DialogDescription className="text-neutral-300 text-sm">
+            Get ready to explore powerful AI tools designed to enhance your productivity.
           </DialogDescription>
         </DialogHeader>
         
-        <div className="py-2 space-y-2 sm:space-y-3">
-          <div className="p-2 sm:p-3 bg-red-950/40 border border-red-500/50 rounded-md text-white">
-            <p className="mb-1 sm:mb-2 font-bold text-red-200 text-xs sm:text-base">🚨 EMERGENCY WARNING 🚨</p>
-            <p className="mb-1 sm:mb-2 font-semibold text-xs sm:text-sm">IF YOU ARE EXPERIENCING A MEDICAL EMERGENCY:</p>
-            <ul className="space-y-1 text-xs text-white ml-2 sm:ml-4">
-              <li>• Call 911 (US) or your local emergency number IMMEDIATELY</li>
-              <li>• Go to the nearest emergency room</li>
-              <li>• DO NOT rely on this AI tool for emergency situations</li>
-            </ul>
-          </div>
-
-          <div className="p-2 sm:p-3 bg-purple-950/40 border border-purple-500/50 rounded-md text-white">
-            <p className="mb-1 sm:mb-2 font-bold text-purple-200 text-xs sm:text-sm">I UNDERSTAND AND ACKNOWLEDGE:</p>
+        <div className="py-4 space-y-3">
+          <div className="p-3 bg-purple-950/40 border border-purple-500/50 rounded-md text-white">
+            <p className="text-sm font-medium text-purple-200 mb-2">📋 Quick Disclaimer:</p>
             <ul className="space-y-1 text-xs text-white">
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-purple-300">NOT A DOCTOR:</strong> This AI is NOT a licensed medical professional.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-purple-300">NO MEDICAL ADVICE:</strong> Information is for educational purposes ONLY.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-purple-300">CONSULT PROFESSIONALS:</strong> Always consult licensed healthcare professionals.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-purple-300">NO LIABILITY:</strong> Creators are not liable for any health outcomes.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-purple-300">ACCURACY NOT GUARANTEED:</strong> AI responses may contain errors.</span>
-              </li>
+              <li>• This is an AI tool for informational purposes only</li>
+              <li>• Not a substitute for professional advice</li>
+              <li>• Always consult qualified professionals for important decisions</li>
             </ul>
           </div>
           
-          <div className="p-2 sm:p-3 bg-yellow-950/40 border border-yellow-500/50 rounded-md text-white">
-            <p className="mb-1 sm:mb-2 font-bold text-yellow-200 text-xs sm:text-sm">⚠️ USAGE LIMITATIONS:</p>
-            <ul className="space-y-1 text-xs text-white">
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-green-300">ChatGPT Plus/Pro:</strong> Unlimited access</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-1 sm:mr-2 mt-0.5">•</span>
-                <span><strong className="text-yellow-300">Free ChatGPT:</strong> Limited interactions</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-2 sm:p-3 bg-blue-950/40 border border-blue-500/50 rounded-md text-white">
-            <p className="mb-1 sm:mb-2 font-bold text-blue-200 text-xs sm:text-sm">📋 WHAT TO DO INSTEAD:</p>
-            <ul className="space-y-1 text-xs text-white">
-              <li>• Schedule appointments with licensed physicians</li>
-              <li>• Visit urgent care for non-emergency concerns</li>
-              <li>• Use telehealth services from licensed providers</li>
-            </ul>
+          <div className="p-3 bg-red-950/40 border border-red-500/50 rounded-md text-white">
+            <p className="text-xs text-red-200 font-medium">🚨 Emergency? Call 911 or your local emergency number immediately</p>
           </div>
         </div>
 
-        <DialogFooter className="mt-4">
+        <DialogFooter>
           <Button 
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-sm sm:text-base py-2 sm:py-3"
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-glow text-sm py-3"
             onClick={handleConsent}
           >
-            I HAVE READ, UNDERSTAND, AND AGREE TO ALL TERMS ABOVE
+            Got It! Let's Get Started ✨
           </Button>
         </DialogFooter>
       </DialogContent>
