@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -63,6 +62,9 @@
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    /* Prevent zoom on iOS */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -76,19 +78,29 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
+    /* Mobile optimization */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
   }
 
-  /* Fix for Facebook in-app browser */
+  /* Enhanced mobile fixes */
   @supports (-webkit-touch-callout: none) {
     body {
+      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
+    }
+    
+    html {
       height: -webkit-fill-available;
     }
   }
   
-  /* Fix overflow issues in Facebook browser */
+  /* Fix overflow issues in mobile browsers */
   #root {
     width: 100%;
     overflow-x: hidden;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -331,6 +343,65 @@
       opacity: 1;
       transform: scale(1.2) rotate(180deg);
     }
+  }
+
+  /* Enhanced mobile dialog fixes */
+  .mobile-dialog {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+  }
+
+  /* Mobile safe area support */
+  @supports (padding: max(0px)) {
+    .mobile-safe {
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
+      padding-top: max(16px, env(safe-area-inset-top));
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+  }
+
+  /* Prevent mobile viewport jumping */
+  .mobile-viewport-fix {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+
+  /* Touch optimization */
+  .touch-optimized {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .touch-optimized button,
+  .touch-optimized a {
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile-specific scrollbar hiding */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
   }
 }
 
