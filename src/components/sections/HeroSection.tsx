@@ -2,18 +2,14 @@ import React from 'react';
 import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 import VideoEmbed from '../VideoEmbed';
-
 const HeroSection = () => {
   const handleChatRedirect = () => {
     window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
   };
-  
   const handleVetGPTRedirect = () => {
     window.open('https://petcaregpt.lovable.app/', '_blank');
   };
-  
-  return (
-    <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
+  return <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(139,92,246,0.15),_transparent_70%)]"></div>
@@ -53,9 +49,7 @@ const HeroSection = () => {
               <span className="text-gradient">AI Doctor GPT</span> - Free AI Medical Assistant & Healthcare Tools
             </h1>
             
-            <p className="text-xl text-neutral-400 mb-6 max-w-2xl">
-              Experience the power of AI Web Tools with our flagship AI Doctor GPT. Get instant medical guidance, symptom analysis, and healthcare insights powered by advanced artificial intelligence. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide.
-            </p>
+            <p className="text-xl text-neutral-400 mb-6 max-w-2xl">Experience the power of AI Web Tools with our flagship AI Doctor GPT. Get instant medical guidance, symptom analysis, and healthcare insights powered by advanced artificial intelligence. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide. 100% FREE</p>
 
             {/* Compact Disclaimer */}
             <div className="mb-6 p-4 bg-red-950/30 border border-red-500/40 rounded-lg backdrop-blur-sm">
@@ -102,7 +96,9 @@ const HeroSection = () => {
           </div>
           
           {/* --- RIGHT COLUMN: Video Embed --- */}
-          <div className="flex-1 animate-fade-in-up w-full max-w-xl mx-auto lg:mx-0" style={{ animationDelay: '0.2s' }}>
+          <div className="flex-1 animate-fade-in-up w-full max-w-xl mx-auto lg:mx-0" style={{
+          animationDelay: '0.2s'
+        }}>
             {/* Responsive: Place video above on mobile, right on desktop */}
             <div className="w-full h-full flex items-center justify-center">
               <VideoEmbed />
@@ -211,7 +207,7 @@ const HeroSection = () => {
                 <div className="p-3 bg-gray-950/40 border border-gray-500/30 rounded">
                   <p className="font-bold text-gray-200 mb-2">📞 CONTACT INFORMATION:</p>
                   <p className="text-neutral-300">
-                    📧 Email: Contact@ai-webtools.com<br/>
+                    📧 Email: Contact@ai-webtools.com<br />
                     ☎ Support: (475) 800-8096
                   </p>
                 </div>
@@ -228,8 +224,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
