@@ -5,7 +5,7 @@ import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, hand
 
 const NavigationMenu = () => {
   const handleDownloadPrompt = () => {
-    window.open('https://docs.google.com/document/d/e/2PACX-1vSoix5D-3HfYurJZdgqjQ7n2y6UuwRlB_HqtA1yDfgkQ6Wk6djLrVDwjD-hIBSlnNHkBCWgeF2rmXlK/pub', '_blank');
+    window.open('https://www.aitools.studio', '_blank');
   };
 
   return (
