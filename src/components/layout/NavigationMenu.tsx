@@ -4,6 +4,10 @@ import AnimatedButton from '../ui/AnimatedButton';
 import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect } from './headerUtils';
 
 const NavigationMenu = () => {
+  const handleDownloadPrompt = () => {
+    window.open('https://docs.google.com/document/d/e/2PACX-1vSoix5D-3HfYurJZdgqjQ7n2y6UuwRlB_HqtA1yDfgkQ6Wk6djLrVDwjD-hIBSlnNHkBCWgeF2rmXlK/pub', '_blank');
+  };
+
   return (
     <nav className="hidden md:flex items-center space-x-4">
       <AnimatedButton 
@@ -30,12 +34,14 @@ const NavigationMenu = () => {
       >
         Mental Wellness GPT
       </AnimatedButton>
-      <a 
-        href="#how-it-works" 
-        className="text-neutral-400 hover:text-purple-400 transition-all text-sm font-medium interactive-link"
+      <AnimatedButton 
+        variant="secondary" 
+        size="sm"
+        onClick={handleDownloadPrompt}
+        className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50 hover:scale-105 transition-all duration-300"
       >
-        How It Works
-      </a>
+        Download Open Source Doctor GPT Prompt
+      </AnimatedButton>
       <AnimatedButton 
         variant="primary" 
         size="sm"
