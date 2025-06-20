@@ -6,8 +6,8 @@ const HeroSection = () => {
   const handleChatRedirect = () => {
     window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
   };
-  const handleVetGPTRedirect = () => {
-    window.open('https://petcaregpt.lovable.app/', '_blank');
+  const handleMoreAIToolsRedirect = () => {
+    window.open('https://www.aitools.studio', '_blank');
   };
   return <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
       {/* Background effects */}
@@ -69,7 +69,7 @@ const HeroSection = () => {
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
                 Try AI Doctor GPT - Free
               </AnimatedButton>
-              <AnimatedButton variant="secondary" size="lg" onClick={handleVetGPTRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
+              <AnimatedButton variant="secondary" size="lg" onClick={handleMoreAIToolsRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
                 More AI Tools
               </AnimatedButton>
             </div>
