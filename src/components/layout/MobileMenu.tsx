@@ -26,58 +26,73 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
           <X className="h-6 w-6 text-white" />
         </button>
       </div>
-      <nav className="flex flex-col items-center space-y-6 pt-6">
-        <AnimatedButton 
-          variant="primary" 
-          size="sm"
-          onClick={() => {
-            toggleMenu();
-            handleDentalGPTRedirect();
-          }}
-          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:shadow-glow"
-        >
-          Dental GPT
-        </AnimatedButton>
-        <AnimatedButton 
-          variant="primary" 
-          size="sm"
-          onClick={() => {
-            toggleMenu();
-            handleVetGPTRedirect();
-          }}
-          className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none hover:shadow-glow"
-        >
-          Veterinarian GPT
-        </AnimatedButton>
-        <AnimatedButton 
-          variant="primary" 
-          size="sm"
-          onClick={() => {
-            toggleMenu();
-            handleMentalWellnessGPTRedirect();
-          }}
-          className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow"
-        >
-          Mental Wellness GPT
-        </AnimatedButton>
-        <a 
-          href="#how-it-works" 
-          className="text-neutral-300 hover:text-purple-400 transition-colors text-lg font-medium interactive-link"
-          onClick={toggleMenu}
-        >
-          How It Works
-        </a>
-        <AnimatedButton 
-          variant="primary" 
-          onClick={() => {
-            toggleMenu();
-            handleChatRedirect();
-          }}
-          className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow mt-4"
-        >
-          Try Doctor GPT
-        </AnimatedButton>
-        <p className="text-neutral-500 text-xs flex items-center mt-6">
+      <nav className="flex flex-col items-center justify-center min-h-screen space-y-5 px-6 pb-20">
+        <div className="mb-4 text-center">
+          <h2 className="text-2xl font-bold text-white mb-2">AI Web Tools</h2>
+          <p className="text-neutral-400 text-sm">4 Free AI Health Tools</p>
+        </div>
+
+        <div className="w-full max-w-sm space-y-3">
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleChatRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            👨‍⚕️ AI Doctor GPT
+          </AnimatedButton>
+          
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleDentalGPTRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            🦷 AI Dental GPT
+          </AnimatedButton>
+          
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleVetGPTRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            🐾 AI Veterinarian GPT
+          </AnimatedButton>
+          
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleMentalWellnessGPTRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            🧠 AI Mental Wellness GPT
+          </AnimatedButton>
+        </div>
+
+        <div className="pt-4 border-t border-white/10 w-full max-w-sm">
+          <a 
+            href="#how-it-works" 
+            className="block text-center text-neutral-300 hover:text-purple-400 transition-colors text-base font-medium py-3"
+            onClick={toggleMenu}
+          >
+            📖 How It Works
+          </a>
+        </div>
+
+        <p className="text-neutral-500 text-xs flex items-center mt-8">
           Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
         </p>
       </nav>

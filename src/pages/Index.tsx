@@ -100,11 +100,41 @@ const Index = () => {
             <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
               <div className="text-center mb-16">
                 <h2 className="text-4xl sm:text-5xl font-bold mb-8 max-w-4xl mx-auto text-balance leading-tight">
-                  <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Web Tools</span> - Free AI Tools Platform
+                  <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Web Tools</span> - 4 Free AI Health Tools
                 </h2>
-                <p className="text-neutral-200 text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
-                  Discover our comprehensive suite of free AI tools designed to revolutionize how you work, learn, and live. AI Web Tools provides cutting-edge artificial intelligence solutions accessible to everyone.
+                <p className="text-neutral-200 text-xl mb-6 max-w-3xl mx-auto leading-relaxed">
+                  Access our complete suite of specialized AI health assistants - each powered by advanced artificial intelligence to provide instant guidance 24/7. All tools are 100% free and serve 75,000+ users worldwide.
                 </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 max-w-5xl mx-auto">
+                  <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300 hover:scale-105">
+                    <div className="text-4xl mb-3">👨‍⚕️</div>
+                    <h3 className="text-xl font-bold text-purple-200 mb-2">AI Doctor GPT</h3>
+                    <p className="text-neutral-300 text-sm">General health guidance, symptoms analysis & medical information</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-blue-900/50 via-cyan-900/40 to-blue-900/50 rounded-xl border border-cyan-400/40 backdrop-blur-lg hover:border-cyan-300/60 transition-all duration-300 hover:scale-105">
+                    <div className="text-4xl mb-3">🦷</div>
+                    <h3 className="text-xl font-bold text-cyan-200 mb-2">AI Dental GPT</h3>
+                    <p className="text-neutral-300 text-sm">Dental care guidance, oral health tips & teeth concerns</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-green-900/50 via-emerald-900/40 to-green-900/50 rounded-xl border border-emerald-400/40 backdrop-blur-lg hover:border-emerald-300/60 transition-all duration-300 hover:scale-105">
+                    <div className="text-4xl mb-3">🐾</div>
+                    <h3 className="text-xl font-bold text-emerald-200 mb-2">AI Vet GPT</h3>
+                    <p className="text-neutral-300 text-sm">Pet health guidance, animal care tips & veterinary information</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-indigo-900/50 via-purple-900/40 to-indigo-900/50 rounded-xl border border-indigo-400/40 backdrop-blur-lg hover:border-indigo-300/60 transition-all duration-300 hover:scale-105">
+                    <div className="text-4xl mb-3">🧠</div>
+                    <h3 className="text-xl font-bold text-indigo-200 mb-2">AI Mental Wellness GPT</h3>
+                    <p className="text-neutral-300 text-sm">Mental health support, stress management & wellness guidance</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center mb-8">
+                <p className="text-neutral-300 text-lg mb-6">Platform Statistics</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                   <div className="p-6 bg-gradient-to-br from-purple-900/40 via-indigo-900/30 to-purple-900/40 rounded-2xl border border-purple-400/30 backdrop-blur-lg hover:border-purple-300/50 transition-all duration-500 hover:scale-105">
