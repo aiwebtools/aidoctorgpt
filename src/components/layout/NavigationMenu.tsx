@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect } from './headerUtils';
 
 const NavigationMenu = () => {
   const handleDownloadPrompt = () => {
@@ -33,6 +33,14 @@ const NavigationMenu = () => {
         className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
         Mental Wellness GPT
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="primary" 
+        size="sm"
+        onClick={handleApothecaryGPTRedirect}
+        className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        Apothecary GPT
       </AnimatedButton>
       <AnimatedButton 
         variant="secondary" 

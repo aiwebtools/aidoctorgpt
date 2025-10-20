@@ -14,3 +14,7 @@ export const handleDentalGPTRedirect = () => {
 export const handleMentalWellnessGPTRedirect = () => {
   window.open('https://mentalwellnessgpt.lovable.app/', '_blank');
 };
+
+export const handleApothecaryGPTRedirect = () => {
+  window.open('https://chatgpt.com/g/g-68c9e33310148191ae3df594ec4012dd-apothecary-gpt', '_blank');
+};

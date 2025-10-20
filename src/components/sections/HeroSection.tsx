@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="flex-1 animate-fade-in-up w-full">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-5 backdrop-blur-sm border border-purple-500/20">
               <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2 animate-pulse-slow"></span>
-              Free AI Tools by AI Web Tools
+              Personal Healthcare AI Tools Suite
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">

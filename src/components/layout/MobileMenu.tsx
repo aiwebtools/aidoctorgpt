@@ -2,7 +2,7 @@
 import React from 'react';
 import { Heart, X } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect } from './headerUtils';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -28,8 +28,9 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
       </div>
       <nav className="flex flex-col items-center justify-center min-h-screen space-y-5 px-6 pb-20">
         <div className="mb-4 text-center">
+          <p className="text-sm text-purple-300 font-semibold mb-1">Personal Healthcare AI Tools Suite</p>
           <h2 className="text-2xl font-bold text-white mb-2">AI Web Tools</h2>
-          <p className="text-neutral-400 text-sm">4 Free AI Health Tools</p>
+          <p className="text-neutral-400 text-sm">5 Free AI Health Tools</p>
         </div>
 
         <div className="w-full max-w-sm space-y-3">
@@ -79,6 +80,18 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
             className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
           >
             🧠 AI Mental Wellness GPT
+          </AnimatedButton>
+          
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleApothecaryGPTRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            ⚗️ AI Apothecary GPT
           </AnimatedButton>
         </div>
 

@@ -99,14 +99,15 @@ const Index = () => {
             
             <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
               <div className="text-center mb-16">
+                <p className="text-sm text-purple-300 font-semibold mb-3">Personal Healthcare AI Tools Suite</p>
                 <h2 className="text-4xl sm:text-5xl font-bold mb-8 max-w-4xl mx-auto text-balance leading-tight">
-                  <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Web Tools</span> - 4 Free AI Health Tools
+                  <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Web Tools</span> - 5 Free AI Health Tools
                 </h2>
                 <p className="text-neutral-200 text-xl mb-6 max-w-3xl mx-auto leading-relaxed">
                   Access our complete suite of specialized AI health assistants - each powered by advanced artificial intelligence to provide instant guidance 24/7. All tools are 100% free and serve 75,000+ users worldwide.
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-10 max-w-6xl mx-auto">
                   <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">👨‍⚕️</div>
                     <h3 className="text-xl font-bold text-purple-200 mb-2">AI Doctor GPT</h3>
@@ -129,6 +130,12 @@ const Index = () => {
                     <div className="text-4xl mb-3">🧠</div>
                     <h3 className="text-xl font-bold text-indigo-200 mb-2">AI Mental Wellness GPT</h3>
                     <p className="text-neutral-300 text-sm">Mental health support, stress management & wellness guidance</p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-amber-900/50 via-orange-900/40 to-amber-900/50 rounded-xl border border-amber-400/40 backdrop-blur-lg hover:border-amber-300/60 transition-all duration-300 hover:scale-105">
+                    <div className="text-4xl mb-3">⚗️</div>
+                    <h3 className="text-xl font-bold text-amber-200 mb-2">AI Apothecary GPT</h3>
+                    <p className="text-neutral-300 text-sm">Lost homeopathic remedies & at-home medication formulations</p>
                   </div>
                 </div>
               </div>
