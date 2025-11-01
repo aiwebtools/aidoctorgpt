@@ -104,61 +104,38 @@ const Index = () => {
                   <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Web Tools</span> - 5 Free AI Health Tools
                 </h2>
                 <p className="text-neutral-200 text-xl mb-6 max-w-3xl mx-auto leading-relaxed">
-                  Access our complete suite of specialized AI health assistants - each powered by advanced artificial intelligence to provide instant, personalized guidance 24/7. All tools are 100% free and trusted by 75,000+ users worldwide. Plus, access professional telehealth services through our partner programs.
+                  Access our complete suite of specialized AI health assistants - each powered by advanced artificial intelligence to provide instant guidance 24/7. All tools are 100% free and serve 75,000+ users worldwide.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-10 max-w-6xl mx-auto">
                   <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">👨‍⚕️</div>
                     <h3 className="text-xl font-bold text-purple-200 mb-2">AI Doctor GPT</h3>
-                    <p className="text-neutral-300 text-sm">Comprehensive general medical guidance powered by AI. Get instant symptom analysis, health information, medication questions, preventive care tips, and personalized wellness advice available 24/7.</p>
+                    <p className="text-neutral-300 text-sm">General health guidance, symptoms analysis & medical information</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-blue-900/50 via-cyan-900/40 to-blue-900/50 rounded-xl border border-cyan-400/40 backdrop-blur-lg hover:border-cyan-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🦷</div>
                     <h3 className="text-xl font-bold text-cyan-200 mb-2">AI Dental GPT</h3>
-                    <p className="text-neutral-300 text-sm">Expert dental and oral health guidance. Receive personalized advice on tooth pain, gum issues, orthodontic questions, dental hygiene best practices, cavity prevention, and cosmetic dentistry information.</p>
+                    <p className="text-neutral-300 text-sm">Dental care guidance, oral health tips & teeth concerns</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-green-900/50 via-emerald-900/40 to-green-900/50 rounded-xl border border-emerald-400/40 backdrop-blur-lg hover:border-emerald-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🐾</div>
-                    <h3 className="text-xl font-bold text-emerald-200 mb-2">AI Veterinarian GPT</h3>
-                    <p className="text-neutral-300 text-sm">Complete pet healthcare assistant for dogs, cats, and other animals. Get guidance on pet symptoms, nutrition advice, behavioral concerns, vaccination schedules, breed-specific care, and emergency pet health information.</p>
+                    <h3 className="text-xl font-bold text-emerald-200 mb-2">AI Vet GPT</h3>
+                    <p className="text-neutral-300 text-sm">Pet health guidance, animal care tips & veterinary information</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-indigo-900/50 via-purple-900/40 to-indigo-900/50 rounded-xl border border-indigo-400/40 backdrop-blur-lg hover:border-indigo-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🧠</div>
                     <h3 className="text-xl font-bold text-indigo-200 mb-2">AI Mental Wellness GPT</h3>
-                    <p className="text-neutral-300 text-sm">Compassionate mental health support and wellness coaching. Access stress management techniques, anxiety relief strategies, mindfulness exercises, emotional wellbeing guidance, coping mechanisms, and self-care resources.</p>
+                    <p className="text-neutral-300 text-sm">Mental health support, stress management & wellness guidance</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-amber-900/50 via-orange-900/40 to-amber-900/50 rounded-xl border border-amber-400/40 backdrop-blur-lg hover:border-amber-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">⚗️</div>
                     <h3 className="text-xl font-bold text-amber-200 mb-2">AI Apothecary GPT</h3>
-                    <p className="text-neutral-300 text-sm">Discover traditional and natural healing wisdom. Learn about forgotten homeopathic remedies, herbal medicine formulations, natural wellness practices, DIY home remedies, and holistic health approaches from historical medical traditions.</p>
-                  </div>
-                </div>
-                
-                <div className="mt-12 pt-8 border-t border-white/10">
-                  <p className="text-sm text-cyan-300 font-semibold mb-4 text-center">🏥 Professional Telehealth Partners</p>
-                  <p className="text-neutral-300 text-base mb-6 max-w-3xl mx-auto text-center">
-                    For professional medical care from licensed healthcare providers, explore our partner telehealth services with real doctors and comprehensive healthcare support.
-                  </p>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <div className="p-6 bg-gradient-to-br from-orange-900/40 via-amber-900/30 to-orange-900/40 rounded-xl border border-orange-400/40 backdrop-blur-lg hover:border-orange-300/60 transition-all duration-300 hover:scale-105">
-                      <div className="text-4xl mb-3">🏥</div>
-                      <h3 className="text-xl font-bold text-orange-200 mb-3">Amazon Clinic</h3>
-                      <p className="text-neutral-300 text-sm mb-4">Pay-per-visit telehealth service. Connect with licensed clinicians for colds, flu, infections, rashes, prescription refills, and more. Get responses in under an hour through secure chat - no video needed. Pricing shown upfront with no membership required.</p>
-                      <a href="https://clinic.amazon.com" target="_blank" rel="noopener noreferrer" className="text-orange-300 hover:text-orange-200 text-sm font-medium underline">Visit Amazon Clinic →</a>
-                    </div>
-                    
-                    <div className="p-6 bg-gradient-to-br from-teal-900/40 via-cyan-900/30 to-teal-900/40 rounded-xl border border-teal-400/40 backdrop-blur-lg hover:border-teal-300/60 transition-all duration-300 hover:scale-105">
-                      <div className="text-4xl mb-3">💳</div>
-                      <h3 className="text-xl font-bold text-teal-200 mb-3">One Medical</h3>
-                      <p className="text-neutral-300 text-sm mb-4">Comprehensive membership-based healthcare. Enjoy in-person care at One Medical offices, 24/7 virtual care via app or web, easy prescription management, quick follow-ups, and same-day appointments. Monthly or annual membership available.</p>
-                      <a href="https://health.amazon.com/onemedical" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-200 text-sm font-medium underline">Visit One Medical →</a>
-                    </div>
+                    <p className="text-neutral-300 text-sm">Lost homeopathic remedies & at-home medication formulations</p>
                   </div>
                 </div>
               </div>
