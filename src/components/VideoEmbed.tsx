@@ -13,13 +13,15 @@ declare global {
 }
 
 /**
- * Embeds a YouTube video player which auto-plays, unmutes, and tries to set 1080p as quality.
+ * Embeds a YouTube video player which auto-plays two videos sequentially.
+ * First video: jwjNOKP5mf4, Second video: EKKIttUG0sI
  */
-const YOUTUBE_VIDEO_ID = "EKKIttUG0sI";
+const VIDEO_IDS = ["jwjNOKP5mf4", "EKKIttUG0sI"];
 
 const VideoEmbed: React.FC = () => {
   const playerRef = useRef<HTMLDivElement>(null);
   const playerInstance = useRef<any>(null);
+  const currentVideoIndex = useRef(0);
 
   useEffect(() => {
     // 1. Load the YouTube Iframe API script if not already present
@@ -32,7 +34,7 @@ const VideoEmbed: React.FC = () => {
     // 2. This function runs when the API is loaded
     function onYouTubeIframeAPIReady() {
       playerInstance.current = new window.YT.Player(playerRef.current, {
-        videoId: YOUTUBE_VIDEO_ID,
+        videoId: VIDEO_IDS[0],
         playerVars: {
           autoplay: 1,
           controls: 1,
@@ -58,6 +60,15 @@ const VideoEmbed: React.FC = () => {
               }
             }, 1000);
             event.target.playVideo();
+          },
+          onStateChange: (event: any) => {
+            // When video ends (state 0), play the next video
+            if (event.data === window.YT.PlayerState.ENDED) {
+              currentVideoIndex.current++;
+              if (currentVideoIndex.current < VIDEO_IDS.length) {
+                event.target.loadVideoById(VIDEO_IDS[currentVideoIndex.current]);
+              }
+            }
           }
         }
       });
