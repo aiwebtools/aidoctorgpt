@@ -18,3 +18,11 @@ export const handleMentalWellnessGPTRedirect = () => {
 export const handleApothecaryGPTRedirect = () => {
   window.open('https://chatgpt.com/g/g-68c9e33310148191ae3df594ec4012dd-apothecary-gpt', '_blank');
 };
+
+export const handleAmazonClinicRedirect = () => {
+  window.open('https://clinic.amazon.com', '_blank');
+};
+
+export const handleOneMedicalRedirect = () => {
+  window.open('https://health.amazon.com/onemedical', '_blank');
+};

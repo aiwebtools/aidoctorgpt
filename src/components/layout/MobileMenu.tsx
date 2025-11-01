@@ -2,7 +2,7 @@
 import React from 'react';
 import { Heart, X } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect } from './headerUtils';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -95,7 +95,33 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
           </AnimatedButton>
         </div>
 
-        <div className="pt-4 border-t border-white/10 w-full max-w-sm">
+        <div className="pt-6 border-t border-white/10 w-full max-w-sm space-y-3">
+          <p className="text-sm text-center text-purple-300 font-semibold mb-3">🏥 Non-AI Healthcare Options</p>
+          
+          <AnimatedButton 
+            variant="secondary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleAmazonClinicRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-orange-600/80 to-amber-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            🏥 Amazon Clinic
+          </AnimatedButton>
+
+          <AnimatedButton 
+            variant="secondary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleOneMedicalRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            💳 One Medical
+          </AnimatedButton>
+
           <a 
             href="#how-it-works" 
             className="block text-center text-neutral-300 hover:text-purple-400 transition-colors text-base font-medium py-3"

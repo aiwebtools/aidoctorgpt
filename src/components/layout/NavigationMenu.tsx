@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect } from './headerUtils';
 
 const NavigationMenu = () => {
   const handleDownloadPrompt = () => {
@@ -57,6 +57,22 @@ const NavigationMenu = () => {
         className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
         Try Doctor GPT
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="secondary" 
+        size="sm"
+        onClick={handleAmazonClinicRedirect}
+        className="bg-gradient-to-r from-orange-600/80 to-amber-600/80 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        Amazon Clinic
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="secondary" 
+        size="sm"
+        onClick={handleOneMedicalRedirect}
+        className="bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        One Medical
       </AnimatedButton>
     </nav>
   );

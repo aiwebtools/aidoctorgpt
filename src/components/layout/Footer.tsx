@@ -105,7 +105,28 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#features" 
+                <a href="https://chatgpt.com/g/g-68c9e33310148191ae3df594ec4012dd-apothecary-gpt" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Apothecary GPT
+                </a>
+              </li>
+              <li className="pt-4">
+                <span className="text-sm text-purple-300 font-semibold block mb-3">🏥 Non-AI Healthcare</span>
+              </li>
+              <li>
+                <a href="https://clinic.amazon.com" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600/30 to-amber-600/30 border border-orange-400/30 text-orange-200 hover:from-orange-500/40 hover:to-amber-500/40 hover:border-orange-300/50 hover:text-orange-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  Amazon Clinic
+                </a>
+              </li>
+              <li>
+                <a href="https://health.amazon.com/onemedical" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-teal-600/30 to-cyan-600/30 border border-teal-400/30 text-teal-200 hover:from-teal-500/40 hover:to-cyan-500/40 hover:border-teal-300/50 hover:text-teal-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  One Medical
+                </a>
+              </li>
+              <li className="pt-4">
+                <a href="#features"
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
                   Features
                 </a>
