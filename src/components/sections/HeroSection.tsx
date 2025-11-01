@@ -39,7 +39,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center">
           {/* --- LEFT COLUMN: Hero Content --- */}
-          <div className="flex-1 animate-fade-in-up w-full">
+          <div className="flex-1 animate-fade-in-up w-full order-last lg:order-first">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-5 backdrop-blur-sm border border-purple-500/20">
               <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2 animate-pulse-slow"></span>
               Personal Healthcare AI Tools Suite
@@ -95,15 +95,14 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* --- RIGHT COLUMN: Video Embed --- */}
-          <div className="flex-1 animate-fade-in-up w-full max-w-xl mx-auto lg:mx-0" style={{
+          {/* --- RIGHT COLUMN: Video Embed (Desktop) / Moved above disclaimer on mobile --- */}
+          <div className="flex-1 animate-fade-in-up w-full max-w-xl mx-auto lg:mx-0 order-first lg:order-last" style={{
           animationDelay: '0.2s'
         }}>
-            {/* Responsive: Place video above on mobile, right on desktop */}
-            <div className="w-full h-full flex items-center justify-center">
+            {/* Video shows above disclaimer on mobile, right side on desktop */}
+            <div className="w-full h-full flex items-center justify-center mb-6 lg:mb-0">
               <VideoEmbed />
             </div>
-            {/* The following Live Demo chat-card/disclaimer previously here is now moved below for clarity */}
           </div>
         </div>
         {/* DEMO/Disclaimer below on desktop, below both columns on mobile */}
