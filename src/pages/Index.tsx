@@ -10,6 +10,7 @@ import ElevenLabsWidget from '@/components/ElevenLabsWidget';
 import HeyGenAvatar from '@/components/HeyGenAvatar';
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect } from '@/components/layout/headerUtils';
 
 const Index = () => {
   // For smooth scrolling to sections
@@ -189,6 +190,146 @@ const Index = () => {
                     <Heart className="h-12 w-12 text-green-400 mb-4 mx-auto" />
                     <h3 className="text-xl font-bold text-green-200 mb-2">100%</h3>
                     <p className="text-neutral-300">Free AI Access</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          {/* Interactive Buttons Section - All AI Tools */}
+          <section className="py-20 relative overflow-hidden" aria-label="Access All AI Health Tools">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-purple-950/60 to-black/80"></div>
+            </div>
+            
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Launch Your AI Health Assistant</span>
+                </h2>
+                <p className="text-neutral-300 text-xl max-w-3xl mx-auto mb-8">
+                  Choose from our suite of specialized AI health tools - each one is completely free and available 24/7
+                </p>
+              </div>
+
+              {/* AI Tools Buttons */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+                <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-2xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300">
+                  <div className="text-5xl mb-4 text-center">👨‍⚕️</div>
+                  <h3 className="text-2xl font-bold text-purple-200 mb-3 text-center">AI Doctor GPT</h3>
+                  <p className="text-neutral-300 text-sm mb-6 text-center">General medical guidance & symptom analysis</p>
+                  <AnimatedButton 
+                    variant="primary"
+                    size="lg"
+                    onClick={handleChatRedirect}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                  >
+                    Launch Doctor GPT
+                  </AnimatedButton>
+                </div>
+
+                <div className="p-6 bg-gradient-to-br from-blue-900/50 via-cyan-900/40 to-blue-900/50 rounded-2xl border border-cyan-400/40 backdrop-blur-lg hover:border-cyan-300/60 transition-all duration-300">
+                  <div className="text-5xl mb-4 text-center">🦷</div>
+                  <h3 className="text-2xl font-bold text-cyan-200 mb-3 text-center">AI Dental GPT</h3>
+                  <p className="text-neutral-300 text-sm mb-6 text-center">Dental care & oral health guidance</p>
+                  <AnimatedButton 
+                    variant="primary"
+                    size="lg"
+                    onClick={handleDentalGPTRedirect}
+                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                  >
+                    Launch Dental GPT
+                  </AnimatedButton>
+                </div>
+
+                <div className="p-6 bg-gradient-to-br from-green-900/50 via-emerald-900/40 to-green-900/50 rounded-2xl border border-emerald-400/40 backdrop-blur-lg hover:border-emerald-300/60 transition-all duration-300">
+                  <div className="text-5xl mb-4 text-center">🐾</div>
+                  <h3 className="text-2xl font-bold text-emerald-200 mb-3 text-center">AI Veterinarian GPT</h3>
+                  <p className="text-neutral-300 text-sm mb-6 text-center">Pet health & animal care guidance</p>
+                  <AnimatedButton 
+                    variant="primary"
+                    size="lg"
+                    onClick={handleVetGPTRedirect}
+                    className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                  >
+                    Launch Vet GPT
+                  </AnimatedButton>
+                </div>
+
+                <div className="p-6 bg-gradient-to-br from-indigo-900/50 via-purple-900/40 to-indigo-900/50 rounded-2xl border border-indigo-400/40 backdrop-blur-lg hover:border-indigo-300/60 transition-all duration-300">
+                  <div className="text-5xl mb-4 text-center">🧠</div>
+                  <h3 className="text-2xl font-bold text-indigo-200 mb-3 text-center">AI Mental Wellness GPT</h3>
+                  <p className="text-neutral-300 text-sm mb-6 text-center">Mental health support & wellness</p>
+                  <AnimatedButton 
+                    variant="primary"
+                    size="lg"
+                    onClick={handleMentalWellnessGPTRedirect}
+                    className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                  >
+                    Launch Mental Wellness GPT
+                  </AnimatedButton>
+                </div>
+
+                <div className="p-6 bg-gradient-to-br from-amber-900/50 via-orange-900/40 to-amber-900/50 rounded-2xl border border-amber-400/40 backdrop-blur-lg hover:border-amber-300/60 transition-all duration-300">
+                  <div className="text-5xl mb-4 text-center">⚗️</div>
+                  <h3 className="text-2xl font-bold text-amber-200 mb-3 text-center">AI Apothecary GPT</h3>
+                  <p className="text-neutral-300 text-sm mb-6 text-center">Homeopathic & natural remedies</p>
+                  <AnimatedButton 
+                    variant="primary"
+                    size="lg"
+                    onClick={handleApothecaryGPTRedirect}
+                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                  >
+                    Launch Apothecary GPT
+                  </AnimatedButton>
+                </div>
+              </div>
+
+              {/* Non-AI Healthcare Options Section */}
+              <div className="pt-12 border-t border-white/10">
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                    <span className="bg-gradient-to-r from-orange-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Professional Telehealth Services</span>
+                  </h2>
+                  <p className="text-neutral-300 text-lg max-w-2xl mx-auto mb-2">
+                    Presented by Amazon - Real licensed healthcare providers
+                  </p>
+                  <p className="text-neutral-400 text-base max-w-2xl mx-auto">
+                    For comprehensive medical care from certified doctors and healthcare professionals
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                  <div className="p-8 bg-gradient-to-br from-orange-900/40 via-amber-900/30 to-orange-900/40 rounded-2xl border border-orange-400/40 backdrop-blur-lg hover:border-orange-300/60 transition-all duration-300">
+                    <div className="text-6xl mb-4 text-center">🏥</div>
+                    <h3 className="text-2xl font-bold text-orange-200 mb-4 text-center">Amazon Clinic</h3>
+                    <p className="text-neutral-300 mb-6 text-center leading-relaxed">
+                      Pay-per-visit telehealth with licensed clinicians. Get treatment for colds, flu, infections, rashes, and prescription refills. Secure chat with responses in under an hour - no membership required.
+                    </p>
+                    <AnimatedButton 
+                      variant="primary"
+                      size="lg"
+                      onClick={handleAmazonClinicRedirect}
+                      className="w-full bg-gradient-to-r from-orange-600 to-amber-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                    >
+                      Visit Amazon Clinic
+                    </AnimatedButton>
+                  </div>
+
+                  <div className="p-8 bg-gradient-to-br from-teal-900/40 via-cyan-900/30 to-teal-900/40 rounded-2xl border border-teal-400/40 backdrop-blur-lg hover:border-teal-300/60 transition-all duration-300">
+                    <div className="text-6xl mb-4 text-center">💳</div>
+                    <h3 className="text-2xl font-bold text-teal-200 mb-4 text-center">One Medical</h3>
+                    <p className="text-neutral-300 mb-6 text-center leading-relaxed">
+                      Membership-based healthcare with in-person care at One Medical offices and 24/7 virtual care via app. Same-day appointments, easy prescriptions, and comprehensive healthcare coverage.
+                    </p>
+                    <AnimatedButton 
+                      variant="primary"
+                      size="lg"
+                      onClick={handleOneMedicalRedirect}
+                      className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+                    >
+                      Visit One Medical
+                    </AnimatedButton>
                   </div>
                 </div>
               </div>
