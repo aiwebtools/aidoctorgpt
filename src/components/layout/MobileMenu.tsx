@@ -2,7 +2,7 @@
 import React from 'react';
 import { Heart, X } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect } from './headerUtils';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -14,7 +14,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
     <div 
       className={`fixed inset-0 z-[9999] bg-black transform transition-transform duration-300 ease-in-out ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      } md:hidden`}
+      } lg:hidden`}
     >
       {/* Close button */}
       <div className="absolute top-4 right-4 z-[10000]">
@@ -26,7 +26,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
           <X className="h-6 w-6 text-white" />
         </button>
       </div>
-      <nav className="flex flex-col items-center justify-center min-h-screen space-y-5 px-6 pb-20">
+      <nav className="flex flex-col items-center justify-start min-h-screen overflow-y-auto space-y-4 px-6 pt-16 pb-20">
         <div className="mb-4 text-center">
           <p className="text-sm text-purple-300 font-semibold mb-1">Personal Healthcare AI Tools Suite</p>
           <h2 className="text-2xl font-bold text-white mb-2">AI Web Tools</h2>
@@ -120,6 +120,30 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
             className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
           >
             💳 One Medical
+          </AnimatedButton>
+
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleAntibioticsRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            💊 Verified Source To Buy Antibiotics
+          </AnimatedButton>
+
+          <AnimatedButton 
+            variant="secondary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleMoreAIToolsRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            🌐 More AI Tools
           </AnimatedButton>
 
           <a 

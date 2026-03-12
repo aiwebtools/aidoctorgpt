@@ -26,3 +26,11 @@ export const handleAmazonClinicRedirect = () => {
 export const handleOneMedicalRedirect = () => {
   window.open('https://health.amazon.com/onemedical', '_blank');
 };
+
+export const handleAntibioticsRedirect = () => {
+  window.open('https://ozio.com', '_blank');
+};
+
+export const handleMoreAIToolsRedirect = () => {
+  window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank');
+};

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect } from './headerUtils';
 
 const NavigationMenu = () => {
   const handleDownloadPrompt = () => {
@@ -9,7 +9,7 @@ const NavigationMenu = () => {
   };
 
   return (
-    <nav className="hidden md:flex items-center space-x-4">
+    <nav className="hidden lg:flex items-center flex-wrap gap-2 justify-end max-w-[75vw]">
       <AnimatedButton 
         variant="primary" 
         size="sm"
@@ -73,6 +73,22 @@ const NavigationMenu = () => {
         className="bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
         One Medical
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="primary" 
+        size="sm"
+        onClick={handleAntibioticsRedirect}
+        className="bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        Buy Antibiotics
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="secondary" 
+        size="sm"
+        onClick={handleMoreAIToolsRedirect}
+        className="bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        More AI Tools
       </AnimatedButton>
     </nav>
   );
