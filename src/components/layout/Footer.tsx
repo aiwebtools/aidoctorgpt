@@ -165,7 +165,7 @@ const Footer = () => {
         
         <div className="border-t border-gradient-to-r from-purple-500/20 via-cyan-500/20 to-purple-500/20 pt-12 text-center">
           <p className="text-neutral-300 text-base mb-4">
-            © {currentYear} <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:to-purple-400 transition-all duration-500">AI WEB TOOLS LLC</a>. All rights reserved.
+            © {currentYear} <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:to-purple-400 transition-all duration-500">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
           <p className="text-neutral-400 text-sm flex items-center justify-center">
             Made with <Heart className="h-4 w-4 text-pink-400 mx-2 animate-pulse-slow" /> for a better world
