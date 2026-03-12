@@ -14,7 +14,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
     <div 
       className={`fixed inset-0 z-[9999] bg-black transform transition-transform duration-300 ease-in-out ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      } md:hidden`}
+      } lg:hidden`}
     >
       {/* Close button */}
       <div className="absolute top-4 right-4 z-[10000]">
