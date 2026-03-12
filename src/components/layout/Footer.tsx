@@ -41,7 +41,7 @@ const Footer = () => {
               Made with <Heart className="h-4 w-4 text-pink-400 mx-2 animate-pulse-slow" /> for a better world
             </p>
             <a 
-              href="https://aiwebtools.ai" 
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-neutral-400 text-sm hover:bg-gradient-to-r hover:from-purple-400 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block mb-6 hover-scale"
