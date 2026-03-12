@@ -61,7 +61,7 @@ const Header = () => {
           <NavigationMenu />
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={toggleMenu}
               className={`p-2 rounded-md text-white hover:bg-white/10 transition-colors`}

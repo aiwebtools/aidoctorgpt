@@ -9,7 +9,7 @@ const NavigationMenu = () => {
   };
 
   return (
-    <nav className="hidden md:flex items-center space-x-4">
+    <nav className="hidden lg:flex items-center flex-wrap gap-2 justify-end max-w-[75vw]">
       <AnimatedButton 
         variant="primary" 
         size="sm"

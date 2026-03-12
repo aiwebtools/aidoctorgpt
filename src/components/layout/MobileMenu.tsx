@@ -26,7 +26,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
           <X className="h-6 w-6 text-white" />
         </button>
       </div>
-      <nav className="flex flex-col items-center justify-center min-h-screen space-y-5 px-6 pb-20">
+      <nav className="flex flex-col items-center justify-start min-h-screen overflow-y-auto space-y-4 px-6 pt-16 pb-20">
         <div className="mb-4 text-center">
           <p className="text-sm text-purple-300 font-semibold mb-1">Personal Healthcare AI Tools Suite</p>
           <h2 className="text-2xl font-bold text-white mb-2">AI Web Tools</h2>
