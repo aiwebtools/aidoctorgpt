@@ -74,6 +74,22 @@ const NavigationMenu = () => {
       >
         One Medical
       </AnimatedButton>
+      <AnimatedButton 
+        variant="primary" 
+        size="sm"
+        onClick={handleAntibioticsRedirect}
+        className="bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        Buy Antibiotics
+      </AnimatedButton>
+      <AnimatedButton 
+        variant="secondary" 
+        size="sm"
+        onClick={handleMoreAIToolsRedirect}
+        className="bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        More AI Tools
+      </AnimatedButton>
     </nav>
   );
 };

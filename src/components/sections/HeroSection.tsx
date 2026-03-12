@@ -7,7 +7,7 @@ const HeroSection = () => {
     window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
   };
   const handleMoreAIToolsRedirect = () => {
-    window.open('https://www.aitools.studio', '_blank');
+    window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank');
   };
   return <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
       {/* Background effects */}

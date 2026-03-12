@@ -125,6 +125,18 @@ const Footer = () => {
                   One Medical
                 </a>
               </li>
+              <li>
+                <a href="https://ozio.com" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-red-600/30 to-rose-600/30 border border-red-400/30 text-red-200 hover:from-red-500/40 hover:to-rose-500/40 hover:border-red-300/50 hover:text-red-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  💊 Verified Source To Buy Antibiotics
+                </a>
+              </li>
+              <li>
+                <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" 
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600/30 to-purple-600/30 border border-violet-400/30 text-violet-200 hover:from-violet-500/40 hover:to-purple-500/40 hover:border-violet-300/50 hover:text-violet-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25 glow-on-hover backdrop-blur-sm font-medium">
+                  🌐 More AI Tools
+                </a>
+              </li>
               <li className="pt-4">
                 <a href="#features"
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">

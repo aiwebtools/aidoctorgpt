@@ -122,6 +122,30 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
             💳 One Medical
           </AnimatedButton>
 
+          <AnimatedButton 
+            variant="primary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleAntibioticsRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            💊 Verified Source To Buy Antibiotics
+          </AnimatedButton>
+
+          <AnimatedButton 
+            variant="secondary" 
+            size="lg"
+            onClick={() => {
+              toggleMenu();
+              handleMoreAIToolsRedirect();
+            }}
+            className="w-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+          >
+            🌐 More AI Tools
+          </AnimatedButton>
+
           <a 
             href="#how-it-works" 
             className="block text-center text-neutral-300 hover:text-purple-400 transition-colors text-base font-medium py-3"
