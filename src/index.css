@@ -88,12 +88,11 @@
   /* Enhanced mobile fixes */
   @supports (-webkit-touch-callout: none) {
     body {
-      height: -webkit-fill-available;
-      min-height: -webkit-fill-available;
+      min-height: 100%;
     }
     
     html {
-      height: -webkit-fill-available;
+      min-height: 100%;
     }
   }
   
@@ -445,6 +444,12 @@
   ::-webkit-scrollbar-thumb {
     background: transparent;
   }
+
+    /* Prevent floating third-party widgets from stealing touch drag */
+    elevenlabs-convai {
+      display: none !important;
+      pointer-events: none !important;
+    }
 }
 
 /* Divine scrollbar styling */
