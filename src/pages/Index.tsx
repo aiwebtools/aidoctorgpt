@@ -6,7 +6,6 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
-import ElevenLabsWidget from '@/components/ElevenLabsWidget';
 import HeyGenAvatar from '@/components/HeyGenAvatar';
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
@@ -47,6 +46,36 @@ const Index = () => {
     });
   }, []);
 
+  // Mobile scroll hardening: remove known third-party touch blockers
+  useEffect(() => {
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    html.style.overflowY = 'auto';
+    body.style.overflowY = 'auto';
+    html.style.touchAction = 'auto';
+    body.style.touchAction = 'auto';
+
+    const removeTouchBlockers = () => {
+      document
+        .querySelectorAll('elevenlabs-convai, script[src*="elevenlabs.io/convai-widget"], iframe[src*="elevenlabs"]')
+        .forEach((el) => el.remove());
+    };
+
+    removeTouchBlockers();
+    const timeoutA = window.setTimeout(removeTouchBlockers, 1000);
+    const timeoutB = window.setTimeout(removeTouchBlockers, 3000);
+
+    return () => {
+      window.clearTimeout(timeoutA);
+      window.clearTimeout(timeoutB);
+      html.style.touchAction = '';
+      body.style.touchAction = '';
+    };
+  }, []);
+
   const handleChatRedirect = () => {
     window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
   };
@@ -71,7 +100,6 @@ const Index = () => {
       <div className="relative z-10">
         <Header />
         <ConsentDialog />
-        <ElevenLabsWidget />
         
         <main className="flex-grow">
           {/* H1 is in HeroSection for SEO */}

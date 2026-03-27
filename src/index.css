@@ -65,7 +65,7 @@
     overflow-y: auto;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    touch-action: pan-y;
+    touch-action: auto;
   }
 
   body {
@@ -81,8 +81,8 @@
     overflow-y: auto;
     position: relative;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: none;
-    touch-action: pan-y;
+    overscroll-behavior-y: auto;
+    touch-action: auto;
   }
 
   /* Enhanced mobile fixes */

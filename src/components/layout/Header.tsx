@@ -14,28 +14,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const html = document.documentElement;
-    const body = document.body;
-
-    if (isMenuOpen) {
-      html.style.overflow = 'hidden';
-      body.style.overflow = 'hidden';
-    } else {
-      html.style.overflow = '';
-      body.style.overflow = '';
-      html.style.overflowY = 'auto';
-      body.style.overflowY = 'auto';
-    }
-
-    return () => {
-      html.style.overflow = '';
-      body.style.overflow = '';
-      html.style.overflowY = 'auto';
-      body.style.overflowY = 'auto';
-    };
-  }, [isMenuOpen]);
-
-  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true);
