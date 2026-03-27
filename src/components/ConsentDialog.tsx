@@ -78,7 +78,7 @@ const ConsentDialog = () => {
           </div>
 
           <div className="p-3 bg-black/40 border border-white/20 rounded-lg">
-            <p className="text-xs text-neutral-300 italic">
+            <p className="text-xs text-white/90 italic">
               By continuing, you acknowledge this is an AI tool for informational purposes only and agree to consult qualified medical professionals for actual health concerns.
             </p>
           </div>

@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
             How It Works
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">How Medicus Works</h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-white/80 max-w-2xl mx-auto">
             Getting started with Medicus, your personal AI Doctor, is quick and easy. Follow these simple steps to receive informational health insights.
           </p>
         </div>
@@ -133,7 +133,7 @@ const HowItWorksSection = () => {
           </div>
           
           <div className="mt-6 p-4 bg-black/50 rounded-lg border border-white/20">
-            <p className="text-neutral-300 text-center font-medium">
+            <p className="text-white/90 text-center font-medium">
               By using Medicus, you acknowledge these disclaimers and agree to seek professional medical care for all health concerns.
             </p>
           </div>

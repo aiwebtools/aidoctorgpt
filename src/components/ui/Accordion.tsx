@@ -25,7 +25,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle, index }: AccordionI
         <h3 className="text-lg font-medium text-neutral-700">{question}</h3>
         <ChevronDown 
           className={cn(
-            "w-5 h-5 text-neutral-500 transition-transform",
+            "w-5 h-5 text-white/70 transition-transform",
             isOpen && "transform rotate-180"
           )} 
         />
@@ -36,7 +36,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle, index }: AccordionI
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="pb-4 px-2 text-neutral-500">
+        <div className="pb-4 px-2 text-white/70">
           {answer}
         </div>
       </div>

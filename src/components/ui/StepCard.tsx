@@ -42,11 +42,11 @@ const StepCard = ({
       
       <div className="pt-2">
         <h3 className={`text-lg font-semibold mb-2 transition-all duration-300 ${
-          isHovered ? 'text-gradient' : 'text-neutral-300'
+          isHovered ? 'text-gradient' : 'text-white/90'
         }`}>
           {title}
         </h3>
-        <p className="text-neutral-400 group-hover:text-neutral-300 transition-colors duration-300">
+        <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
           {description}
         </p>
       </div>

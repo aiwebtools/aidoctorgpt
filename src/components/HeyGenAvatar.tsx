@@ -60,7 +60,7 @@ const HeyGenAvatar = () => {
         <h3 className="text-xl font-semibold text-purple-400 mb-4">
           Meet Your AI Doctor Assistant
         </h3>
-        <p className="text-neutral-300 mb-6">
+        <p className="text-white/90 mb-6">
           Interactive AI doctor powered by HeyGen - click on the avatar to interact
         </p>
         

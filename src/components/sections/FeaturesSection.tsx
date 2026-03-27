@@ -59,7 +59,7 @@ const FeaturesSection = () => {
             Why Choose Medicus & AI Web Tools?
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">Powerful Features for Your Health</h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-white/80 max-w-2xl mx-auto">
             Medicus and our suite of AI tools combine advanced AI technology with medical knowledge to provide you with informational health insights.
           </p>
         </div>
