@@ -5,6 +5,7 @@ import VideoEmbed from '../VideoEmbed';
 
 const HeroSection = () => {
   const handleChatRedirect = () => {
+    try { const a = new Audio('/sounds/medicus-click.mp3'); a.volume = 0.7; a.play().catch(() => {}); } catch {}
     window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
   };
   const handleMoreAIToolsRedirect = () => {
