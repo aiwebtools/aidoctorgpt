@@ -11,6 +11,8 @@ const HeyGenAvatar = () => {
     const host = "https://labs.heygen.com";
     const url = host + "/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJBbm5fRG9jdG9yX1NpdHRpbmdfcHVibGlj%0D%0AIiwicHJldmlld0ltZyI6Imh0dHBzOi8vZmlsZXMyLmhleWdlbi5haS9hdmF0YXIvdjMvMjZkZTM2%0D%0AOWIyZDQ0NDNlNTg2ZGVkZjI3YWYxZTBjMWRfNDU1NzAvcHJldmlld190YWxrXzEud2VicCIsIm5l%0D%0AZWRSZW1vdmVCYWNrZ3JvdW5kIjpmYWxzZSwia25vd2xlZGdlQmFzZUlkIjoiNTZmYmY3MTJjNThi%0D%0ANDQxMzg0MTNhOTliOWMzZmQwNGUiLCJ1c2VybmFtZSI6IjlkNjcxNjU4ZjFmOTRiNzE5YjJlNTg4%0D%0ANjM1ZDAxZjdiIn0%3D&inIFrame=1";
     
+    const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+
     // Create the iframe
     const iframe = document.createElement('iframe');
     iframe.src = url;
@@ -20,6 +22,8 @@ const HeyGenAvatar = () => {
     iframe.style.height = "100%";
     iframe.style.border = "none";
     iframe.style.borderRadius = "8px";
+    iframe.style.pointerEvents = isMobileViewport ? 'none' : 'auto';
+    iframe.style.touchAction = 'pan-y';
     
     // Clear the container and append the iframe
     if (containerRef.current) {
@@ -28,7 +32,7 @@ const HeyGenAvatar = () => {
     }
     
     // Set up message listener to handle avatar interactions
-    window.addEventListener("message", (e) => {
+    const messageHandler = (e: MessageEvent) => {
       if (e.origin === host && e.data && e.data.type && e.data.type === "streaming-embed") {
         if (e.data.action === "init" || e.data.action === "show") {
           // Make sure the avatar is visible
@@ -37,11 +41,13 @@ const HeyGenAvatar = () => {
           }
         }
       }
-    });
+    };
+
+    window.addEventListener('message', messageHandler);
 
     // Clean up on unmount
     return () => {
-      window.removeEventListener("message", () => {});
+      window.removeEventListener('message', messageHandler);
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
       }
