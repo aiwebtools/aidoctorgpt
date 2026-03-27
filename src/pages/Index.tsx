@@ -6,24 +6,26 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
-
+import { handleAntibioticsRedirect, handleChatRedirect, openWithGeneralSound, openWithMedicusSound } from '@/components/layout/headerUtils';
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
 import ozioKitImage from '@/assets/ozio-emergency-kit.jpg';
+
+const MEDICUS_MATCH = 'g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt';
 
 const Index = () => {
   // For smooth scrolling to sections
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+      const anchor = (e.target as HTMLElement).closest('a');
+      if (anchor?.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
-        const id = target.getAttribute('href')?.substring(1);
+        const id = anchor.getAttribute('href')?.substring(1);
         if (id) {
           const element = document.getElementById(id);
           if (element) {
             window.scrollTo({
-              top: element.offsetTop - 80, // Adjust for header height
+              top: element.offsetTop - 80,
               behavior: 'smooth'
             });
           }
@@ -35,15 +37,31 @@ const Index = () => {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
-  // Ensure all external links open in new tabs
+  // Ensure external links open in new tabs and play click sounds reliably
   useEffect(() => {
-    const externalLinks = document.querySelectorAll('a[href^="http"]');
-    externalLinks.forEach(link => {
-      if (!(link as HTMLElement).getAttribute('target')) {
-        (link as HTMLElement).setAttribute('target', '_blank');
-        (link as HTMLElement).setAttribute('rel', 'noopener noreferrer');
+    const externalLinks = document.querySelectorAll<HTMLAnchorElement>('a[href^="http"]');
+    externalLinks.forEach((link) => {
+      if (!link.getAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
       }
     });
+
+    const handleExternalLinkClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest('a[href^="http"]') as HTMLAnchorElement | null;
+      if (!anchor || e.defaultPrevented) return;
+
+      e.preventDefault();
+      const href = anchor.href;
+      if (href.includes(MEDICUS_MATCH)) {
+        openWithMedicusSound(href);
+      } else {
+        openWithGeneralSound(href);
+      }
+    };
+
+    document.addEventListener('click', handleExternalLinkClick);
+    return () => document.removeEventListener('click', handleExternalLinkClick);
   }, []);
 
   // Mobile scroll hardening: remove known third-party touch blockers
@@ -75,11 +93,6 @@ const Index = () => {
       body.style.touchAction = '';
     };
   }, []);
-
-  const handleChatRedirect = () => {
-    try { const a = new Audio('/sounds/medicus-click.mp3'); a.volume = 0.7; a.play().catch(() => {}); } catch {}
-    window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
-  };
 
   return (
     <div className="min-h-screen flex flex-col relative" style={{ overflowX: 'hidden' }}>
@@ -247,7 +260,7 @@ const Index = () => {
                     <AnimatedButton 
                       variant="primary" 
                       size="lg"
-                      onClick={() => window.open('https://ozio.com', '_blank')}
+                      onClick={handleAntibioticsRedirect}
                       className="bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-2xl hover:shadow-red-500/30 text-lg px-8 py-3"
                       icon={<ArrowRight className="ml-2" />}
                     >

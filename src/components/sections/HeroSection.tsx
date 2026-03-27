@@ -2,16 +2,9 @@ import React from 'react';
 import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 import VideoEmbed from '../VideoEmbed';
+import { handleChatRedirect, handleMoreAIToolsRedirect } from '../layout/headerUtils';
 
 const HeroSection = () => {
-  const handleChatRedirect = () => {
-    try { const a = new Audio('/sounds/medicus-click.mp3'); a.volume = 0.7; a.play().catch(() => {}); } catch {}
-    window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
-  };
-  const handleMoreAIToolsRedirect = () => {
-    try { const a = new Audio('/sounds/general-click.mp3'); a.volume = 0.7; a.play().catch(() => {}); } catch {}
-    window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank');
-  };
   return <div className="relative pt-20 sm:pt-28 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
