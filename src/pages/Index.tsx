@@ -6,7 +6,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
-import HeyGenAvatar from '@/components/HeyGenAvatar';
+
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
 import ozioKitImage from '@/assets/ozio-emergency-kit.jpg';
@@ -105,7 +105,7 @@ const Index = () => {
         <main className="flex-grow">
           {/* H1 is in HeroSection for SEO */}
           <HeroSection />
-          <HeyGenAvatar />
+          
           
           {/* SEO-optimized AI Tools Section */}
           <section className="py-20 relative overflow-hidden" aria-label="Free AI Tools by AI Web Tools">
