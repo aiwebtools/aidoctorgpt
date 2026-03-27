@@ -14,10 +14,24 @@ const Header = () => {
   };
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    const html = document.documentElement;
+    const body = document.body;
+
+    if (isMenuOpen) {
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+    } else {
+      html.style.overflow = '';
+      body.style.overflow = '';
+      html.style.overflowY = 'auto';
+      body.style.overflowY = 'auto';
+    }
 
     return () => {
-      document.body.style.overflow = '';
+      html.style.overflow = '';
+      body.style.overflow = '';
+      html.style.overflowY = 'auto';
+      body.style.overflowY = 'auto';
     };
   }, [isMenuOpen]);
 
