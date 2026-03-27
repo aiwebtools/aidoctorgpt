@@ -10,8 +10,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,25 +36,14 @@ const Header = () => {
     };
   }, []);
 
-  // Ensure all external links open in new windows
+  // Ensure external links open in new windows without heavy DOM observers
   useEffect(() => {
-    const updateExternalLinks = () => {
-      document.querySelectorAll('a[href^="http"]').forEach(link => {
-        if (!(link as HTMLElement).getAttribute('target')) {
-          (link as HTMLElement).setAttribute('target', '_blank');
-          (link as HTMLElement).setAttribute('rel', 'noopener noreferrer');
-        }
-      });
-    };
-    
-    // Apply initially
-    updateExternalLinks();
-    
-    // Set up an observer to catch dynamically added links
-    const observer = new MutationObserver(updateExternalLinks);
-    observer.observe(document.body, { childList: true, subtree: true });
-    
-    return () => observer.disconnect();
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="http"]').forEach((link) => {
+      if (!link.getAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
   }, []);
 
   return (
