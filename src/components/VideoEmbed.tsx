@@ -91,10 +91,10 @@ const VideoEmbed: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center my-8 touch-pan-y">
-      <div className="w-full max-w-3xl rounded-lg overflow-hidden border border-purple-600/30 shadow-lg aspect-video bg-black pointer-events-none md:pointer-events-auto">
+    <div className="w-full flex justify-center my-8">
+      <div className="w-full max-w-3xl rounded-lg overflow-hidden border border-purple-600/30 shadow-lg aspect-video bg-black" style={{ touchAction: 'pan-y' }}>
         {/* The YouTube iframe player will be rendered here */}
-        <div ref={playerRef} style={{ width: "100%", height: "100%" }} className="pointer-events-none md:pointer-events-auto" />
+        <div ref={playerRef} style={{ width: "100%", height: "100%" }} />
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import ElevenLabsWidget from '@/components/ElevenLabsWidget';
 import HeyGenAvatar from '@/components/HeyGenAvatar';
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
+import ozioKitImage from '@/assets/ozio-emergency-kit.jpg';
 
 const Index = () => {
   // For smooth scrolling to sections
@@ -53,30 +54,17 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col relative" style={{ overflowX: 'hidden' }}>
       {/* Divine Background Effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950"></div>
         
-        {/* Large moving orbs */}
-        <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-r from-purple-500/15 via-cyan-500/10 to-pink-500/15 blur-3xl animate-float opacity-80"></div>
-        <div className="absolute top-1/3 right-0 w-80 h-80 rounded-full bg-gradient-to-r from-indigo-500/15 via-purple-500/15 to-cyan-500/10 blur-3xl animate-float opacity-70" style={{ animationDelay: '2s', animationDuration: '10s' }}></div>
-        <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-indigo-500/15 blur-3xl animate-float opacity-60" style={{ animationDelay: '4s', animationDuration: '12s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-gradient-to-r from-cyan-500/10 via-blue-500/15 to-purple-500/10 blur-3xl animate-float opacity-50" style={{ animationDelay: '6s', animationDuration: '14s' }}></div>
+        {/* Orbs - hidden on mobile for performance */}
+        <div className="hidden md:block absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-r from-purple-500/15 via-cyan-500/10 to-pink-500/15 blur-3xl animate-float opacity-80"></div>
+        <div className="hidden md:block absolute top-1/3 right-0 w-80 h-80 rounded-full bg-gradient-to-r from-indigo-500/15 via-purple-500/15 to-cyan-500/10 blur-3xl animate-float opacity-70" style={{ animationDelay: '2s', animationDuration: '10s' }}></div>
+        <div className="hidden md:block absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-indigo-500/15 blur-3xl animate-float opacity-60" style={{ animationDelay: '4s', animationDuration: '12s' }}></div>
         
-        {/* Glistening light effects */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-purple-400/5 to-transparent animate-pulse-slow"></div>
-        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-cyan-400/5 to-transparent animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-pink-400/3 to-transparent animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
-        
-        {/* Floating particles */}
-        <div className="absolute top-20 left-[10%] w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-float opacity-70" style={{ animationDuration: '5s' }}></div>
-        <div className="absolute top-40 right-[15%] w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 animate-float opacity-80" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-60 left-[20%] w-4 h-4 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 animate-float opacity-60" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
-        <div className="absolute top-1/3 left-[75%] w-2 h-2 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 animate-float opacity-75" style={{ animationDuration: '8s', animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-40 right-[25%] w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400 animate-float opacity-65" style={{ animationDuration: '9s', animationDelay: '3s' }}></div>
-        
-        {/* Moving grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.08)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_80%)] animate-pulse-slow"></div>
+        {/* Subtle glow - single layer on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-purple-400/5 to-transparent"></div>
       </div>
 
       {/* SEO-optimized page structure */}
@@ -174,6 +162,76 @@ const Index = () => {
           
           <FeaturesSection />
           <HowItWorksSection />
+          
+          {/* Ozio Emergency Antibiotics Section */}
+          <section className="py-16 md:py-20 relative overflow-hidden" aria-label="Emergency Antibiotics from Ozio Medical">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-950/60 via-rose-950/50 to-red-950/60"></div>
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-400/60 to-transparent"></div>
+            </div>
+            
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+              <div className="max-w-5xl mx-auto">
+                <div className="flex flex-col md:flex-row gap-8 items-center bg-gradient-to-br from-black/50 via-red-950/30 to-black/50 backdrop-blur-lg border border-red-500/30 rounded-2xl p-6 md:p-10 shadow-2xl shadow-red-500/10">
+                  
+                  {/* Image */}
+                  <div className="w-full md:w-2/5 flex-shrink-0">
+                    <img 
+                      src={ozioKitImage} 
+                      alt="Ozio Medical Emergency Antibiotics and Medical Kits" 
+                      className="rounded-xl border border-red-500/20 shadow-lg w-full"
+                      loading="lazy"
+                      width={800}
+                      height={512}
+                    />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-red-900/50 text-red-300 mb-4 border border-red-500/30">
+                      🚨 Emergency Preparedness
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white leading-tight">
+                      Emergency Antibiotics & Medical Kits <span className="text-red-400">— No Prescription Required</span>
+                    </h2>
+                    <p className="text-neutral-300 mb-4 leading-relaxed">
+                      <strong className="text-red-200">Ozio Medical</strong> is an official member of the <strong>American Telehealth Association (ATA)</strong> and certified by <strong>LegitScript</strong> for safety, legality, and compliance. Get doctor-verified emergency antibiotics, medical kits, and standalone medications shipped directly to you.
+                    </p>
+                    <ul className="text-neutral-300 text-sm space-y-2 mb-6">
+                      <li className="flex items-center justify-center md:justify-start">
+                        <span className="h-2 w-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                        ATA Certified — American Telehealth Association Member
+                      </li>
+                      <li className="flex items-center justify-center md:justify-start">
+                        <span className="h-2 w-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                        LegitScript Verified for Safety & Compliance
+                      </li>
+                      <li className="flex items-center justify-center md:justify-start">
+                        <span className="h-2 w-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                        Emergency Kits starting at $195 — Travel, Contagion & Advanced Kits
+                      </li>
+                      <li className="flex items-center justify-center md:justify-start">
+                        <span className="h-2 w-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                        Standalone Antibiotics & Ivermectin Available
+                      </li>
+                    </ul>
+                    <AnimatedButton 
+                      variant="primary" 
+                      size="lg"
+                      onClick={() => window.open('https://ozio.com', '_blank')}
+                      className="bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-2xl hover:shadow-red-500/30 text-lg px-8 py-3"
+                      icon={<ArrowRight className="ml-2" />}
+                    >
+                      💊 Get Emergency Antibiotics — Ozio Medical
+                    </AnimatedButton>
+                    <p className="text-neutral-500 text-xs mt-3">
+                      Ozio Medical is a third-party service. AI Web Tools LLC is not affiliated with Ozio Medical.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           
           {/* SEO-optimized Call to Action Section */}
           <section className="py-24 relative overflow-hidden" aria-label="Get started with Medicus AI Doctor GPT">

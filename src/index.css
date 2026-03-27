@@ -348,6 +348,45 @@
     }
   }
 
+  /* Reduce animations on mobile for performance */
+  @media (max-width: 768px) {
+    .animate-float,
+    .animate-pulse-slow,
+    .floating,
+    .pulse-slow {
+      animation: none !important;
+    }
+
+    .glass-card:hover {
+      transform: none;
+    }
+
+    .hover-scale:hover {
+      transform: none;
+      filter: none;
+    }
+
+    .btn-glow::after {
+      animation: none !important;
+    }
+
+    .glow-on-hover::before {
+      display: none;
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   /* Enhanced mobile dialog fixes */
   .mobile-dialog {
     position: fixed !important;
