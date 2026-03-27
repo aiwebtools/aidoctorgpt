@@ -1,5 +1,14 @@
 
+export const playMedicusSound = () => {
+  try {
+    const audio = new Audio('/sounds/medicus-click.mp3');
+    audio.volume = 0.7;
+    audio.play().catch(() => {});
+  } catch {}
+};
+
 export const handleChatRedirect = () => {
+  playMedicusSound();
   window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
 };
 
