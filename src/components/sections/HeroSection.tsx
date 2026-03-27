@@ -10,7 +10,7 @@ const HeroSection = () => {
   const handleMoreAIToolsRedirect = () => {
     window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank');
   };
-  return <div className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24">
+  return <div className="relative overflow-hidden pt-20 sm:pt-28 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(139,92,246,0.15),_transparent_70%)]"></div>
@@ -46,11 +46,20 @@ const HeroSection = () => {
               Personal Healthcare AI Tools Suite
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-5 text-balance leading-tight">
               <span className="text-gradient">MEDICUS</span> - Your Personal AI Doctor GPT & Free Healthcare Tools
             </h1>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
+                Talk to Medicus - Free
+              </AnimatedButton>
+              <AnimatedButton variant="secondary" size="lg" onClick={handleMoreAIToolsRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
+                More AI Tools
+              </AnimatedButton>
+            </div>
             
-            <p className="text-xl text-neutral-400 mb-6 max-w-2xl">Meet <strong className="text-purple-300">Medicus</strong>, your personal AI Doctor GPT — powered by advanced artificial intelligence. Get instant medical guidance, symptom analysis, and healthcare insights 24/7. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide. 100% FREE</p>
+            <p className="text-base sm:text-lg text-neutral-400 mb-5 max-w-2xl">Meet <strong className="text-purple-300">Medicus</strong>, your personal AI Doctor GPT — powered by advanced artificial intelligence. Get instant medical guidance, symptom analysis, and healthcare insights 24/7. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide. 100% FREE</p>
 
             {/* Compact Disclaimer */}
             <div className="mb-6 p-4 bg-red-950/30 border border-red-500/40 rounded-lg backdrop-blur-sm">
@@ -64,15 +73,6 @@ const HeroSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
-                Talk to Medicus - Free
-              </AnimatedButton>
-              <AnimatedButton variant="secondary" size="lg" onClick={handleMoreAIToolsRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
-                More AI Tools
-              </AnimatedButton>
             </div>
             
             {/* Enhanced stats section with AI Web Tools branding */}
