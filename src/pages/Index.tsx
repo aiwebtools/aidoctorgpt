@@ -47,7 +47,7 @@ const Index = () => {
   }, []);
 
   const handleChatRedirect = () => {
-    window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
+    window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
   };
 
   return (
@@ -108,10 +108,10 @@ const Index = () => {
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-10 max-w-6xl mx-auto">
-                  <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300 hover:scale-105">
+              <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">👨‍⚕️</div>
-                    <h3 className="text-xl font-bold text-purple-200 mb-2">AI Doctor GPT</h3>
-                    <p className="text-neutral-300 text-sm">General health guidance, symptoms analysis & medical information</p>
+                    <h3 className="text-xl font-bold text-purple-200 mb-2">MEDICUS - AI Doctor GPT</h3>
+                    <p className="text-neutral-300 text-sm">Meet Medicus — your personal AI doctor for health guidance, symptoms analysis & medical information</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-blue-900/50 via-cyan-900/40 to-blue-900/50 rounded-xl border border-cyan-400/40 backdrop-blur-lg hover:border-cyan-300/60 transition-all duration-300 hover:scale-105">
@@ -176,7 +176,7 @@ const Index = () => {
           <HowItWorksSection />
           
           {/* SEO-optimized Call to Action Section */}
-          <section className="py-24 relative overflow-hidden" aria-label="Get started with AI Doctor GPT">
+          <section className="py-24 relative overflow-hidden" aria-label="Get started with Medicus AI Doctor GPT">
             {/* Background effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-indigo-900/80 to-pink-900/90 backdrop-blur-sm"></div>
@@ -193,10 +193,10 @@ const Index = () => {
             <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
               <div className="text-center space-y-8">
                 <h2 className="text-4xl sm:text-5xl font-bold mb-8 max-w-4xl mx-auto text-balance leading-tight">
-                  Start Your Free AI Health Consultation with <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">AI Doctor GPT</span>
+                  Start Your Free AI Health Consultation with <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">Medicus - AI Doctor GPT</span>
                 </h2>
                 <p className="text-neutral-200 text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
-                  Join over 75,000+ users who trust AI Doctor GPT for free health guidance, symptom analysis, and medical information. Available 24/7 with instant responses powered by advanced AI technology.
+                  Join over 75,000+ users who trust Medicus, your personal AI Doctor GPT, for free health guidance, symptom analysis, and medical information. Available 24/7 with instant responses powered by advanced AI technology.
                 </p>
                 
                 {/* Educational Disclaimer */}
@@ -214,9 +214,9 @@ const Index = () => {
                     className="bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 text-white border-none hover:shadow-2xl hover:shadow-purple-500/30 btn-glow text-xl px-10 py-4 hover-scale"
                     icon={<ArrowRight className="ml-2" />}
                     onClick={handleChatRedirect}
-                    aria-label="Try AI Doctor GPT Now - Free Health Assistant"
+                    aria-label="Talk to Medicus Now - Free AI Doctor"
                   >
-                    Try AI Doctor GPT Now - Free
+                    Talk to Medicus - Free
                   </AnimatedButton>
                 </div>
                 
@@ -225,7 +225,7 @@ const Index = () => {
                   <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">⚠️ Important Medical Disclaimer</h3>
                   <div className="text-left space-y-6">
                     <p className="text-neutral-300 leading-relaxed text-lg">
-                      <strong>AI Doctor GPT is NOT a licensed medical professional.</strong> This AI health assistant provides information for educational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment from qualified healthcare providers.
+                      <strong>Medicus (AI Doctor GPT) is NOT a licensed medical professional.</strong> This AI health assistant provides information for educational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment from qualified healthcare providers.
                     </p>
                     <p className="text-neutral-300 leading-relaxed text-lg">
                       <strong>For medical emergencies:</strong> Call 911 (US), 999 (UK), or your local emergency services immediately. Do not use this AI tool for emergency situations.
@@ -234,7 +234,7 @@ const Index = () => {
                       <strong>Always consult healthcare professionals:</strong> If you are experiencing persistent, severe, or worsening symptoms, consult a licensed doctor, physician, or qualified medical professional immediately.
                     </p>
                     <p className="text-neutral-300 leading-relaxed text-lg">
-                      By using AI Doctor GPT, you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
+                      By using Medicus (AI Doctor GPT), you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
                     </p>
                   </div>
                   

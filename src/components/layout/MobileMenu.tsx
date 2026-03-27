@@ -12,9 +12,10 @@ interface MobileMenuProps {
 const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
   return (
     <div 
-      className={`fixed inset-0 z-[9999] bg-black transform transition-transform duration-300 ease-in-out ${
+      className={`fixed inset-0 z-[9999] transform transition-transform duration-300 ease-in-out ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       } lg:hidden`}
+      style={{ backgroundColor: '#0a0a1a' }}
     >
       {/* Close button */}
       <div className="absolute top-4 right-4 z-[10000]">
@@ -26,7 +27,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
           <X className="h-6 w-6 text-white" />
         </button>
       </div>
-      <nav className="flex flex-col items-center justify-start min-h-screen overflow-y-auto space-y-4 px-6 pt-16 pb-20">
+      <nav className="flex flex-col items-center justify-start h-full overflow-y-auto space-y-4 px-6 pt-16 pb-20" style={{ WebkitOverflowScrolling: 'touch' }}>
         <div className="mb-4 text-center">
           <p className="text-sm text-purple-300 font-semibold mb-1">Personal Healthcare AI Tools Suite</p>
           <h2 className="text-2xl font-bold text-white mb-2">AI Web Tools</h2>
@@ -41,9 +42,9 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleChatRedirect();
             }}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none py-4 text-base font-semibold"
           >
-            👨‍⚕️ AI Doctor GPT
+            👨‍⚕️ MEDICUS - AI Doctor GPT
           </AnimatedButton>
           
           <AnimatedButton 
@@ -53,7 +54,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleDentalGPTRedirect();
             }}
-            className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none py-4 text-base font-semibold"
           >
             🦷 AI Dental GPT
           </AnimatedButton>
@@ -65,7 +66,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleVetGPTRedirect();
             }}
-            className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none py-4 text-base font-semibold"
           >
             🐾 AI Veterinarian GPT
           </AnimatedButton>
@@ -77,7 +78,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleMentalWellnessGPTRedirect();
             }}
-            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none py-4 text-base font-semibold"
           >
             🧠 AI Mental Wellness GPT
           </AnimatedButton>
@@ -89,7 +90,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleApothecaryGPTRedirect();
             }}
-            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none py-4 text-base font-semibold"
           >
             ⚗️ AI Apothecary GPT
           </AnimatedButton>
@@ -105,7 +106,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleAmazonClinicRedirect();
             }}
-            className="w-full bg-gradient-to-r from-orange-600/80 to-amber-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-orange-600/80 to-amber-600/80 text-white border-none py-4 text-base font-semibold"
           >
             🏥 Amazon Clinic
           </AnimatedButton>
@@ -117,7 +118,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleOneMedicalRedirect();
             }}
-            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white border-none py-4 text-base font-semibold"
           >
             💳 One Medical
           </AnimatedButton>
@@ -129,7 +130,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleAntibioticsRedirect();
             }}
-            className="w-full bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-red-600 to-rose-600 text-white border-none py-4 text-base font-semibold"
           >
             💊 Verified Source To Buy Antibiotics
           </AnimatedButton>
@@ -141,7 +142,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               toggleMenu();
               handleMoreAIToolsRedirect();
             }}
-            className="w-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-white border-none hover:shadow-glow py-4 text-base font-semibold"
+            className="w-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-white border-none py-4 text-base font-semibold"
           >
             🌐 More AI Tools
           </AnimatedButton>
@@ -156,7 +157,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         </div>
 
         <p className="text-neutral-500 text-xs flex items-center mt-8">
-          Made with <Heart className="h-3 w-3 text-pink-500 mx-1 animate-pulse-slow" /> for better and free healthcare
+          Made with <Heart className="h-3 w-3 text-pink-500 mx-1" /> for better and free healthcare
         </p>
       </nav>
     </div>

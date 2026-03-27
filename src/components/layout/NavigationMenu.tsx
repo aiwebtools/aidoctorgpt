@@ -56,7 +56,7 @@ const NavigationMenu = () => {
         onClick={handleChatRedirect}
         className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
       >
-        Try Doctor GPT
+        MEDICUS - AI Doctor
       </AnimatedButton>
       <AnimatedButton 
         variant="secondary" 
