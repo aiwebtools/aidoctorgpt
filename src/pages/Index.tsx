@@ -51,7 +51,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden">
+    <div className="min-h-screen flex flex-col relative" style={{ overflowX: 'hidden' }}>
       {/* Divine Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         {/* Animated gradient background */}
