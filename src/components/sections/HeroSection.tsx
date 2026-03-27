@@ -2,9 +2,10 @@ import React from 'react';
 import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 import VideoEmbed from '../VideoEmbed';
+
 const HeroSection = () => {
   const handleChatRedirect = () => {
-    window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
+    window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
   };
   const handleMoreAIToolsRedirect = () => {
     window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank');
@@ -46,10 +47,10 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
-              <span className="text-gradient">AI Doctor GPT</span> - Free AI Medical Assistant & Healthcare Tools
+              <span className="text-gradient">MEDICUS</span> - Your Personal AI Doctor GPT & Free Healthcare Tools
             </h1>
             
-            <p className="text-xl text-neutral-400 mb-6 max-w-2xl">Experience the power of AI Web Tools with our flagship AI Doctor GPT. Get instant medical guidance, symptom analysis, and healthcare insights powered by advanced artificial intelligence. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide. 100% FREE</p>
+            <p className="text-xl text-neutral-400 mb-6 max-w-2xl">Meet <strong className="text-purple-300">Medicus</strong>, your personal AI Doctor GPT — powered by advanced artificial intelligence. Get instant medical guidance, symptom analysis, and healthcare insights 24/7. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide. 100% FREE</p>
 
             {/* Compact Disclaimer */}
             <div className="mb-6 p-4 bg-red-950/30 border border-red-500/40 rounded-lg backdrop-blur-sm">
@@ -58,7 +59,7 @@ const HeroSection = () => {
                 <div>
                   <p className="text-red-200 font-semibold text-sm mb-1">⚠️ Medical Disclaimer:</p>
                   <p className="text-neutral-300 text-sm leading-relaxed">
-                    <strong>NOT a licensed medical professional.</strong> Information provided is for educational purposes only and should NOT replace professional medical advice, diagnosis, or treatment. 
+                    <strong>NOT a licensed medical professional.</strong> Medicus and all AI tools provide information for educational purposes only and should NOT replace professional medical advice, diagnosis, or treatment. 
                     <strong className="text-red-300"> For emergencies, call 911 immediately.</strong> Always consult qualified healthcare providers for medical concerns.
                   </p>
                 </div>
@@ -67,7 +68,7 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
-                Try AI Doctor GPT - Free
+                Talk to Medicus - Free
               </AnimatedButton>
               <AnimatedButton variant="secondary" size="lg" onClick={handleMoreAIToolsRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
                 More AI Tools
@@ -99,14 +100,12 @@ const HeroSection = () => {
           <div className="flex-1 animate-fade-in-up w-full max-w-xl mx-auto lg:mx-0" style={{
           animationDelay: '0.2s'
         }}>
-            {/* Responsive: Place video above on mobile, right on desktop */}
             <div className="w-full h-full flex items-center justify-center">
               <VideoEmbed />
             </div>
-            {/* The following Live Demo chat-card/disclaimer previously here is now moved below for clarity */}
           </div>
         </div>
-        {/* DEMO/Disclaimer below on desktop, below both columns on mobile */}
+        {/* DEMO/Disclaimer below */}
         <div className="flex flex-col lg:flex-row gap-8 mt-6">
           <div className="flex-1" />
           <div className="flex-1 glass-card p-6 rounded-2xl shadow-xl relative overflow-hidden border border-white/10 hover:border-purple-500/30 transition-all duration-500 mt-6">
@@ -119,7 +118,7 @@ const HeroSection = () => {
               </div>
               <div className="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-4 max-w-xs border border-white/10">
                 <p className="text-neutral-300">
-                  Hi, I'm Doctor GPT. What symptoms are you experiencing today? Please provide your age, gender, and relevant medical history.
+                  Hi, I'm <strong className="text-purple-300">Medicus</strong>, your personal AI Doctor. What symptoms are you experiencing today? Please provide your age, gender, and relevant medical history.
                 </p>
               </div>
             </div>
@@ -139,13 +138,13 @@ const HeroSection = () => {
               </div>
               <div className="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-4 max-w-xs border border-white/10">
                 <p className="text-neutral-300">
-                  Based on your symptoms, you might be experiencing...
+                  Based on your symptoms, Medicus is analyzing...
                 </p>
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-neutral-800">
               <div className="flex items-center rounded-full border border-purple-500/30 pl-4 focus-within:ring-2 focus-within:ring-purple-500 focus-within:border-purple-500 backdrop-blur-sm bg-black/20">
-                <input type="text" placeholder="Describe your symptoms..." className="w-full bg-transparent border-none focus:outline-none text-sm py-2 text-neutral-300" onClick={handleChatRedirect} readOnly />
+                <input type="text" placeholder="Ask Medicus about your symptoms..." className="w-full bg-transparent border-none focus:outline-none text-sm py-2 text-neutral-300" onClick={handleChatRedirect} readOnly />
                 <button className="ml-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full p-2 hover:shadow-glow transition-shadow duration-300" onClick={handleChatRedirect}>
                   <ArrowRight className="h-4 w-4" />
                 </button>
@@ -166,7 +165,7 @@ const HeroSection = () => {
 
                 <div className="p-3 bg-purple-950/40 border border-purple-500/30 rounded">
                   <p className="font-bold text-purple-200 mb-2">⚠️ NOT A MEDICAL PROFESSIONAL:</p>
-                  <p className="text-neutral-300">Doctor GPT is NOT a licensed medical professional, doctor, nurse, or healthcare provider. This AI does not provide medical advice, diagnosis, or treatment. All information is for educational and research purposes ONLY.</p>
+                  <p className="text-neutral-300">Medicus (AI Doctor GPT) is NOT a licensed medical professional, doctor, nurse, or healthcare provider. This AI does not provide medical advice, diagnosis, or treatment. All information is for educational and research purposes ONLY.</p>
                 </div>
 
                 <div className="p-3 bg-orange-950/40 border border-orange-500/30 rounded">
@@ -195,7 +194,7 @@ const HeroSection = () => {
                   <ul className="text-neutral-300 space-y-1">
                     <li className="flex items-center">
                       <span className="h-2 w-2 bg-green-400 rounded-full mr-2"></span>
-                      <span><strong>ChatGPT Plus/Pro Users:</strong> Unlimited access to Doctor GPT</span>
+                      <span><strong>ChatGPT Plus/Pro Users:</strong> Unlimited access to Medicus</span>
                     </li>
                     <li className="flex items-center">
                       <span className="h-2 w-2 bg-yellow-400 rounded-full mr-2"></span>

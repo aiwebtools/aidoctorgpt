@@ -56,11 +56,11 @@ const FeaturesSection = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-purple-900/50 text-purple-300 mb-4 backdrop-blur-sm border border-purple-500/20">
             <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-            Why Choose AI Doctor GPT?
+            Why Choose Medicus & AI Web Tools?
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">Powerful Features for Your Health</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Doctor GPT combines advanced AI technology with medical knowledge to provide you with informational health insights.
+            Medicus and our suite of AI tools combine advanced AI technology with medical knowledge to provide you with informational health insights.
           </p>
         </div>
 

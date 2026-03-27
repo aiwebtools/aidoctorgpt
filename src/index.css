@@ -62,9 +62,10 @@
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    /* Prevent zoom on iOS */
+    overflow-y: auto;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    touch-action: pan-y;
   }
 
   body {
@@ -77,10 +78,11 @@
     min-height: 100%;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
-    /* Mobile optimization */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
+    touch-action: pan-y;
   }
 
   /* Enhanced mobile fixes */
@@ -101,6 +103,7 @@
     overflow-x: hidden;
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    position: relative;
   }
 
   h1, h2, h3, h4, h5, h6 {

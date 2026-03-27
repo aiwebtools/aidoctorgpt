@@ -52,7 +52,7 @@ const ConsentDialog = () => {
           <div className="p-4 bg-gradient-to-r from-red-950/60 to-orange-950/60 border border-red-500/50 rounded-lg">
             <p className="text-lg font-bold text-red-200 mb-3">🚨 NOT Medical Advice</p>
             <p className="text-sm text-neutral-200 leading-relaxed mb-3">
-              <strong>AI Doctor GPT and all AI Web Tools are NOT licensed medical professionals.</strong> These AI tools do not provide medical advice, diagnosis, or treatment.
+              <strong>Medicus (AI Doctor GPT) and all AI Web Tools are NOT licensed medical professionals.</strong> These AI tools do not provide medical advice, diagnosis, or treatment.
             </p>
             <p className="text-sm text-neutral-200 leading-relaxed">
               All information provided is for <strong>informational, educational, and exploratory purposes ONLY</strong> and should not replace consultation with qualified healthcare providers.
@@ -62,7 +62,7 @@ const ConsentDialog = () => {
           <div className="p-4 bg-gradient-to-r from-purple-950/40 to-indigo-950/40 border border-purple-500/50 rounded-lg">
             <p className="text-lg font-medium text-purple-200 mb-3">🤖 Our 5 Free AI Tools</p>
             <ul className="space-y-2 text-sm text-white">
-              <li className="flex items-center"><span className="mr-2">👨‍⚕️</span> <strong>AI Doctor GPT</strong> - General health guidance</li>
+              <li className="flex items-center"><span className="mr-2">👨‍⚕️</span> <strong>MEDICUS - AI Doctor GPT</strong> - Your personal AI doctor for general health guidance</li>
               <li className="flex items-center"><span className="mr-2">🦷</span> <strong>AI Dental GPT</strong> - Dental health information</li>
               <li className="flex items-center"><span className="mr-2">🐾</span> <strong>AI Veterinarian GPT</strong> - Pet care guidance</li>
               <li className="flex items-center"><span className="mr-2">🧠</span> <strong>AI Mental Wellness GPT</strong> - Mental health support</li>

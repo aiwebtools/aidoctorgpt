@@ -1,6 +1,6 @@
 
 export const handleChatRedirect = () => {
-  window.open('https://chatgpt.com/g/g-mFtK9rcS6-doctor-gpt', '_blank');
+  window.open('https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt', '_blank');
 };
 
 export const handleVetGPTRedirect = () => {

@@ -12,7 +12,7 @@ const HowItWorksSection = () => {
     {
       number: 2,
       title: "Receive AI-Powered Insights",
-      description: "Doctor GPT analyzes your details and suggests possible causes based on medical knowledge."
+      description: "Medicus analyzes your details and suggests possible causes based on medical knowledge."
     },
     {
       number: 3,
@@ -41,9 +41,9 @@ const HowItWorksSection = () => {
             <span className="flex h-2 w-2 rounded-full bg-cyan-500 mr-2"></span>
             How It Works
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">How Doctor GPT Works</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">How Medicus Works</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Getting started with Doctor GPT is quick and easy. Follow these simple steps to receive informational health insights.
+            Getting started with Medicus, your personal AI Doctor, is quick and easy. Follow these simple steps to receive informational health insights.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const HowItWorksSection = () => {
             ⚠️ CRITICAL MEDICAL DISCLAIMER
           </h3>
           <p className="text-red-200 font-medium">
-            Doctor GPT is NOT a substitute for professional medical advice. This AI tool provides INFORMATIONAL content only. 
+            Medicus (AI Doctor GPT) is NOT a substitute for professional medical advice. This AI tool provides INFORMATIONAL content only. 
             Always consult licensed healthcare professionals for medical decisions.
           </p>
         </div>
@@ -134,7 +134,7 @@ const HowItWorksSection = () => {
           
           <div className="mt-6 p-4 bg-black/50 rounded-lg border border-white/20">
             <p className="text-neutral-300 text-center font-medium">
-              By using Doctor GPT, you acknowledge these disclaimers and agree to seek professional medical care for all health concerns.
+              By using Medicus, you acknowledge these disclaimers and agree to seek professional medical care for all health concerns.
             </p>
           </div>
         </div>
