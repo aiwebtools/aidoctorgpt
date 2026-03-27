@@ -9,6 +9,7 @@ const getCachedAudio = (soundPath: string) => {
   if (!audioCache[soundPath]) {
     const audio = new Audio(soundPath);
     audio.preload = 'auto';
+    audio.volume = 0.95;
     audioCache[soundPath] = audio;
   }
   return audioCache[soundPath];
@@ -20,14 +21,15 @@ const warmupSounds = () => {
 };
 
 if (typeof window !== 'undefined') {
-  window.addEventListener('pointerdown', warmupSounds, { once: true });
+  warmupSounds();
+  window.addEventListener('pointerdown', warmupSounds, { once: true, passive: true });
+  window.addEventListener('touchstart', warmupSounds, { once: true, passive: true });
 }
 
 const playClickSound = (soundPath: string) => {
   try {
-    const cached = getCachedAudio(soundPath);
-    const audio = cached.cloneNode(true) as HTMLAudioElement;
-    audio.volume = 0.9;
+    const audio = getCachedAudio(soundPath);
+    audio.currentTime = 0;
     audio.play().catch(() => {});
   } catch {}
 };
@@ -37,9 +39,7 @@ const openWithSound = (url: string, soundPath: string) => {
   playClickSound(soundPath);
 
   if (popup) {
-    window.setTimeout(() => {
-      popup.location.replace(url);
-    }, 120);
+    popup.location.replace(url);
     return;
   }
 
