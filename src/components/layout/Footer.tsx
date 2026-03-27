@@ -18,17 +18,17 @@ const Footer = () => {
             <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent mb-6 hover-scale">
               AiDoctorGPT
             </h2>
-            <p className="text-neutral-300 mb-6 max-w-xs hover:text-neutral-200 transition-all duration-500 leading-relaxed">
+            <p className="text-white/90 mb-6 max-w-xs hover:text-neutral-200 transition-all duration-500 leading-relaxed">
               Your AI healthcare companion, providing personalized medical consultation 24/7.
             </p>
-            <p className="text-neutral-400 text-sm mb-3 flex items-center">
+            <p className="text-white/80 text-sm mb-3 flex items-center">
               Made with <Heart className="h-4 w-4 text-pink-400 mx-2 animate-pulse-slow" /> for a better world
             </p>
             <a 
               href="https://aiwebtools.lovable.app/?via=aiwebtools" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-neutral-400 text-sm hover:bg-gradient-to-r hover:from-purple-400 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block mb-6 hover-scale"
+              className="text-white/80 text-sm hover:bg-gradient-to-r hover:from-purple-400 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block mb-6 hover-scale"
             >
               Presented by AiWebTools.Ai
             </a>
@@ -41,17 +41,17 @@ const Footer = () => {
             </div>
             
             <div className="flex space-x-6">
-              <a href="#" className="text-neutral-400 hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 hover-scale">
+              <a href="#" className="text-white/80 hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 hover-scale">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
-              <a href="#" className="text-neutral-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 hover-scale">
+              <a href="#" className="text-white/80 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 hover-scale">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                 </svg>
               </a>
-              <a href="#" className="text-neutral-400 hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 hover-scale">
+              <a href="#" className="text-white/80 hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 hover-scale">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -145,12 +145,12 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">Contact</h3>
             <ul className="space-y-4">
-              <li className="text-neutral-300">
-                <span className="block mb-2 text-neutral-400">Email:</span>
+              <li className="text-white/90">
+                <span className="block mb-2 text-white/80">Email:</span>
                 <a href="mailto:Contact@ai-webtools.com" className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:to-purple-400 transition-all duration-500 interactive-link inline-block hover-scale">Contact@ai-webtools.com</a>
               </li>
-              <li className="text-neutral-300">
-                <span className="block mb-2 text-neutral-400">Support:</span>
+              <li className="text-white/90">
+                <span className="block mb-2 text-white/80">Support:</span>
                 <a href="tel:4758008096" className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-purple-400 hover:to-pink-400 transition-all duration-500 hover-scale inline-flex items-center group">
                   <Phone className="h-5 w-5 mr-2 text-purple-400 group-hover:text-pink-400 transition-colors duration-500" /> (475) 800-8096
                 </a>
@@ -160,10 +160,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gradient-to-r from-purple-500/20 via-cyan-500/20 to-purple-500/20 pt-12 text-center">
-          <p className="text-neutral-300 text-base mb-4">
+          <p className="text-white/90 text-base mb-4">
             © {currentYear} <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:to-purple-400 transition-all duration-500">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
-          <p className="text-neutral-400 text-sm flex items-center justify-center">
+          <p className="text-white/80 text-sm flex items-center justify-center">
             Made with <Heart className="h-4 w-4 text-pink-400 mx-2 animate-pulse-slow" /> for a better world
           </p>
         </div>

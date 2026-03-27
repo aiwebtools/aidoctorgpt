@@ -50,7 +50,7 @@ const FeatureCard = ({
         {title}
       </h3>
       
-      <p className="text-neutral-400 flex-grow group-hover:text-neutral-300 transition-colors duration-300">
+      <p className="text-white/80 flex-grow group-hover:text-white/90 transition-colors duration-300">
         {description}
       </p>
       

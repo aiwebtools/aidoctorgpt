@@ -128,61 +128,61 @@ const Index = () => {
               <div className="p-6 bg-gradient-to-br from-purple-900/50 via-pink-900/40 to-purple-900/50 rounded-xl border border-purple-400/40 backdrop-blur-lg hover:border-purple-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">👨‍⚕️</div>
                     <h3 className="text-xl font-bold text-purple-200 mb-2">MEDICUS - AI Doctor GPT</h3>
-                    <p className="text-neutral-300 text-sm">Meet Medicus — your personal AI doctor for health guidance, symptoms analysis & medical information</p>
+                    <p className="text-white/90 text-sm">Meet Medicus — your personal AI doctor for health guidance, symptoms analysis & medical information</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-blue-900/50 via-cyan-900/40 to-blue-900/50 rounded-xl border border-cyan-400/40 backdrop-blur-lg hover:border-cyan-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🦷</div>
                     <h3 className="text-xl font-bold text-cyan-200 mb-2">AI Dental GPT</h3>
-                    <p className="text-neutral-300 text-sm">Dental care guidance, oral health tips & teeth concerns</p>
+                    <p className="text-white/90 text-sm">Dental care guidance, oral health tips & teeth concerns</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-green-900/50 via-emerald-900/40 to-green-900/50 rounded-xl border border-emerald-400/40 backdrop-blur-lg hover:border-emerald-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🐾</div>
                     <h3 className="text-xl font-bold text-emerald-200 mb-2">AI Vet GPT</h3>
-                    <p className="text-neutral-300 text-sm">Pet health guidance, animal care tips & veterinary information</p>
+                    <p className="text-white/90 text-sm">Pet health guidance, animal care tips & veterinary information</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-indigo-900/50 via-purple-900/40 to-indigo-900/50 rounded-xl border border-indigo-400/40 backdrop-blur-lg hover:border-indigo-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🧠</div>
                     <h3 className="text-xl font-bold text-indigo-200 mb-2">AI Mental Wellness GPT</h3>
-                    <p className="text-neutral-300 text-sm">Mental health support, stress management & wellness guidance</p>
+                    <p className="text-white/90 text-sm">Mental health support, stress management & wellness guidance</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-amber-900/50 via-orange-900/40 to-amber-900/50 rounded-xl border border-amber-400/40 backdrop-blur-lg hover:border-amber-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">⚗️</div>
                     <h3 className="text-xl font-bold text-amber-200 mb-2">AI Apothecary GPT</h3>
-                    <p className="text-neutral-300 text-sm">Lost homeopathic remedies & at-home medication formulations</p>
+                    <p className="text-white/90 text-sm">Lost homeopathic remedies & at-home medication formulations</p>
                   </div>
                 </div>
               </div>
               
               <div className="text-center mb-8">
-                <p className="text-neutral-300 text-lg mb-6">Platform Statistics</p>
+                <p className="text-white/90 text-lg mb-6">Platform Statistics</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                   <div className="p-6 bg-gradient-to-br from-purple-900/40 via-indigo-900/30 to-purple-900/40 rounded-2xl border border-purple-400/30 backdrop-blur-lg hover:border-purple-300/50 transition-all duration-500 hover:scale-105">
                     <Shield className="h-12 w-12 text-purple-400 mb-4 mx-auto" />
                     <h3 className="text-xl font-bold text-purple-200 mb-2">75,000+</h3>
-                    <p className="text-neutral-300">Active AI Tool Users</p>
+                    <p className="text-white/90">Active AI Tool Users</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-cyan-900/40 via-blue-900/30 to-cyan-900/40 rounded-2xl border border-cyan-400/30 backdrop-blur-lg hover:border-cyan-300/50 transition-all duration-500 hover:scale-105">
                     <Zap className="h-12 w-12 text-cyan-400 mb-4 mx-auto" />
                     <h3 className="text-xl font-bold text-cyan-200 mb-2">4.8/5</h3>
-                    <p className="text-neutral-300">User Satisfaction Rating</p>
+                    <p className="text-white/90">User Satisfaction Rating</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-pink-900/40 via-purple-900/30 to-pink-900/40 rounded-2xl border border-pink-400/30 backdrop-blur-lg hover:border-pink-300/50 transition-all duration-500 hover:scale-105">
                     <Globe className="h-12 w-12 text-pink-400 mb-4 mx-auto" />
                     <h3 className="text-xl font-bold text-pink-200 mb-2">24/7</h3>
-                    <p className="text-neutral-300">AI Availability</p>
+                    <p className="text-white/90">AI Availability</p>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-green-900/40 via-emerald-900/30 to-green-900/40 rounded-2xl border border-green-400/30 backdrop-blur-lg hover:border-green-300/50 transition-all duration-500 hover:scale-105">
                     <Heart className="h-12 w-12 text-green-400 mb-4 mx-auto" />
                     <h3 className="text-xl font-bold text-green-200 mb-2">100%</h3>
-                    <p className="text-neutral-300">Free AI Access</p>
+                    <p className="text-white/90">Free AI Access</p>
                   </div>
                 </div>
               </div>
@@ -223,10 +223,10 @@ const Index = () => {
                     <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white leading-tight">
                       Emergency Antibiotics & Medical Kits <span className="text-red-400">— No Prescription Required</span>
                     </h2>
-                    <p className="text-neutral-300 mb-4 leading-relaxed">
+                    <p className="text-white/90 mb-4 leading-relaxed">
                       <strong className="text-red-200">Ozio Medical</strong> is an official member of the <strong>American Telehealth Association (ATA)</strong> and certified by <strong>LegitScript</strong> for safety, legality, and compliance. Get doctor-verified emergency antibiotics, medical kits, and standalone medications shipped directly to you.
                     </p>
-                    <ul className="text-neutral-300 text-sm space-y-2 mb-6">
+                    <ul className="text-white/90 text-sm space-y-2 mb-6">
                       <li className="flex items-center justify-center md:justify-start">
                         <span className="h-2 w-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
                         ATA Certified — American Telehealth Association Member
@@ -253,7 +253,7 @@ const Index = () => {
                     >
                       💊 Get Emergency Antibiotics — Ozio Medical
                     </AnimatedButton>
-                    <p className="text-neutral-500 text-xs mt-3">
+                    <p className="text-white/70 text-xs mt-3">
                       Ozio Medical is a third-party service. AI Web Tools LLC is not affiliated with Ozio Medical.
                     </p>
                   </div>
@@ -311,16 +311,16 @@ const Index = () => {
                 <div id="main-disclaimer" className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-black/50 via-gray-900/40 to-black/50 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-purple-500/10">
                   <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">⚠️ Important Medical Disclaimer</h3>
                   <div className="text-left space-y-6">
-                    <p className="text-neutral-300 leading-relaxed text-lg">
+                    <p className="text-white/90 leading-relaxed text-lg">
                       <strong>Medicus (AI Doctor GPT) is NOT a licensed medical professional.</strong> This AI health assistant provides information for educational purposes only and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment from qualified healthcare providers.
                     </p>
-                    <p className="text-neutral-300 leading-relaxed text-lg">
+                    <p className="text-white/90 leading-relaxed text-lg">
                       <strong>For medical emergencies:</strong> Call 911 (US), 999 (UK), or your local emergency services immediately. Do not use this AI tool for emergency situations.
                     </p>
-                    <p className="text-neutral-300 leading-relaxed text-lg">
+                    <p className="text-white/90 leading-relaxed text-lg">
                       <strong>Always consult healthcare professionals:</strong> If you are experiencing persistent, severe, or worsening symptoms, consult a licensed doctor, physician, or qualified medical professional immediately.
                     </p>
-                    <p className="text-neutral-300 leading-relaxed text-lg">
+                    <p className="text-white/90 leading-relaxed text-lg">
                       By using Medicus (AI Doctor GPT), you acknowledge that all recommendations are general guidance and that you should always seek qualified medical attention for health concerns.
                     </p>
                   </div>
@@ -328,7 +328,7 @@ const Index = () => {
                   {/* SEO-optimized pricing information */}
                   <div className="mt-8 p-6 bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-purple-900/40 rounded-xl border border-purple-400/30 backdrop-blur-sm">
                     <h4 className="font-medium text-purple-200 mb-4 text-xl">Free AI Health Assistant - Access Information:</h4>
-                    <ul className="text-neutral-300 space-y-3 text-lg">
+                    <ul className="text-white/90 space-y-3 text-lg">
                       <li className="flex items-center">
                         <span className="h-3 w-3 bg-green-400 rounded-full mr-4"></span>
                         <span><strong>Unlimited free access</strong> with ChatGPT Plus or Pro subscription</span>
@@ -345,8 +345,8 @@ const Index = () => {
                 <div className="mt-12 p-6 bg-gradient-to-r from-gray-900/50 via-slate-900/40 to-gray-900/50 rounded-2xl backdrop-blur-lg border border-white/10">
                   <h3 className="text-neutral-200 mb-4 font-semibold text-xl">📞 Contact AI Web Tools LLC</h3>
                   <address className="not-italic">
-                    <p className="text-neutral-300 mb-2 text-lg">📧 Email: <a href="mailto:Contact@ai-webtools.com" className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:to-purple-400 transition-all duration-500">Contact@ai-webtools.com</a></p>
-                    <p className="text-neutral-300 text-lg">☎ Support: <a href="tel:+14758008096" className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-purple-400 hover:to-pink-400 transition-all duration-500">(475) 800-8096</a></p>
+                    <p className="text-white/90 mb-2 text-lg">📧 Email: <a href="mailto:Contact@ai-webtools.com" className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:to-purple-400 transition-all duration-500">Contact@ai-webtools.com</a></p>
+                    <p className="text-white/90 text-lg">☎ Support: <a href="tel:+14758008096" className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:from-purple-400 hover:to-pink-400 transition-all duration-500">(475) 800-8096</a></p>
                   </address>
                 </div>
               </div>

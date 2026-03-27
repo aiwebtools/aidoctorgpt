@@ -12,11 +12,11 @@ interface MobileMenuProps {
 const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
   return (
     <div 
-      className={`fixed inset-0 z-[9999] bg-background transition-opacity duration-200 ease-out lg:hidden ${
+      className={`fixed inset-0 z-[9999] transition-opacity duration-200 ease-out lg:hidden ${
         isMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
       }`}
       aria-hidden={!isMenuOpen}
-      style={{ backgroundColor: '#0a0a1a' }}
+      style={{ backgroundColor: '#0a0a1a', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
     >
       {/* Close button */}
       <div className="absolute top-4 right-4 z-[10000]">
@@ -32,7 +32,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         <div className="mb-4 text-center">
           <p className="text-sm text-purple-300 font-semibold mb-1">Personal Healthcare AI Tools Suite</p>
           <h2 className="text-2xl font-bold text-white mb-2">AI Web Tools</h2>
-          <p className="text-neutral-400 text-sm">5 Free AI Health Tools</p>
+          <p className="text-white/80 text-sm">5 Free AI Health Tools</p>
         </div>
 
         <div className="w-full max-w-sm space-y-3">
@@ -150,14 +150,14 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
 
           <a 
             href="#how-it-works" 
-            className="block text-center text-neutral-300 hover:text-purple-400 transition-colors text-base font-medium py-3"
+            className="block text-center text-white/90 hover:text-purple-400 transition-colors text-base font-medium py-3"
             onClick={toggleMenu}
           >
             📖 How It Works
           </a>
         </div>
 
-        <p className="text-neutral-500 text-xs flex items-center mt-8">
+        <p className="text-white/70 text-xs flex items-center mt-8">
           Made with <Heart className="h-3 w-3 text-pink-500 mx-1" /> for better and free healthcare
         </p>
       </nav>
