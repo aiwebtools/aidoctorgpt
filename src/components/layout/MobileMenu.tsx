@@ -16,6 +16,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         isMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
       }`}
       aria-hidden={!isMenuOpen}
+      style={{ backgroundColor: '#0a0a1a' }}
     >
       {/* Close button */}
       <div className="absolute top-4 right-4 z-[10000]">
