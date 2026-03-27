@@ -12,10 +12,10 @@ interface MobileMenuProps {
 const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
   return (
     <div 
-      className={`fixed inset-0 z-[9999] transform transition-transform duration-300 ease-in-out ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      } lg:hidden`}
-      style={{ backgroundColor: '#0a0a1a' }}
+      className={`fixed inset-0 z-[9999] bg-background transition-opacity duration-200 ease-out lg:hidden ${
+        isMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
+      }`}
+      aria-hidden={!isMenuOpen}
     >
       {/* Close button */}
       <div className="absolute top-4 right-4 z-[10000]">
