@@ -1,11 +1,11 @@
 
 import React from 'react';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect, openWithGeneralSound } from './headerUtils';
 
 const NavigationMenu = () => {
   const handleDownloadPrompt = () => {
-    window.open('https://docs.google.com/document/d/e/2PACX-1vSoix5D-3HfYurJZdgqjQ7n2y6UuwRlB_HqtA1yDfgkQ6Wk6djLrVDwjD-hIBSlnNHkBCWgeF2rmXlK/pub', '_blank');
+    openWithGeneralSound('https://docs.google.com/document/d/e/2PACX-1vSoix5D-3HfYurJZdgqjQ7n2y6UuwRlB_HqtA1yDfgkQ6Wk6djLrVDwjD-hIBSlnNHkBCWgeF2rmXlK/pub');
   };
 
   return (

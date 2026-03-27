@@ -6,7 +6,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
-import { handleChatRedirect } from '@/components/layout/headerUtils';
+import { handleAntibioticsRedirect, handleChatRedirect, openWithGeneralSound, openWithMedicusSound } from '@/components/layout/headerUtils';
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
 import ozioKitImage from '@/assets/ozio-emergency-kit.jpg';
@@ -53,20 +53,10 @@ const Index = () => {
 
       e.preventDefault();
       const href = anchor.href;
-      const isMedicus = href.includes(MEDICUS_MATCH);
-      const popup = window.open('', '_blank', 'noopener,noreferrer');
-
-      try {
-        const audio = new Audio(isMedicus ? '/sounds/medicus-click.mp3' : '/sounds/general-click.mp3');
-        audio.volume = 0.7;
-        audio.preload = 'auto';
-        audio.play().catch(() => {});
-      } catch {}
-
-      if (popup) {
-        popup.location.href = href;
+      if (href.includes(MEDICUS_MATCH)) {
+        openWithMedicusSound(href);
       } else {
-        window.open(href, '_blank', 'noopener,noreferrer');
+        openWithGeneralSound(href);
       }
     };
 
@@ -270,7 +260,7 @@ const Index = () => {
                     <AnimatedButton 
                       variant="primary" 
                       size="lg"
-                      onClick={() => window.open('https://ozio.com', '_blank')}
+                      onClick={handleAntibioticsRedirect}
                       className="bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-2xl hover:shadow-red-500/30 text-lg px-8 py-3"
                       icon={<ArrowRight className="ml-2" />}
                     >

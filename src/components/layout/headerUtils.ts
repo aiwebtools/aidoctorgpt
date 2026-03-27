@@ -3,11 +3,31 @@ const MEDICUS_URL = 'https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-me
 const MEDICUS_SOUND = '/sounds/medicus-click.mp3';
 const GENERAL_SOUND = '/sounds/general-click.mp3';
 
+const audioCache: Record<string, HTMLAudioElement> = {};
+
+const getCachedAudio = (soundPath: string) => {
+  if (!audioCache[soundPath]) {
+    const audio = new Audio(soundPath);
+    audio.preload = 'auto';
+    audioCache[soundPath] = audio;
+  }
+  return audioCache[soundPath];
+};
+
+const warmupSounds = () => {
+  getCachedAudio(MEDICUS_SOUND).load();
+  getCachedAudio(GENERAL_SOUND).load();
+};
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('pointerdown', warmupSounds, { once: true });
+}
+
 const playClickSound = (soundPath: string) => {
   try {
-    const audio = new Audio(soundPath);
-    audio.volume = 0.7;
-    audio.preload = 'auto';
+    const cached = getCachedAudio(soundPath);
+    const audio = cached.cloneNode(true) as HTMLAudioElement;
+    audio.volume = 0.9;
     audio.play().catch(() => {});
   } catch {}
 };
@@ -17,7 +37,9 @@ const openWithSound = (url: string, soundPath: string) => {
   playClickSound(soundPath);
 
   if (popup) {
-    popup.location.href = url;
+    window.setTimeout(() => {
+      popup.location.replace(url);
+    }, 120);
     return;
   }
 
@@ -26,6 +48,9 @@ const openWithSound = (url: string, soundPath: string) => {
 
 export const playMedicusSound = () => playClickSound(MEDICUS_SOUND);
 export const playGeneralSound = () => playClickSound(GENERAL_SOUND);
+
+export const openWithMedicusSound = (url: string) => openWithSound(url, MEDICUS_SOUND);
+export const openWithGeneralSound = (url: string) => openWithSound(url, GENERAL_SOUND);
 
 export const handleChatRedirect = () => {
   openWithSound(MEDICUS_URL, MEDICUS_SOUND);
