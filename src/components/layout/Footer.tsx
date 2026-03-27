@@ -6,24 +6,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-b from-black/60 via-purple-950/40 to-indigo-950/60 backdrop-blur-xl pt-20 pb-12 relative overflow-hidden">
-      {/* Divine Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated gradient orbs */}
-        <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 blur-3xl animate-float opacity-70"></div>
-        <div className="absolute bottom-20 right-1/3 w-80 h-80 rounded-full bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 blur-3xl animate-float opacity-60" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full bg-gradient-to-r from-cyan-500/15 via-blue-500/15 to-purple-500/15 blur-3xl animate-float opacity-50" style={{ animationDelay: '4s', animationDuration: '12s' }}></div>
-        
-        {/* Shimmering particles */}
-        <div className="absolute top-16 left-[15%] w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-float opacity-80" style={{ animationDuration: '4s' }}></div>
-        <div className="absolute top-32 right-[20%] w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 animate-float opacity-70" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 left-[60%] w-4 h-4 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 animate-float opacity-60" style={{ animationDuration: '5s', animationDelay: '2.5s' }}></div>
-        <div className="absolute top-24 left-[70%] w-2 h-2 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 animate-float opacity-75" style={{ animationDuration: '7s', animationDelay: '0.5s' }}></div>
-        
-        {/* Glistening light rays */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-purple-500/5 to-transparent animate-pulse-slow"></div>
-        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-cyan-500/5 to-transparent animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Divine border effects */}
+      {/* Background Effects - lightweight */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/60 to-transparent shadow-lg shadow-purple-500/20"></div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent shadow-lg shadow-cyan-500/20"></div>
       </div>

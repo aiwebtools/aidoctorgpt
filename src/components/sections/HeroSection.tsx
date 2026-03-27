@@ -10,31 +10,11 @@ const HeroSection = () => {
   const handleMoreAIToolsRedirect = () => {
     window.open('https://aiwebtools.lovable.app/?via=aiwebtools', '_blank');
   };
-  return <div className="relative overflow-hidden pt-20 sm:pt-28 pb-16 sm:pb-24">
+  return <div className="relative pt-20 sm:pt-28 pb-16 sm:pb-24">
       {/* Background effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(139,92,246,0.15),_transparent_70%)]"></div>
-        <div className="absolute top-1/3 right-0 w-96 h-96 rounded-full bg-pink-500/10 blur-3xl animate-float"></div>
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl" style={{
-        animationDelay: '1.5s',
-        animationDuration: '7s'
-      }}></div>
-        
-        {/* Animated particles */}
-        <div className="absolute top-20 left-[20%] w-2 h-2 rounded-full bg-purple-500/70 animate-float" style={{
-        animationDuration: '3s'
-      }}></div>
-        <div className="absolute top-40 left-[70%] w-2 h-2 rounded-full bg-cyan-400/70 animate-float" style={{
-        animationDuration: '5s',
-        animationDelay: '1s'
-      }}></div>
-        <div className="absolute top-60 left-[30%] w-3 h-3 rounded-full bg-pink-500/70 animate-float" style={{
-        animationDuration: '4s',
-        animationDelay: '0.5s'
-      }}></div>
-        
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+        <div className="hidden md:block absolute top-1/3 right-0 w-96 h-96 rounded-full bg-pink-500/10 blur-3xl animate-float"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
