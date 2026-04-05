@@ -22,7 +22,7 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-5 text-balance leading-tight">
-              <span className="text-gradient">MEDICUS</span> - Your Personal AI Doctor GPT & Free Healthcare Tools
+              <span className="text-gradient">Doctor GPT</span> — Free AI Doctor, Medical GPT & Health GPT by <span className="text-gradient">Medicus</span>
             </h1>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
