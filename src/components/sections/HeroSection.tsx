@@ -22,7 +22,7 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-5 text-balance leading-tight">
-              <span className="text-gradient">MEDICUS</span> - Your Personal AI Doctor GPT & Free Healthcare Tools
+              <span className="text-gradient">Doctor GPT</span> — Free AI Doctor, Medical GPT & Health GPT by <span className="text-gradient">Medicus</span>
             </h1>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -34,7 +34,7 @@ const HeroSection = () => {
               </AnimatedButton>
             </div>
             
-            <p className="text-base sm:text-lg text-white/80 mb-5 max-w-2xl">Meet <strong className="text-purple-300">Medicus</strong>, your personal AI Doctor GPT — powered by advanced artificial intelligence. Get instant medical guidance, symptom analysis, and healthcare insights 24/7. Part of our comprehensive free AI tools platform serving 75,000+ users worldwide. 100% FREE</p>
+            <p className="text-base sm:text-lg text-white/80 mb-5 max-w-2xl">Meet <strong className="text-purple-300">Medicus</strong> — the best <strong>Doctor GPT</strong>, <strong>Medical GPT</strong> & <strong>Health GPT</strong> available online for free. Get instant AI doctor consultations, symptom analysis, and healthcare insights 24/7. Trusted by 75,000+ users worldwide. 100% FREE</p>
 
             {/* Compact Disclaimer */}
             <div className="mb-6 p-4 bg-red-950/30 border border-red-500/40 rounded-lg backdrop-blur-sm">
