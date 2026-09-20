@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aidoctorgpt.com/sitemap.xml
+Sitemap: https://aidoctorgpt.lovable.app/sitemap.xml
