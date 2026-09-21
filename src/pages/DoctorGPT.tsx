@@ -42,6 +42,7 @@ const SUGGESTIONS = [
   'What can I do for a persistent tension headache?',
   'Natural and pharmaceutical options for acid reflux',
   'Can you look at this rash? (attach a photo)',
+  'Please review my lab results (attach a PDF or photo)',
 ];
 
 const loadStoredMessages = (): UIMessage[] => {
@@ -249,6 +250,17 @@ const DoctorGPT = () => {
                             alt={part.filename ?? 'Uploaded image'}
                             className="max-h-64 rounded-lg border border-white/10"
                           />
+                        );
+                      }
+                      if (part.type === 'file') {
+                        return (
+                          <span
+                            key={index}
+                            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-black/40 px-3 py-2 text-xs text-white"
+                          >
+                            <Paperclip className="h-3.5 w-3.5" />
+                            {part.filename ?? 'Attached file'}
+                          </span>
                         );
                       }
                       return null;
