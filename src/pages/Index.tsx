@@ -124,6 +124,23 @@ const Index = () => {
         <main className="flex-grow">
           {/* H1 is in HeroSection for SEO */}
           <HeroSection />
+
+          {/* On-site search */}
+          <section className="py-10 relative z-20" aria-label="Search this site">
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-3xl">
+              <h2 className="text-center text-2xl font-bold text-white mb-4">Search the Medicus health library</h2>
+              <SearchBox />
+              <p className="text-center text-sm text-white/85 mt-4">
+                Or browse everything in the{' '}
+                <Link to="/library" className="underline font-semibold">
+                  Health Library &amp; AI Tool guides
+                </Link>
+                .
+              </p>
+            </div>
+          </section>
+
+          
           
           
           {/* SEO-optimized AI Tools Section */}

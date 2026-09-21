@@ -67,6 +67,18 @@ const Footer = () => {
             <h3 className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
+                <Link to="/library"
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-400/30 text-cyan-100 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-500 hover:scale-105 font-medium">
+                  Health Library &amp; AI Tool Guides
+                </Link>
+              </li>
+              <li>
+                <Link to="/search"
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-400/30 text-cyan-100 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-500 hover:scale-105 font-medium">
+                  Search This Site
+                </Link>
+              </li>
+              <li>
                 <Link to="/doctor-gpt"
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600/30 to-teal-600/30 border border-emerald-400/30 text-emerald-100 hover:from-emerald-500/40 hover:to-teal-500/40 transition-all duration-500 hover:scale-105 font-medium">
                   Doctor GPT (INSITE version)
