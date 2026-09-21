@@ -1,10 +1,16 @@
 import React from 'react';
-import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle, Stethoscope } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 import VideoEmbed from '../VideoEmbed';
-import { handleChatRedirect, handleMoreAIToolsRedirect } from '../layout/headerUtils';
+import { handleChatRedirect, handleMoreAIToolsRedirect, playGeneralSound } from '../layout/headerUtils';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const openOnSiteDoctor = () => {
+    playGeneralSound();
+    navigate('/doctor-gpt');
+  };
   return <div className="relative pt-20 sm:pt-28 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
