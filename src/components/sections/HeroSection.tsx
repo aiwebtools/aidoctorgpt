@@ -1,10 +1,16 @@
 import React from 'react';
-import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight, Heart, Shield, Star, Users, FileText, AlertTriangle, Stethoscope } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 import VideoEmbed from '../VideoEmbed';
-import { handleChatRedirect, handleMoreAIToolsRedirect } from '../layout/headerUtils';
+import { handleChatRedirect, handleMoreAIToolsRedirect, playGeneralSound } from '../layout/headerUtils';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const openOnSiteDoctor = () => {
+    playGeneralSound();
+    navigate('/doctor-gpt');
+  };
   return <div className="relative pt-20 sm:pt-28 pb-16 sm:pb-24">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -26,6 +32,9 @@ const HeroSection = () => {
             </h1>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <AnimatedButton variant="primary" size="lg" icon={<Stethoscope className="ml-1" />} onClick={openOnSiteDoctor} className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none hover:shadow-glow btn-glow">
+                Chat with Doctor GPT Here - Free
+              </AnimatedButton>
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
                 Talk to Medicus - Free
               </AnimatedButton>

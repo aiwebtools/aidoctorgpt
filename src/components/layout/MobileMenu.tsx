@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { Heart, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect, playGeneralSound } from './headerUtils';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -10,6 +11,14 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
+  const navigate = useNavigate();
+
+  const openOnSiteDoctor = () => {
+    toggleMenu();
+    playGeneralSound();
+    navigate('/doctor-gpt');
+  };
+
   return (
     <div 
       className={`fixed inset-0 z-[9999] transition-opacity duration-200 ease-out lg:hidden ${
@@ -36,6 +45,15 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         </div>
 
         <div className="w-full max-w-sm space-y-3">
+          <AnimatedButton
+            variant="primary"
+            size="lg"
+            onClick={openOnSiteDoctor}
+            className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none py-4 text-base font-semibold"
+          >
+            🩺 Doctor GPT — Chat Here Now
+          </AnimatedButton>
+
           <AnimatedButton 
             variant="primary" 
             size="lg"
