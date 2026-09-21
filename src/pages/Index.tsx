@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Seo from '@/components/Seo';
+import SearchBox from '@/components/SearchBox';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
@@ -118,12 +120,35 @@ const Index = () => {
 
       {/* SEO-optimized page structure */}
       <div className="relative z-10">
+        <Seo
+          title="Doctor GPT | Medical GPT | Health GPT — Free AI Doctor by Medicus"
+          description="Doctor GPT powered by Medicus — the free Medical GPT & Health GPT. 24/7 AI doctor for symptom analysis, lab result explanations, health guidance and medical information."
+          path="/"
+          keywords={['doctor gpt', 'medical gpt', 'health gpt', 'ai doctor', 'free ai doctor', 'symptom checker']}
+        />
         <Header />
         <ConsentDialog />
         
         <main className="flex-grow">
           {/* H1 is in HeroSection for SEO */}
           <HeroSection />
+
+          {/* On-site search */}
+          <section className="py-10 relative z-20" aria-label="Search this site">
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-3xl">
+              <h2 className="text-center text-2xl font-bold text-white mb-4">Search the Medicus health library</h2>
+              <SearchBox />
+              <p className="text-center text-sm text-white/85 mt-4">
+                Or browse everything in the{' '}
+                <Link to="/library" className="underline font-semibold">
+                  Health Library &amp; AI Tool guides
+                </Link>
+                .
+              </p>
+            </div>
+          </section>
+
+          
           
           
           {/* SEO-optimized AI Tools Section */}

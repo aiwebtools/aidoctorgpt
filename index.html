@@ -19,8 +19,7 @@
     <meta name="geo.region" content="US" />
     <meta name="geo.country" content="US" />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://aidoctorgpt.lovable.app/" />
+    <!-- Canonical URL is set per page at runtime (see src/components/Seo.tsx) -->
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -56,6 +55,25 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
     
+    <!-- Site search box in Google results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Medicus — Personal Healthcare AI Tools Suite",
+      "alternateName": ["Doctor GPT", "Medical GPT", "Health GPT"],
+      "url": "https://aidoctorgpt.lovable.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://aidoctorgpt.lovable.app/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
