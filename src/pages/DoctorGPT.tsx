@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage, type FileUIPart } from 'ai';
-import { ArrowLeft, Stethoscope, Trash2, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Stethoscope, Trash2, AlertTriangle, Paperclip } from 'lucide-react';
 import {
   Conversation,
   ConversationContent,
@@ -42,6 +42,7 @@ const SUGGESTIONS = [
   'What can I do for a persistent tension headache?',
   'Natural and pharmaceutical options for acid reflux',
   'Can you look at this rash? (attach a photo)',
+  'Please review my lab results (attach a PDF or photo)',
 ];
 
 const loadStoredMessages = (): UIMessage[] => {
@@ -150,7 +151,7 @@ const DoctorGPT = () => {
       const text = message.text?.trim() ?? '';
       if (!text && message.files.length === 0) return;
       if (isBusy) return;
-      void send(text || 'Please review the attached image.', message.files);
+      void send(text || 'Please analyze the attached file(s) and tell me what you see.', message.files);
     },
     [isBusy, send]
   );
@@ -216,7 +217,8 @@ const DoctorGPT = () => {
                 </h1>
                 <p className="text-white/80 max-w-lg mx-auto mb-6">
                   Describe your symptoms — include your age, sex, height, weight, and any
-                  pre-existing conditions. You can also attach a photo of an injury or rash.
+                   pre-existing conditions. You can also attach photos of an injury or rash, or
+                   upload documents like lab results, test reports, or prescriptions (PDF) for analysis.
                 </p>
                 <div className="grid gap-2 sm:grid-cols-2 max-w-xl mx-auto">
                   {SUGGESTIONS.map((suggestion) => (
@@ -249,6 +251,17 @@ const DoctorGPT = () => {
                             alt={part.filename ?? 'Uploaded image'}
                             className="max-h-64 rounded-lg border border-white/10"
                           />
+                        );
+                      }
+                      if (part.type === 'file') {
+                        return (
+                          <span
+                            key={index}
+                            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-black/40 px-3 py-2 text-xs text-white"
+                          >
+                            <Paperclip className="h-3.5 w-3.5" />
+                            {part.filename ?? 'Attached file'}
+                          </span>
                         );
                       }
                       return null;
@@ -288,10 +301,10 @@ const DoctorGPT = () => {
         <div className="pt-3 pb-6">
           <PromptInput
             onSubmit={handleSubmit}
-            accept="image/*"
+            accept="image/*,application/pdf"
             multiple
-            maxFiles={4}
-            maxFileSize={10 * 1024 * 1024}
+            maxFiles={6}
+            maxFileSize={20 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
             <PromptInputTextarea placeholder="Describe your symptoms, age, sex, and medical history..." />
@@ -300,7 +313,7 @@ const DoctorGPT = () => {
                 <PromptInputActionMenu>
                   <PromptInputActionMenuTrigger />
                   <PromptInputActionMenuContent>
-                    <PromptInputActionAddAttachments label="Add a photo" />
+                    <PromptInputActionAddAttachments label="Add photos or documents (PDF)" />
                   </PromptInputActionMenuContent>
                 </PromptInputActionMenu>
               </PromptInputTools>
