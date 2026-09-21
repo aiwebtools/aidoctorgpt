@@ -217,7 +217,8 @@ const DoctorGPT = () => {
                 </h1>
                 <p className="text-white/80 max-w-lg mx-auto mb-6">
                   Describe your symptoms — include your age, sex, height, weight, and any
-                  pre-existing conditions. You can also attach a photo of an injury or rash.
+                   pre-existing conditions. You can also attach photos of an injury or rash, or
+                   upload documents like lab results, test reports, or prescriptions (PDF) for analysis.
                 </p>
                 <div className="grid gap-2 sm:grid-cols-2 max-w-xl mx-auto">
                   {SUGGESTIONS.map((suggestion) => (
@@ -300,10 +301,10 @@ const DoctorGPT = () => {
         <div className="pt-3 pb-6">
           <PromptInput
             onSubmit={handleSubmit}
-            accept="image/*"
+            accept="image/*,application/pdf"
             multiple
-            maxFiles={4}
-            maxFileSize={10 * 1024 * 1024}
+            maxFiles={6}
+            maxFileSize={20 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
             <PromptInputTextarea placeholder="Describe your symptoms, age, sex, and medical history..." />
@@ -312,7 +313,7 @@ const DoctorGPT = () => {
                 <PromptInputActionMenu>
                   <PromptInputActionMenuTrigger />
                   <PromptInputActionMenuContent>
-                    <PromptInputActionAddAttachments label="Add a photo" />
+                    <PromptInputActionAddAttachments label="Add photos or documents (PDF)" />
                   </PromptInputActionMenuContent>
                 </PromptInputActionMenu>
               </PromptInputTools>
