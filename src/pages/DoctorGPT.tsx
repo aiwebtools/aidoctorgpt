@@ -151,7 +151,7 @@ const DoctorGPT = () => {
       const text = message.text?.trim() ?? '';
       if (!text && message.files.length === 0) return;
       if (isBusy) return;
-      void send(text || 'Please review the attached image.', message.files);
+      void send(text || 'Please analyze the attached file(s) and tell me what you see.', message.files);
     },
     [isBusy, send]
   );
