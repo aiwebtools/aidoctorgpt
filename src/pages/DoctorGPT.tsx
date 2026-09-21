@@ -89,7 +89,12 @@ const DoctorGPT = () => {
   }, [messages]);
 
   const focusInput = useCallback(() => {
-    requestAnimationFrame(() => textareaRef.current?.focus());
+    requestAnimationFrame(() => {
+      const el = document.querySelector<HTMLTextAreaElement>(
+        'form textarea'
+      );
+      el?.focus();
+    });
   }, []);
 
   useEffect(() => {
