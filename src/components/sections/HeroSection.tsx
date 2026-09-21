@@ -33,13 +33,13 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <AnimatedButton variant="primary" size="lg" icon={<Stethoscope className="ml-1" />} onClick={openOnSiteDoctor} className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none hover:shadow-glow btn-glow">
-                Chat with Doctor GPT Here - Free
+                Doctor GPT (INSITE version) — Free
               </AnimatedButton>
               <AnimatedButton variant="primary" size="lg" icon={<ArrowRight className="ml-1" />} onClick={handleChatRedirect} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none hover:shadow-glow btn-glow">
-                Talk to Medicus - Free
+                Medicus (CHATGPT version) — Free
               </AnimatedButton>
               <AnimatedButton variant="secondary" size="lg" onClick={handleMoreAIToolsRedirect} className="bg-black/30 border-purple-500/30 backdrop-blur-sm text-white hover:bg-black/40 hover:border-purple-500/50">
-                More AI Tools
+                More AI Tools (EXTERNAL WEBSITE)
               </AnimatedButton>
             </div>
             

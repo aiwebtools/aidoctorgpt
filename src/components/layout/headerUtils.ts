@@ -1,5 +1,16 @@
 
-const MEDICUS_URL = 'https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt';
+export const TOOL_URLS = {
+  medicusChatGPT: 'https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt',
+  dentalChatGPT: 'https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert',
+  veterinarianWebApp: 'https://petcaregpt.lovable.app/',
+  mentalWellnessWebApp: 'https://mentalwellnessgpt.lovable.app/',
+  apothecaryChatGPT: 'https://chatgpt.com/g/g-68c9e33310148191ae3df594ec4012dd-apothecary-gpt',
+  amazonClinic: 'https://clinic.amazon.com',
+  oneMedical: 'https://health.amazon.com/onemedical',
+  antibiotics: 'https://ozio.com',
+  moreAiTools: 'https://aiwebtools.lovable.app/?via=aiwebtools',
+  openSourcePrompt: 'https://docs.google.com/document/d/e/2PACX-1vSoix5D-3HfYurJZdgqjQ7n2y6UuwRlB_HqtA1yDfgkQ6Wk6djLrVDwjD-hIBSlnNHkBCWgeF2rmXlK/pub',
+} as const;
 const MEDICUS_SOUND = '/sounds/medicus-click.mp3';
 const GENERAL_SOUND = '/sounds/general-click.mp3';
 
@@ -53,37 +64,37 @@ export const openWithMedicusSound = (url: string) => openWithSound(url, MEDICUS_
 export const openWithGeneralSound = (url: string) => openWithSound(url, GENERAL_SOUND);
 
 export const handleChatRedirect = () => {
-  openWithSound(MEDICUS_URL, MEDICUS_SOUND);
+  openWithSound(TOOL_URLS.medicusChatGPT, MEDICUS_SOUND);
 };
 
 export const handleVetGPTRedirect = () => {
-  openWithSound('https://petcaregpt.lovable.app/', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.veterinarianWebApp, GENERAL_SOUND);
 };
 
 export const handleDentalGPTRedirect = () => {
-  openWithSound('https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.dentalChatGPT, GENERAL_SOUND);
 };
 
 export const handleMentalWellnessGPTRedirect = () => {
-  openWithSound('https://mentalwellnessgpt.lovable.app/', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.mentalWellnessWebApp, GENERAL_SOUND);
 };
 
 export const handleApothecaryGPTRedirect = () => {
-  openWithSound('https://chatgpt.com/g/g-68c9e33310148191ae3df594ec4012dd-apothecary-gpt', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.apothecaryChatGPT, GENERAL_SOUND);
 };
 
 export const handleAmazonClinicRedirect = () => {
-  openWithSound('https://clinic.amazon.com', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.amazonClinic, GENERAL_SOUND);
 };
 
 export const handleOneMedicalRedirect = () => {
-  openWithSound('https://health.amazon.com/onemedical', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.oneMedical, GENERAL_SOUND);
 };
 
 export const handleAntibioticsRedirect = () => {
-  openWithSound('https://ozio.com', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.antibiotics, GENERAL_SOUND);
 };
 
 export const handleMoreAIToolsRedirect = () => {
-  openWithSound('https://aiwebtools.lovable.app/?via=aiwebtools', GENERAL_SOUND);
+  openWithSound(TOOL_URLS.moreAiTools, GENERAL_SOUND);
 };
