@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage, type FileUIPart } from 'ai';
-import { ArrowLeft, Stethoscope, Trash2, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Stethoscope, Trash2, AlertTriangle, Paperclip } from 'lucide-react';
 import {
   Conversation,
   ConversationContent,
