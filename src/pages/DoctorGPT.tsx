@@ -258,9 +258,6 @@ const DoctorGPT = () => {
             maxFileSize={10 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
-            <PromptInputAttachments>
-              {(attachment) => <PromptInputAttachment data={attachment} />}
-            </PromptInputAttachments>
             <PromptInputTextarea
               ref={textareaRef}
               placeholder="Describe your symptoms, age, sex, and medical history..."
