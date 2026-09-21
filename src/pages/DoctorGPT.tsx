@@ -58,7 +58,6 @@ const fileToDataUrl = (file: File) =>
 
 const DoctorGPT = () => {
   const initialMessages = useMemo(loadStoredMessages, []);
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const transport = useMemo(
     () =>
