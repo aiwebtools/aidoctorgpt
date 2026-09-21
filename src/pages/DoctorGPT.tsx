@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage, type FileUIPart } from 'ai';
@@ -27,8 +27,15 @@ import {
 } from '@/components/ai-elements/prompt-input';
 import { Shimmer } from '@/components/ai-elements/shimmer';
 import { toast } from 'sonner';
+import AnimatedButton from '@/components/ui/AnimatedButton';
+import { handleChatRedirect } from '@/components/layout/headerUtils';
 
 const STORAGE_KEY = 'doctor-gpt-conversation-v1';
+
+const isCommunityCreditError = (message: string) =>
+  /\b(402|403)\b|credit|billing|payment|required|spending limit|usage limit|ai disabled|insufficient/i.test(
+    message
+  );
 
 const SUGGESTIONS = [
   "I've had a sore throat and fever for 3 days",
@@ -58,6 +65,7 @@ const fileToDataUrl = (file: File) =>
 
 const DoctorGPT = () => {
   const initialMessages = useMemo(loadStoredMessages, []);
+  const [communityCreditsUnavailable, setCommunityCreditsUnavailable] = useState(false);
 
   const transport = useMemo(
     () =>
@@ -75,7 +83,13 @@ const DoctorGPT = () => {
     messages: initialMessages,
     transport,
     onError: (error) => {
-      toast.error(error.message || 'Doctor GPT could not respond. Please try again.');
+      const message = error.message || 'Doctor GPT could not respond. Please try again.';
+      if (isCommunityCreditError(message)) {
+        setCommunityCreditsUnavailable(true);
+        toast.error('Community AI credits are unavailable. The ChatGPT version is ready to use.');
+        return;
+      }
+      toast.error(message);
     },
   });
 
@@ -108,6 +122,7 @@ const DoctorGPT = () => {
 
   const send = useCallback(
     async (text: string, files: FileUIPart[] = []) => {
+      setCommunityCreditsUnavailable(false);
       const attachments: FileUIPart[] = [];
       for (const file of files) {
         if (file.url.startsWith('data:')) {
@@ -248,6 +263,23 @@ const DoctorGPT = () => {
                   <Shimmer>Doctor GPT is reviewing your case...</Shimmer>
                 </MessageContent>
               </Message>
+            )}
+            {communityCreditsUnavailable && (
+              <div className="rounded-lg border border-amber-400/40 bg-amber-950/40 p-5 text-center">
+                <AlertTriangle className="mx-auto mb-2 h-6 w-6 text-amber-300" />
+                <h2 className="mb-2 text-lg font-bold text-white">Community credits have run out for today</h2>
+                <p className="mb-4 text-sm text-white">
+                  Sorry, the in-site version is temporarily unavailable. Please continue with the original Medicus custom GPT.
+                </p>
+                <AnimatedButton
+                  variant="primary"
+                  size="lg"
+                  onClick={handleChatRedirect}
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none"
+                >
+                  Open Medicus (CHATGPT version)
+                </AnimatedButton>
+              </div>
             )}
           </ConversationContent>
           <ConversationScrollButton />

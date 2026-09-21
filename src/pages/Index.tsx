@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
@@ -6,7 +7,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import ConsentDialog from '@/components/ConsentDialog';
-import { handleAntibioticsRedirect, handleChatRedirect, openWithGeneralSound, openWithMedicusSound } from '@/components/layout/headerUtils';
+import { handleAntibioticsRedirect, handleApothecaryGPTRedirect, handleChatRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleVetGPTRedirect, openWithGeneralSound, openWithMedicusSound, playGeneralSound } from '@/components/layout/headerUtils';
 import VideoEmbed from '@/components/VideoEmbed';
 import { ArrowRight, Star, Users, Shield, Zap, Globe, Heart } from 'lucide-react';
 import ozioKitImage from '@/assets/ozio-emergency-kit.jpg';
@@ -14,6 +15,11 @@ import ozioKitImage from '@/assets/ozio-emergency-kit.jpg';
 const MEDICUS_MATCH = 'g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt';
 
 const Index = () => {
+  const navigate = useNavigate();
+  const openOnSiteDoctor = () => {
+    playGeneralSound();
+    navigate('/doctor-gpt');
+  };
   // For smooth scrolling to sections
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
@@ -142,30 +148,38 @@ const Index = () => {
                     <div className="text-4xl mb-3">👨‍⚕️</div>
                     <h3 className="text-xl font-bold text-purple-200 mb-2">MEDICUS - AI Doctor GPT</h3>
                     <p className="text-white/90 text-sm">Meet Medicus — your personal AI doctor for health guidance, symptoms analysis & medical information</p>
+                    <div className="mt-4 flex flex-col gap-2">
+                      <AnimatedButton variant="primary" size="sm" onClick={openOnSiteDoctor} className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none">Doctor GPT (INSITE version)</AnimatedButton>
+                      <AnimatedButton variant="primary" size="sm" onClick={handleChatRedirect} className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none">Medicus (CHATGPT version)</AnimatedButton>
+                    </div>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-blue-900/50 via-cyan-900/40 to-blue-900/50 rounded-xl border border-cyan-400/40 backdrop-blur-lg hover:border-cyan-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🦷</div>
                     <h3 className="text-xl font-bold text-cyan-200 mb-2">AI Dental GPT</h3>
                     <p className="text-white/90 text-sm">Dental care guidance, oral health tips & teeth concerns</p>
+                    <AnimatedButton variant="primary" size="sm" onClick={handleDentalGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none">Open (CHATGPT version)</AnimatedButton>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-green-900/50 via-emerald-900/40 to-green-900/50 rounded-xl border border-emerald-400/40 backdrop-blur-lg hover:border-emerald-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🐾</div>
                     <h3 className="text-xl font-bold text-emerald-200 mb-2">AI Vet GPT</h3>
                     <p className="text-white/90 text-sm">Pet health guidance, animal care tips & veterinary information</p>
+                    <AnimatedButton variant="primary" size="sm" onClick={handleVetGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none">Open (EXTERNAL WEB APP)</AnimatedButton>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-indigo-900/50 via-purple-900/40 to-indigo-900/50 rounded-xl border border-indigo-400/40 backdrop-blur-lg hover:border-indigo-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🧠</div>
                     <h3 className="text-xl font-bold text-indigo-200 mb-2">AI Mental Wellness GPT</h3>
                     <p className="text-white/90 text-sm">Mental health support, stress management & wellness guidance</p>
+                    <AnimatedButton variant="primary" size="sm" onClick={handleMentalWellnessGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">Open (EXTERNAL WEB APP)</AnimatedButton>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-amber-900/50 via-orange-900/40 to-amber-900/50 rounded-xl border border-amber-400/40 backdrop-blur-lg hover:border-amber-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">⚗️</div>
                     <h3 className="text-xl font-bold text-amber-200 mb-2">AI Apothecary GPT</h3>
                     <p className="text-white/90 text-sm">Lost homeopathic remedies & at-home medication formulations</p>
+                    <AnimatedButton variant="primary" size="sm" onClick={handleApothecaryGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none">Open (CHATGPT version)</AnimatedButton>
                   </div>
                 </div>
               </div>
@@ -264,7 +278,7 @@ const Index = () => {
                       className="bg-gradient-to-r from-red-600 to-rose-600 text-white border-none hover:shadow-2xl hover:shadow-red-500/30 text-lg px-8 py-3"
                       icon={<ArrowRight className="ml-2" />}
                     >
-                      💊 Get Emergency Antibiotics — Ozio Medical
+                      💊 Ozio Medical (EXTERNAL WEBSITE)
                     </AnimatedButton>
                     <p className="text-white/70 text-xs mt-3">
                       Ozio Medical is a third-party service. AI Web Tools LLC is not affiliated with Ozio Medical.
@@ -307,7 +321,17 @@ const Index = () => {
                   </p>
                 </div>
                 
-                <div className="mb-12">
+                <div className="mb-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <AnimatedButton 
+                    variant="primary"
+                    size="lg"
+                    className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none hover:shadow-2xl hover:shadow-emerald-500/30 btn-glow text-xl px-10 py-4 hover-scale"
+                    icon={<ArrowRight className="ml-2" />}
+                    onClick={openOnSiteDoctor}
+                    aria-label="Open Doctor GPT on this website"
+                  >
+                    Doctor GPT (INSITE version)
+                  </AnimatedButton>
                   <AnimatedButton 
                     variant="secondary"
                     size="lg"
@@ -316,7 +340,7 @@ const Index = () => {
                     onClick={handleChatRedirect}
                     aria-label="Talk to Medicus Now - Free AI Doctor"
                   >
-                    Talk to Medicus - Free
+                    Medicus (CHATGPT version)
                   </AnimatedButton>
                 </div>
                 
