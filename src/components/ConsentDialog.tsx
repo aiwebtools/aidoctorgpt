@@ -62,11 +62,11 @@ const ConsentDialog = () => {
           <div className="p-4 bg-gradient-to-r from-purple-950/40 to-indigo-950/40 border border-purple-500/50 rounded-lg">
             <p className="text-lg font-medium text-purple-200 mb-3">🤖 Our 5 Free AI Tools</p>
             <ul className="space-y-2 text-sm text-white">
-              <li className="flex items-center"><span className="mr-2">👨‍⚕️</span> <strong>MEDICUS - AI Doctor GPT</strong> - Your personal AI doctor for general health guidance</li>
-              <li className="flex items-center"><span className="mr-2">🦷</span> <strong>AI Dental GPT</strong> - Dental health information</li>
-              <li className="flex items-center"><span className="mr-2">🐾</span> <strong>AI Veterinarian GPT</strong> - Pet care guidance</li>
-              <li className="flex items-center"><span className="mr-2">🧠</span> <strong>AI Mental Wellness GPT</strong> - Mental health support</li>
-              <li className="flex items-center"><span className="mr-2">⚗️</span> <strong>AI Apothecary GPT</strong> - Homeopathic remedies & formulations</li>
+              <li className="flex items-center"><span className="mr-2">👨‍⚕️</span> <strong>Doctor GPT (INSITE version) + Medicus (CHATGPT version)</strong> - General health guidance</li>
+              <li className="flex items-center"><span className="mr-2">🦷</span> <strong>AI Dental GPT (CHATGPT version)</strong> - Dental health information</li>
+              <li className="flex items-center"><span className="mr-2">🐾</span> <strong>AI Veterinarian GPT (EXTERNAL WEB APP)</strong> - Pet care guidance</li>
+              <li className="flex items-center"><span className="mr-2">🧠</span> <strong>AI Mental Wellness GPT (EXTERNAL WEB APP)</strong> - Mental health support</li>
+              <li className="flex items-center"><span className="mr-2">⚗️</span> <strong>AI Apothecary GPT (CHATGPT version)</strong> - Homeopathic remedies & formulations</li>
             </ul>
           </div>
 

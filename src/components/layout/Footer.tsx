@@ -32,7 +32,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-white/80 text-sm hover:bg-gradient-to-r hover:from-purple-400 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block mb-6 hover-scale"
             >
-              Presented by AiWebTools.Ai
+              Presented by AiWebTools.Ai (EXTERNAL WEBSITE)
             </a>
             
             {/* Educational Disclaimer */}
@@ -144,7 +144,7 @@ const Footer = () => {
               <li>
                 <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Terms of Service
+                   Terms of Service (EXTERNAL WEBSITE)
                 </a>
               </li>
             </ul>

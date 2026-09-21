@@ -128,7 +128,7 @@ const HeroSection = () => {
             </div>
             <div className="mt-6 pt-4 border-t border-neutral-800">
               <div className="flex items-center rounded-full border border-purple-500/30 pl-4 focus-within:ring-2 focus-within:ring-purple-500 focus-within:border-purple-500 backdrop-blur-sm bg-black/20">
-                <input type="text" placeholder="Ask Medicus about your symptoms..." className="w-full bg-transparent border-none focus:outline-none text-sm py-2 text-white/90" onClick={handleChatRedirect} readOnly />
+                <input type="text" placeholder="Open Medicus (CHATGPT version)..." className="w-full bg-transparent border-none focus:outline-none text-sm py-2 text-white/90" onClick={handleChatRedirect} readOnly />
                 <button className="ml-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full p-2 hover:shadow-glow transition-shadow duration-300" onClick={handleChatRedirect}>
                   <ArrowRight className="h-4 w-4" />
                 </button>
