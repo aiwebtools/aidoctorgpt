@@ -11,6 +11,14 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
+  const navigate = useNavigate();
+
+  const openOnSiteDoctor = () => {
+    toggleMenu();
+    playGeneralSound();
+    navigate('/doctor-gpt');
+  };
+
   return (
     <div 
       className={`fixed inset-0 z-[9999] transition-opacity duration-200 ease-out lg:hidden ${
