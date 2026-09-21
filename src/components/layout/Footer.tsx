@@ -1,5 +1,7 @@
 import React from 'react';
 import { Heart, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { TOOL_URLS } from './headerUtils';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,7 +32,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-white/80 text-sm hover:bg-gradient-to-r hover:from-purple-400 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-500 interactive-link inline-block mb-6 hover-scale"
             >
-              Presented by AiWebTools.Ai
+              Presented by AiWebTools.Ai (EXTERNAL WEBSITE)
             </a>
             
             {/* Educational Disclaimer */}
@@ -65,60 +67,66 @@ const Footer = () => {
             <h3 className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <a href="https://chatgpt.com/g/g-69c4da4473b0819185462889b7348a28-medicus-wellcheck-gpt" target="_blank" rel="noopener noreferrer" 
+                <Link to="/doctor-gpt"
+                   className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600/30 to-teal-600/30 border border-emerald-400/30 text-emerald-100 hover:from-emerald-500/40 hover:to-teal-500/40 transition-all duration-500 hover:scale-105 font-medium">
+                  Doctor GPT (INSITE version)
+                </Link>
+              </li>
+              <li>
+                <a href={TOOL_URLS.medicusChatGPT} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  MEDICUS - AI Doctor GPT
+                  MEDICUS - AI Doctor GPT (CHATGPT version)
                 </a>
               </li>
               <li>
-                <a href="https://chatgpt.com/g/g-67cbcbcf3a38819183974f2d062d5d7f-dental-gpt-expert" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.dentalChatGPT} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Dental GPT
+                  Dental GPT (CHATGPT version)
                 </a>
               </li>
               <li>
-                <a href="https://petcaregpt.lovable.app/" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.veterinarianWebApp} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Veterinarian GPT
+                  Veterinarian GPT (EXTERNAL WEB APP)
                 </a>
               </li>
               <li>
-                <a href="https://mentalwellnessgpt.lovable.app/" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.mentalWellnessWebApp} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Mental Wellness GPT
+                  Mental Wellness GPT (EXTERNAL WEB APP)
                 </a>
               </li>
               <li>
-                <a href="https://chatgpt.com/g/g-68c9e33310148191ae3df594ec4012dd-apothecary-gpt" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.apothecaryChatGPT} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Apothecary GPT
+                  Apothecary GPT (CHATGPT version)
                 </a>
               </li>
               <li className="pt-4">
                 <span className="text-sm text-purple-300 font-semibold block mb-3">🏥 Non-AI Healthcare</span>
               </li>
               <li>
-                <a href="https://clinic.amazon.com" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.amazonClinic} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600/30 to-amber-600/30 border border-orange-400/30 text-orange-200 hover:from-orange-500/40 hover:to-amber-500/40 hover:border-orange-300/50 hover:text-orange-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Amazon Clinic
+                  Amazon Clinic (EXTERNAL WEBSITE)
                 </a>
               </li>
               <li>
-                <a href="https://health.amazon.com/onemedical" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.oneMedical} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-teal-600/30 to-cyan-600/30 border border-teal-400/30 text-teal-200 hover:from-teal-500/40 hover:to-cyan-500/40 hover:border-teal-300/50 hover:text-teal-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  One Medical
+                  One Medical (EXTERNAL WEBSITE)
                 </a>
               </li>
               <li>
-                <a href="https://ozio.com" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.antibiotics} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-red-600/30 to-rose-600/30 border border-red-400/30 text-red-200 hover:from-red-500/40 hover:to-rose-500/40 hover:border-red-300/50 hover:text-red-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  💊 Verified Source To Buy Antibiotics
+                  💊 Buy Antibiotics (EXTERNAL WEBSITE)
                 </a>
               </li>
               <li>
-                <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" 
+                <a href={TOOL_URLS.moreAiTools} target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600/30 to-purple-600/30 border border-violet-400/30 text-violet-200 hover:from-violet-500/40 hover:to-purple-500/40 hover:border-violet-300/50 hover:text-violet-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  🌐 More AI Tools
+                  🌐 More AI Tools (EXTERNAL WEBSITE)
                 </a>
               </li>
               <li className="pt-4">
@@ -136,7 +144,7 @@ const Footer = () => {
               <li>
                 <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" 
                    className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border border-yellow-400/30 text-yellow-200 hover:from-yellow-400/30 hover:via-amber-400/30 hover:to-orange-400/30 hover:border-yellow-300/50 hover:text-yellow-100 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 glow-on-hover backdrop-blur-sm font-medium">
-                  Terms of Service
+                   Terms of Service (EXTERNAL WEBSITE)
                 </a>
               </li>
             </ul>

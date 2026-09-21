@@ -42,7 +42,9 @@ const playClickSound = (soundPath: string) => {
     const audio = getCachedAudio(soundPath);
     audio.currentTime = 0;
     audio.play().catch(() => {});
-  } catch {}
+  } catch {
+    // Audio may be blocked by a browser setting; navigation should still continue.
+  }
 };
 
 const openWithSound = (url: string, soundPath: string) => {
