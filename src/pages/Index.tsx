@@ -120,6 +120,12 @@ const Index = () => {
 
       {/* SEO-optimized page structure */}
       <div className="relative z-10">
+        <Seo
+          title="Doctor GPT | Medical GPT | Health GPT — Free AI Doctor by Medicus"
+          description="Doctor GPT powered by Medicus — the free Medical GPT & Health GPT. 24/7 AI doctor for symptom analysis, lab result explanations, health guidance and medical information."
+          path="/"
+          keywords={['doctor gpt', 'medical gpt', 'health gpt', 'ai doctor', 'free ai doctor', 'symptom checker']}
+        />
         <Header />
         <ConsentDialog />
         
