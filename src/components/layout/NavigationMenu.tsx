@@ -1,15 +1,31 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import AnimatedButton from '../ui/AnimatedButton';
-import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect, openWithGeneralSound } from './headerUtils';
+import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect, openWithGeneralSound, playGeneralSound } from './headerUtils';
 
 const NavigationMenu = () => {
+  const navigate = useNavigate();
+
   const handleDownloadPrompt = () => {
     openWithGeneralSound('https://docs.google.com/document/d/e/2PACX-1vSoix5D-3HfYurJZdgqjQ7n2y6UuwRlB_HqtA1yDfgkQ6Wk6djLrVDwjD-hIBSlnNHkBCWgeF2rmXlK/pub');
   };
 
+  const openOnSiteDoctor = () => {
+    playGeneralSound();
+    navigate('/doctor-gpt');
+  };
+
   return (
     <nav className="hidden lg:flex items-center flex-wrap gap-2 justify-end max-w-[75vw]">
+      <AnimatedButton
+        variant="primary"
+        size="sm"
+        onClick={openOnSiteDoctor}
+        className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
+      >
+        Doctor GPT — Chat Here
+      </AnimatedButton>
       <AnimatedButton 
         variant="primary" 
         size="sm"
