@@ -58,7 +58,6 @@ const fileToDataUrl = (file: File) =>
 
 const DoctorGPT = () => {
   const initialMessages = useMemo(loadStoredMessages, []);
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const transport = useMemo(
     () =>
@@ -89,7 +88,12 @@ const DoctorGPT = () => {
   }, [messages]);
 
   const focusInput = useCallback(() => {
-    requestAnimationFrame(() => textareaRef.current?.focus());
+    requestAnimationFrame(() => {
+      const el = document.querySelector<HTMLTextAreaElement>(
+        'form textarea'
+      );
+      el?.focus();
+    });
   }, []);
 
   useEffect(() => {
@@ -258,10 +262,7 @@ const DoctorGPT = () => {
             maxFileSize={10 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
-            <PromptInputTextarea
-              ref={textareaRef}
-              placeholder="Describe your symptoms, age, sex, and medical history..."
-            />
+            <PromptInputTextarea placeholder="Describe your symptoms, age, sex, and medical history..." />
             <PromptInputFooter>
               <PromptInputTools>
                 <PromptInputActionMenu>
