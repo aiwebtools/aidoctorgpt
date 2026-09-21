@@ -45,6 +45,15 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         </div>
 
         <div className="w-full max-w-sm space-y-3">
+          <AnimatedButton
+            variant="primary"
+            size="lg"
+            onClick={openOnSiteDoctor}
+            className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none py-4 text-base font-semibold"
+          >
+            🩺 Doctor GPT — Chat Here Now
+          </AnimatedButton>
+
           <AnimatedButton 
             variant="primary" 
             size="lg"
