@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Seo from '@/components/Seo';
+import DoctorGPT from '@/pages/DoctorGPT';
 import SearchBox from '@/components/SearchBox';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -132,6 +133,13 @@ const Index = () => {
         <main className="flex-grow">
           {/* H1 is in HeroSection for SEO */}
           <HeroSection />
+
+          <section id="ask-medicus" className="relative z-20 py-8 sm:py-14" aria-label="Ask Doctor GPT on this site">
+            <div className="container mx-auto max-w-4xl px-4 sm:px-6">
+              <h2 className="mb-4 text-center text-2xl font-bold text-foreground sm:text-3xl">Ask Doctor GPT here</h2>
+              <DoctorGPT embedded />
+            </div>
+          </section>
 
           {/* On-site search */}
           <section className="py-10 relative z-20" aria-label="Search this site">

@@ -1,8 +1,10 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage, type FileUIPart } from 'ai';
-import { ArrowLeft, Stethoscope, Trash2, AlertTriangle, Paperclip } from 'lucide-react';
+import { ArrowLeft, Stethoscope, Trash2, AlertTriangle, Paperclip, Mic, MicOff, Volume2, VolumeX, Square } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useDoctorVoice } from '@/hooks/useDoctorVoice';
 import {
   Conversation,
   ConversationContent,
@@ -64,9 +66,10 @@ const fileToDataUrl = (file: File) =>
     reader.readAsDataURL(file);
   });
 
-const DoctorGPT = () => {
+const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
   const initialMessages = useMemo(loadStoredMessages, []);
   const [communityCreditsUnavailable, setCommunityCreditsUnavailable] = useState(false);
+  const lastSpokenId = useRef(initialMessages.filter((message) => message.role === 'assistant').at(-1)?.id);
 
   const transport = useMemo(
     () =>
@@ -112,18 +115,35 @@ const DoctorGPT = () => {
   }, []);
 
   useEffect(() => {
-    focusInput();
-  }, [focusInput]);
+    if (!embedded) focusInput();
+  }, [focusInput, embedded]);
 
   useEffect(() => {
-    if (status === 'ready') focusInput();
-  }, [status, focusInput]);
+    if (status === 'ready' && !embedded) focusInput();
+  }, [status, focusInput, embedded]);
 
   const isBusy = status === 'submitted' || status === 'streaming';
+  const sendRef = useRef<(text: string) => void>(() => {});
+  const voice = useDoctorVoice((text) => {
+    if (!isBusy) void sendRef.current(text);
+    else toast.error('Please wait for the current reply before speaking again.');
+  });
+
+  useEffect(() => {
+    if (status !== 'ready') return;
+    const latest = messages.filter((message) => message.role === 'assistant').at(-1);
+    if (!latest || latest.id === lastSpokenId.current) return;
+    lastSpokenId.current = latest.id;
+    if (voice.voiceEnabled) {
+      const text = latest.parts.filter((part) => part.type === 'text').map((part) => part.text).join(' ');
+      if (text) voice.speak(text);
+    }
+  }, [status, messages, voice.voiceEnabled, voice.speak]);
 
   const send = useCallback(
     async (text: string, files: FileUIPart[] = []) => {
       setCommunityCreditsUnavailable(false);
+      voice.stopSpeaking();
       const attachments: FileUIPart[] = [];
       for (const file of files) {
         if (file.url.startsWith('data:')) {
@@ -143,8 +163,9 @@ const DoctorGPT = () => {
       await sendMessage({ text, files: attachments });
       focusInput();
     },
-    [sendMessage, focusInput]
+    [sendMessage, focusInput, voice.stopSpeaking]
   );
+  sendRef.current = (text) => { void send(text); };
 
   const handleSubmit = useCallback(
     (message: PromptInputMessage) => {
@@ -157,6 +178,9 @@ const DoctorGPT = () => {
   );
 
   const clearConversation = useCallback(() => {
+    voice.stopListening();
+    voice.stopSpeaking();
+    lastSpokenId.current = undefined;
     setMessages([]);
     try {
       window.localStorage.removeItem(STORAGE_KEY);
@@ -164,48 +188,50 @@ const DoctorGPT = () => {
       /* ignore */
     }
     focusInput();
-  }, [setMessages, focusInput]);
+  }, [setMessages, focusInput, voice.stopListening, voice.stopSpeaking]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <header className="border-b border-white/10 bg-black/40 backdrop-blur-md">
+    <div className={embedded ? 'flex h-[min(720px,80dvh)] min-h-[430px] flex-col overflow-hidden rounded-lg border border-border bg-background text-foreground shadow-xl' : 'flex min-h-dvh flex-col bg-background text-foreground'}>
+      <header className="border-b border-border bg-secondary/60">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <Link
+          {!embedded ? <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-white hover:text-purple-300 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to site
-          </Link>
+          </Link> : <span className="text-xs font-semibold text-accent">INSITE version</span>}
           <div className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600">
-              <Stethoscope className="h-4 w-4 text-white" />
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+              <Stethoscope className="h-4 w-4 text-primary-foreground" />
             </span>
-            <span className="font-bold tracking-tight text-white">DOCTOR GPT</span>
+            <span className="font-bold text-foreground text-sm sm:text-base">DOCTOR GPT</span>
           </div>
-          <button
+          <Button
             type="button"
             onClick={clearConversation}
-            className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors"
+            variant="ghost"
+            size="icon"
+            title="New consultation"
+            aria-label="New consultation"
           >
             <Trash2 className="h-4 w-4" />
-            <span className="hidden sm:inline">New consultation</span>
-          </button>
+          </Button>
         </div>
       </header>
 
-      <div className="border-b border-red-500/30 bg-red-950/30">
+      <div className="border-b border-destructive/30 bg-destructive/10">
         <div className="container mx-auto px-4 py-2 flex items-start gap-2">
-          <AlertTriangle className="h-4 w-4 text-red-400 mt-0.5 shrink-0" />
-          <p className="text-xs text-white/90">
+          <AlertTriangle className="h-4 w-4 text-destructive-foreground mt-0.5 shrink-0" />
+          <p className="text-xs text-foreground">
             Educational information only — not a substitute for a licensed clinician.
-            <strong className="text-red-300"> In an emergency, call 911 immediately.</strong>
+            <strong> In an emergency, call local emergency services immediately.</strong>
           </p>
         </div>
       </div>
 
-      <main className="flex-1 container mx-auto px-4 py-4 flex flex-col max-w-3xl w-full">
-        <Conversation className="flex-1">
+      <main className="flex-1 min-h-0 container mx-auto px-3 sm:px-4 py-3 flex flex-col max-w-3xl w-full">
+        <Conversation className="flex-1 min-h-0">
           <ConversationContent className="space-y-4">
             {messages.length === 0 ? (
               <div className="py-10 text-center">
@@ -222,14 +248,15 @@ const DoctorGPT = () => {
                 </p>
                 <div className="grid gap-2 sm:grid-cols-2 max-w-xl mx-auto">
                   {SUGGESTIONS.map((suggestion) => (
-                    <button
+                    <Button
                       key={suggestion}
                       type="button"
                       onClick={() => void send(suggestion)}
-                      className="rounded-xl border border-purple-500/30 bg-black/30 px-4 py-3 text-left text-sm text-white hover:border-purple-500/60 hover:bg-black/50 transition-colors"
+                      variant="outline"
+                      className="h-auto min-h-12 whitespace-normal justify-start text-left px-4 py-3"
                     >
                       {suggestion}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
@@ -298,7 +325,7 @@ const DoctorGPT = () => {
           <ConversationScrollButton />
         </Conversation>
 
-        <div className="pt-3 pb-6">
+        <div className="pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0">
           <PromptInput
             onSubmit={handleSubmit}
             accept="image/*,application/pdf"
@@ -316,6 +343,13 @@ const DoctorGPT = () => {
                     <PromptInputActionAddAttachments label="Add photos or documents (PDF)" />
                   </PromptInputActionMenuContent>
                 </PromptInputActionMenu>
+                <Button type="button" variant={voice.isListening ? 'default' : 'ghost'} size="icon-sm" aria-label={voice.isListening ? 'Stop microphone' : 'Ask by voice'} title={voice.isListening ? 'Stop microphone' : 'Ask by voice'} onClick={voice.isListening ? voice.stopListening : voice.startListening}>
+                  {voice.isListening ? <MicOff /> : <Mic />}
+                </Button>
+                <Button type="button" variant={voice.voiceEnabled ? 'secondary' : 'ghost'} size="icon-sm" aria-label={voice.voiceEnabled ? 'Turn off spoken replies' : 'Turn on spoken replies'} title={voice.voiceEnabled ? 'Turn off spoken replies' : 'Turn on spoken replies'} onClick={voice.toggleVoice}>
+                  {voice.voiceEnabled ? <Volume2 /> : <VolumeX />}
+                </Button>
+                {voice.isSpeaking && <Button type="button" variant="ghost" size="icon-sm" aria-label="Stop speaking" title="Stop speaking" onClick={voice.stopSpeaking}><Square /></Button>}
               </PromptInputTools>
               <PromptInputSubmit status={status} onStop={stop} />
             </PromptInputFooter>
