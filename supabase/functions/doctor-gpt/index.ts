@@ -107,7 +107,7 @@ Deno.serve(async (req) => {
 
     const result = streamText({
       model: lovable.responses("openai/gpt-6-astra"),
-      system: SYSTEM_PROMPT,
+      system: systemPrompt,
       messages: await convertToModelMessages(messages),
       abortSignal: req.signal,
       providerOptions: {
