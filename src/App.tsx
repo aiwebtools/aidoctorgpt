@@ -21,6 +21,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/doctor-gpt" element={<DoctorGPT />} />
+          <Route path="/dental-gpt" element={<DoctorGPT key="dental" toolId="dental" />} />
+          <Route path="/petcare-gpt" element={<DoctorGPT key="vet" toolId="vet" />} />
+          <Route path="/mental-wellness-gpt" element={<DoctorGPT key="mental" toolId="mental" />} />
+          <Route path="/apothecary-gpt" element={<DoctorGPT key="apothecary" toolId="apothecary" />} />
           <Route path="/library" element={<Library />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/tools/:slug" element={<ToolPage />} />

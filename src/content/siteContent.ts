@@ -127,6 +127,7 @@ export const TOOL_PAGES: ContentPage[] = [
       },
     ],
     links: [
+      { label: 'Dental GPT (INSITE version)', kind: 'INSITE version', href: '/dental-gpt' },
       {
         label: 'Dental GPT (CHATGPT version)',
         kind: 'CHATGPT version',
@@ -171,6 +172,7 @@ export const TOOL_PAGES: ContentPage[] = [
       },
     ],
     links: [
+      { label: 'PetCare / Veterinarian GPT (INSITE version)', kind: 'INSITE version', href: '/petcare-gpt' },
       {
         label: 'PetCare / Veterinarian GPT (EXTERNAL WEB APP)',
         kind: 'EXTERNAL WEB APP',
@@ -215,6 +217,7 @@ export const TOOL_PAGES: ContentPage[] = [
       },
     ],
     links: [
+      { label: 'Mental Wellness GPT (INSITE version)', kind: 'INSITE version', href: '/mental-wellness-gpt' },
       {
         label: 'Mental Wellness GPT (EXTERNAL WEB APP)',
         kind: 'EXTERNAL WEB APP',
@@ -261,6 +264,7 @@ export const TOOL_PAGES: ContentPage[] = [
       },
     ],
     links: [
+      { label: 'Apothecary GPT (INSITE version)', kind: 'INSITE version', href: '/apothecary-gpt' },
       {
         label: 'Apothecary GPT (CHATGPT version)',
         kind: 'CHATGPT version',

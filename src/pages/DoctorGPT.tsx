@@ -30,24 +30,17 @@ import {
 import { Shimmer } from '@/components/ai-elements/shimmer';
 import { toast } from 'sonner';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { handleChatRedirect } from '@/components/layout/headerUtils';
+import { openWithGeneralSound, openWithMedicusSound } from '@/components/layout/headerUtils';
+import { IN_SITE_TOOLS, type InSiteToolId } from '@/content/inSiteTools';
 
-const STORAGE_KEY = 'doctor-gpt-conversation-v1';
 
 const isCommunityCreditError = (message: string) =>
   /\b(402|403)\b|credit|billing|payment|required|spending limit|usage limit|ai disabled|insufficient/i.test(
     message
   );
 
-const SUGGESTIONS = [
-  "I've had a sore throat and fever for 3 days",
-  'What can I do for a persistent tension headache?',
-  'Natural and pharmaceutical options for acid reflux',
-  'Can you look at this rash? (attach a photo)',
-  'Please review my lab results (attach a PDF or photo)',
-];
 
-const loadStoredMessages = (): UIMessage[] => {
+const loadStoredMessages = (STORAGE_KEY: string): UIMessage[] => {
   if (typeof window === 'undefined') return [];
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -66,8 +59,11 @@ const fileToDataUrl = (file: File) =>
     reader.readAsDataURL(file);
   });
 
-const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
-  const initialMessages = useMemo(loadStoredMessages, []);
+const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean; toolId?: InSiteToolId }) => {
+  const tool = IN_SITE_TOOLS[toolId];
+  const STORAGE_KEY = toolId === 'doctor' ? 'doctor-gpt-conversation-v1' : `${toolId}-gpt-conversation-v1`;
+  const openExternal = () => (tool.medicusSound ? openWithMedicusSound(tool.externalUrl) : openWithGeneralSound(tool.externalUrl));
+  const initialMessages = useMemo(() => loadStoredMessages(STORAGE_KEY), [STORAGE_KEY]);
   const [communityCreditsUnavailable, setCommunityCreditsUnavailable] = useState(false);
   const lastSpokenId = useRef(initialMessages.filter((message) => message.role === 'assistant').at(-1)?.id);
 
@@ -78,19 +74,20 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
         headers: {
           Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
         },
+        body: { tool: toolId },
       }),
-    []
+    [toolId]
   );
 
   const { messages, sendMessage, status, stop, setMessages } = useChat({
-    id: 'doctor-gpt',
+    id: `${toolId}-gpt`,
     messages: initialMessages,
     transport,
     onError: (error) => {
       const message = error.message || 'Doctor GPT could not respond. Please try again.';
       if (isCommunityCreditError(message)) {
         setCommunityCreditsUnavailable(true);
-        toast.error('Community AI credits are unavailable. The ChatGPT version is ready to use.');
+        toast.error(`Community AI credits are unavailable. ${tool.externalLabel} is ready to use.`);
         return;
       }
       toast.error(message);
@@ -103,7 +100,7 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
     } catch {
       /* storage full or unavailable */
     }
-  }, [messages]);
+  }, [messages, STORAGE_KEY]);
 
   const focusInput = useCallback(() => {
     requestAnimationFrame(() => {
@@ -188,7 +185,7 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
       /* ignore */
     }
     focusInput();
-  }, [setMessages, focusInput, voice.stopListening, voice.stopSpeaking]);
+  }, [setMessages, focusInput, voice.stopListening, voice.stopSpeaking, STORAGE_KEY]);
 
   return (
     <div className={embedded ? 'flex h-[min(720px,80dvh)] min-h-[430px] flex-col overflow-hidden rounded-lg border border-border bg-background text-foreground shadow-xl' : 'flex min-h-dvh flex-col bg-background text-foreground'}>
@@ -205,8 +202,12 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary">
               <Stethoscope className="h-4 w-4 text-primary-foreground" />
             </span>
-            <span className="font-bold text-foreground text-sm sm:text-base">DOCTOR GPT</span>
+            <span className="font-bold text-foreground text-sm sm:text-base">{tool.name}</span>
           </div>
+          <div className="flex items-center gap-1">
+          <Button type="button" variant="ghost" size="sm" onClick={openExternal} className="hidden sm:inline-flex text-xs">
+            {tool.externalLabel}
+          </Button>
           <Button
             type="button"
             onClick={clearConversation}
@@ -217,6 +218,7 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
           >
             <Trash2 className="h-4 w-4" />
           </Button>
+          </div>
         </div>
       </header>
 
@@ -239,15 +241,13 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
                   <Stethoscope className="h-7 w-7 text-white" />
                 </span>
                 <h1 className="text-2xl font-bold text-white mb-2">
-                  I am DOCTOR GPT. How can I assist you today?
+                  {tool.greeting}
                 </h1>
                 <p className="text-white/80 max-w-lg mx-auto mb-6">
-                  Describe your symptoms — include your age, sex, height, weight, and any
-                   pre-existing conditions. You can also attach photos of an injury or rash, or
-                   upload documents like lab results, test reports, or prescriptions (PDF) for analysis.
+                  {tool.intro}
                 </p>
                 <div className="grid gap-2 sm:grid-cols-2 max-w-xl mx-auto">
-                  {SUGGESTIONS.map((suggestion) => (
+                  {tool.suggestions.map((suggestion) => (
                     <Button
                       key={suggestion}
                       type="button"
@@ -300,7 +300,7 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
             {status === 'submitted' && (
               <Message from="assistant">
                 <MessageContent>
-                  <Shimmer>Doctor GPT is reviewing your case...</Shimmer>
+                  <Shimmer>{`${tool.name} is thinking...`}</Shimmer>
                 </MessageContent>
               </Message>
             )}
@@ -309,15 +309,15 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
                 <AlertTriangle className="mx-auto mb-2 h-6 w-6 text-amber-300" />
                 <h2 className="mb-2 text-lg font-bold text-white">Community credits have run out for today</h2>
                 <p className="mb-4 text-sm text-white">
-                  Sorry, the in-site version is temporarily unavailable. Please continue with the original Medicus custom GPT.
+                  Sorry, the in-site version is temporarily unavailable. Please continue with the original version.
                 </p>
                 <AnimatedButton
                   variant="primary"
                   size="lg"
-                  onClick={handleChatRedirect}
+                  onClick={openExternal}
                   className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none"
                 >
-                  Open Medicus (CHATGPT version)
+                  Open {tool.externalLabel}
                 </AnimatedButton>
               </div>
             )}
@@ -334,7 +334,7 @@ const DoctorGPT = ({ embedded = false }: { embedded?: boolean }) => {
             maxFileSize={20 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
-            <PromptInputTextarea placeholder="Describe your symptoms, age, sex, and medical history..." />
+            <PromptInputTextarea placeholder={tool.placeholder} />
             <PromptInputFooter>
               <PromptInputTools>
                 <PromptInputActionMenu>
