@@ -1,4 +1,5 @@
-import { convertToModelMessages, streamText, type UIMessage } from "npm:ai@7.0.107";
+import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "npm:ai@7.0.107";
+import { z } from "npm:zod@3.25.76";
 import { createOpenAI } from "npm:@ai-sdk/openai@4.0.71";
 import {
   createLovableAiGatewayRunIdFetch,
@@ -75,6 +76,42 @@ TONE: knowledgeable, warm, a touch old-world.
 ${COMMON}`,
 };
 
+async function generateImage(apiKey: string, prompt: string, signal: AbortSignal) {
+  const response = await fetch("https://ai.gateway.lovable.dev/v1/images/generations", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ model: "openai/gpt-image-2.5-sunburst", prompt, quality: "low", size: "1024x1024", stream: true }),
+    signal,
+  });
+  if (!response.ok || !response.body) {
+    throw new Error(`Image generation failed (${response.status}): ${(await response.text()).slice(0, 300)}`);
+  }
+  const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+  let buffer = "";
+  let finalB64 = "";
+  let lastB64 = "";
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += value;
+    const events = buffer.split(/\r?\n\r?\n/);
+    buffer = events.pop() ?? "";
+    for (const raw of events) {
+      const data = raw.split(/\r?\n/).filter((l) => l.startsWith("data:")).map((l) => l.slice(5).trim()).join("");
+      if (!data || data === "[DONE]") continue;
+      const payload = JSON.parse(data);
+      if (payload.type === "error" || payload.error) throw new Error(payload.error?.message ?? "Image generation failed");
+      if (payload.b64_json) {
+        lastB64 = payload.b64_json;
+        if (String(payload.type).endsWith("completed")) finalB64 = payload.b64_json;
+      }
+    }
+  }
+  const b64 = finalB64 || lastB64;
+  if (!b64) throw new Error("Image generation returned no image");
+  return `data:image/png;base64,${b64}`;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -105,10 +142,30 @@ Deno.serve(async (req) => {
       fetch: runIdFetch.fetch,
     });
 
+    const tools = {
+      generate_image: tool({
+        description:
+          "Create an illustrative image (diagram, anatomy illustration, remedy preparation, exercise demonstration, pet care visual, etc.) when the user asks for a picture/image/diagram or when a visual would clearly help. The image is shown to the user automatically.",
+        inputSchema: z.object({
+          prompt: z.string().describe("Detailed description of the image to create"),
+        }),
+        execute: async ({ prompt }) => {
+          const image = await generateImage(apiKey, prompt, req.signal);
+          return { image, prompt };
+        },
+        toModelOutput: () => ({
+          type: "text" as const,
+          value: "The image was generated and is displayed to the user. Briefly describe what it shows.",
+        }),
+      }),
+    };
+
     const result = streamText({
       model: lovable.responses("openai/gpt-6-astra"),
-      system: systemPrompt,
-      messages: await convertToModelMessages(messages),
+      system: `${systemPrompt}\n\nYou can create images with the generate_image tool when the user asks for a picture, diagram or illustration, or when a visual would clearly help. Never claim you cannot create images.`,
+      messages: await convertToModelMessages(messages, { tools }),
+      tools,
+      stopWhen: stepCountIs(50),
       abortSignal: req.signal,
       providerOptions: {
         openai: {
