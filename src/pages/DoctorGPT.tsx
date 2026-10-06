@@ -25,6 +25,7 @@ import {
   PromptInputActionMenuTrigger,
   PromptInputActionMenuContent,
   PromptInputActionAddAttachments,
+  usePromptInputAttachments,
   type PromptInputMessage,
 } from '@/components/ai-elements/prompt-input';
 import { Shimmer } from '@/components/ai-elements/shimmer';
@@ -39,6 +40,35 @@ const isCommunityCreditError = (message: string) =>
     message
   );
 
+
+const UploadButton = () => {
+  const attachments = usePromptInputAttachments();
+  return (
+    <Button type="button" variant="ghost" size="icon-sm" aria-label="Upload photos or documents" title="Upload photos or documents (PDF)" onClick={() => attachments.openFileDialog()}>
+      <Paperclip />
+    </Button>
+  );
+};
+
+const AttachmentList = () => {
+  const attachments = usePromptInputAttachments();
+  if (!attachments.files.length) return null;
+  return (
+    <div className="flex w-full flex-wrap gap-2 px-3 pt-3">
+      {attachments.files.map((file) => (
+        <span key={file.id} className="inline-flex max-w-[12rem] items-center gap-2 rounded-md border border-border bg-secondary px-2 py-1 text-xs text-foreground">
+          {file.mediaType?.startsWith('image/') ? (
+            <img src={file.url} alt="" className="h-8 w-8 rounded object-cover" />
+          ) : (
+            <Paperclip className="h-3.5 w-3.5 shrink-0" />
+          )}
+          <span className="truncate">{file.filename ?? 'file'}</span>
+          <button type="button" aria-label={`Remove ${file.filename ?? 'file'}`} onClick={() => attachments.remove(file.id)} className="shrink-0 font-bold">×</button>
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const loadStoredMessages = (STORAGE_KEY: string): UIMessage[] => {
   if (typeof window === 'undefined') return [];
@@ -361,6 +391,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
             maxFileSize={20 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
+            <AttachmentList />
             <PromptInputTextarea placeholder={tool.placeholder} />
             <PromptInputFooter>
               <PromptInputTools>
@@ -370,6 +401,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
                     <PromptInputActionAddAttachments label="Add photos or documents (PDF)" />
                   </PromptInputActionMenuContent>
                 </PromptInputActionMenu>
+                <UploadButton />
                 <Button type="button" variant={voice.isListening ? 'default' : 'ghost'} size="icon-sm" aria-label={voice.isListening ? 'Stop microphone' : 'Ask by voice'} title={voice.isListening ? 'Stop microphone' : 'Ask by voice'} onClick={voice.isListening ? voice.stopListening : voice.startListening}>
                   {voice.isListening ? <MicOff /> : <Mic />}
                 </Button>
