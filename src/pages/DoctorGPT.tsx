@@ -4,7 +4,7 @@ import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage, type FileUIPart } from 'ai';
 import { ArrowLeft, Stethoscope, Trash2, AlertTriangle, Paperclip, Mic, MicOff, Volume2, VolumeX, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useDoctorVoice } from '@/hooks/useDoctorVoice';
+import { useDoctorVoice, unlockAudio } from '@/hooks/useDoctorVoice';
 import {
   Conversation,
   ConversationContent,
@@ -98,7 +98,15 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
     } catch {
-      /* storage full or unavailable */
+      try {
+        const slim = messages.map((m) => ({
+          ...m,
+          parts: m.parts.filter((p) => p.type === 'text'),
+        }));
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(slim));
+      } catch {
+        /* storage unavailable */
+      }
     }
   }, [messages, STORAGE_KEY]);
 
@@ -124,7 +132,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
   const voice = useDoctorVoice((text) => {
     if (!isBusy) void sendRef.current(text);
     else toast.error('Please wait for the current reply before speaking again.');
-  });
+  }, toolId);
 
   useEffect(() => {
     if (status !== 'ready') return;
@@ -141,6 +149,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
     async (text: string, files: FileUIPart[] = []) => {
       setCommunityCreditsUnavailable(false);
       voice.stopSpeaking();
+      if (voice.voiceEnabled) unlockAudio();
       const attachments: FileUIPart[] = [];
       for (const file of files) {
         if (file.url.startsWith('data:')) {
@@ -160,7 +169,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
       await sendMessage({ text, files: attachments });
       focusInput();
     },
-    [sendMessage, focusInput, voice.stopSpeaking]
+    [sendMessage, focusInput, voice.stopSpeaking, voice.voiceEnabled]
   );
   sendRef.current = (text) => { void send(text); };
 
@@ -269,6 +278,24 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
                         return (
                           <MessageResponse key={index}>{part.text}</MessageResponse>
                         );
+                      }
+                      if (part.type === 'tool-generate_image') {
+                        const output = (part as { state?: string; output?: { image?: string; prompt?: string }; errorText?: string });
+                        if (output.state === 'output-available' && output.output?.image) {
+                          return (
+                            <a key={index} href={output.output.image} download="medicus-image.png" className="block">
+                              <img
+                                src={output.output.image}
+                                alt={output.output.prompt ?? 'Generated image'}
+                                className="w-full max-w-md rounded-lg border border-border"
+                              />
+                            </a>
+                          );
+                        }
+                        if (output.state === 'output-error') {
+                          return <p key={index} className="text-sm text-destructive-foreground">The image could not be created: {output.errorText}</p>;
+                        }
+                        return <Shimmer key={index}>Creating image...</Shimmer>;
                       }
                       if (part.type === 'file' && part.mediaType?.startsWith('image/')) {
                         return (
