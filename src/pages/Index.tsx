@@ -191,28 +191,40 @@ const Index = () => {
                     <div className="text-4xl mb-3">🦷</div>
                     <h3 className="text-xl font-bold text-cyan-200 mb-2">AI Dental GPT</h3>
                     <p className="text-white/90 text-sm">Dental care guidance, oral health tips & teeth concerns</p>
-                    <AnimatedButton variant="primary" size="sm" onClick={handleDentalGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none">Open (CHATGPT version)</AnimatedButton>
+                    <div className="mt-4 flex flex-col gap-2">
+                      <AnimatedButton variant="primary" size="sm" onClick={() => { playGeneralSound(); navigate('/dental-gpt'); }} className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none">Dental GPT (INSITE version)</AnimatedButton>
+                      <AnimatedButton variant="primary" size="sm" onClick={handleDentalGPTRedirect} className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-none">Dental GPT (CHATGPT version)</AnimatedButton>
+                    </div>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-green-900/50 via-emerald-900/40 to-green-900/50 rounded-xl border border-emerald-400/40 backdrop-blur-lg hover:border-emerald-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🐾</div>
                     <h3 className="text-xl font-bold text-emerald-200 mb-2">AI Vet GPT</h3>
                     <p className="text-white/90 text-sm">Pet health guidance, animal care tips & veterinary information</p>
-                    <AnimatedButton variant="primary" size="sm" onClick={handleVetGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none">Open (EXTERNAL WEB APP)</AnimatedButton>
+                    <div className="mt-4 flex flex-col gap-2">
+                      <AnimatedButton variant="primary" size="sm" onClick={() => { playGeneralSound(); navigate('/petcare-gpt'); }} className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none">PetCare GPT (INSITE version)</AnimatedButton>
+                      <AnimatedButton variant="primary" size="sm" onClick={handleVetGPTRedirect} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white border-none">PetCare GPT (EXTERNAL WEB APP)</AnimatedButton>
+                    </div>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-indigo-900/50 via-purple-900/40 to-indigo-900/50 rounded-xl border border-indigo-400/40 backdrop-blur-lg hover:border-indigo-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">🧠</div>
                     <h3 className="text-xl font-bold text-indigo-200 mb-2">AI Mental Wellness GPT</h3>
                     <p className="text-white/90 text-sm">Mental health support, stress management & wellness guidance</p>
-                    <AnimatedButton variant="primary" size="sm" onClick={handleMentalWellnessGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">Open (EXTERNAL WEB APP)</AnimatedButton>
+                    <div className="mt-4 flex flex-col gap-2">
+                      <AnimatedButton variant="primary" size="sm" onClick={() => { playGeneralSound(); navigate('/mental-wellness-gpt'); }} className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none">Mental Wellness GPT (INSITE version)</AnimatedButton>
+                      <AnimatedButton variant="primary" size="sm" onClick={handleMentalWellnessGPTRedirect} className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">Mental Wellness GPT (EXTERNAL WEB APP)</AnimatedButton>
+                    </div>
                   </div>
                   
                   <div className="p-6 bg-gradient-to-br from-amber-900/50 via-orange-900/40 to-amber-900/50 rounded-xl border border-amber-400/40 backdrop-blur-lg hover:border-amber-300/60 transition-all duration-300 hover:scale-105">
                     <div className="text-4xl mb-3">⚗️</div>
                     <h3 className="text-xl font-bold text-amber-200 mb-2">AI Apothecary GPT</h3>
                     <p className="text-white/90 text-sm">Lost homeopathic remedies & at-home medication formulations</p>
-                    <AnimatedButton variant="primary" size="sm" onClick={handleApothecaryGPTRedirect} className="mt-4 w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none">Open (CHATGPT version)</AnimatedButton>
+                    <div className="mt-4 flex flex-col gap-2">
+                      <AnimatedButton variant="primary" size="sm" onClick={() => { playGeneralSound(); navigate('/apothecary-gpt'); }} className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none">Apothecary GPT (INSITE version)</AnimatedButton>
+                      <AnimatedButton variant="primary" size="sm" onClick={handleApothecaryGPTRedirect} className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none">Apothecary GPT (CHATGPT version)</AnimatedButton>
+                    </div>
                   </div>
                 </div>
               </div>
