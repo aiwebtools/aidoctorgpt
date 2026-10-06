@@ -3,6 +3,7 @@ import React from 'react';
 import { Heart, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AnimatedButton from '../ui/AnimatedButton';
+import { IN_SITE_TOOL_LIST } from '@/content/inSiteTools';
 import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect, playGeneralSound } from './headerUtils';
 
 interface MobileMenuProps {
@@ -13,10 +14,10 @@ interface MobileMenuProps {
 const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
   const navigate = useNavigate();
 
-  const openOnSiteDoctor = () => {
+  const openInSite = (path: string) => {
     toggleMenu();
     playGeneralSound();
-    navigate('/doctor-gpt');
+    navigate(path);
   };
 
   return (
@@ -45,14 +46,19 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
         </div>
 
         <div className="w-full max-w-sm space-y-3">
-          <AnimatedButton
-            variant="primary"
-            size="lg"
-            onClick={openOnSiteDoctor}
-            className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none py-4 text-base font-semibold"
-          >
-            🩺 Doctor GPT (INSITE version)
-          </AnimatedButton>
+          <p className="text-sm text-center text-emerald-300 font-semibold">On-site AI (INSITE version)</p>
+          {IN_SITE_TOOL_LIST.map((tool) => (
+            <AnimatedButton
+              key={tool.id}
+              variant="primary"
+              size="lg"
+              onClick={() => openInSite(tool.path)}
+              className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none py-4 text-base font-semibold"
+            >
+              {tool.name} (INSITE version)
+            </AnimatedButton>
+          ))}
+          <p className="pt-3 text-sm text-center text-purple-300 font-semibold">Original versions (external)</p>
 
           <AnimatedButton 
             variant="primary" 
