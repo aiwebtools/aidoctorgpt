@@ -2,6 +2,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AnimatedButton from '../ui/AnimatedButton';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { IN_SITE_TOOL_LIST } from '@/content/inSiteTools';
 import { handleChatRedirect, handleVetGPTRedirect, handleDentalGPTRedirect, handleMentalWellnessGPTRedirect, handleApothecaryGPTRedirect, handleAmazonClinicRedirect, handleOneMedicalRedirect, handleAntibioticsRedirect, handleMoreAIToolsRedirect, openWithGeneralSound, playGeneralSound, TOOL_URLS } from './headerUtils';
 
 const NavigationMenu = () => {
@@ -11,21 +13,22 @@ const NavigationMenu = () => {
     openWithGeneralSound(TOOL_URLS.openSourcePrompt);
   };
 
-  const openOnSiteDoctor = () => {
-    playGeneralSound();
-    navigate('/doctor-gpt');
-  };
-
   return (
     <nav className="hidden lg:flex items-center flex-wrap gap-2 justify-end max-w-[75vw]">
-      <AnimatedButton
-        variant="primary"
-        size="sm"
-        onClick={openOnSiteDoctor}
-        className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-none hover:shadow-glow hover:scale-105 transition-all duration-300"
-      >
-        Doctor GPT (INSITE version)
-      </AnimatedButton>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className="rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-105">
+            On-site AI Tools (INSITE version) ▾
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="z-[60] bg-popover">
+          {IN_SITE_TOOL_LIST.map((tool) => (
+            <DropdownMenuItem key={tool.id} onSelect={() => { playGeneralSound(); navigate(tool.path); }}>
+              {tool.name} (INSITE version)
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
       <AnimatedButton 
         variant="primary" 
         size="sm"
