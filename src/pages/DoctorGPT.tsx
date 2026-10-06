@@ -4,7 +4,7 @@ import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage, type FileUIPart } from 'ai';
 import { ArrowLeft, Stethoscope, Trash2, AlertTriangle, Paperclip, Mic, MicOff, Volume2, VolumeX, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useDoctorVoice } from '@/hooks/useDoctorVoice';
+import { useDoctorVoice, unlockAudio } from '@/hooks/useDoctorVoice';
 import {
   Conversation,
   ConversationContent,
@@ -25,6 +25,7 @@ import {
   PromptInputActionMenuTrigger,
   PromptInputActionMenuContent,
   PromptInputActionAddAttachments,
+  usePromptInputAttachments,
   type PromptInputMessage,
 } from '@/components/ai-elements/prompt-input';
 import { Shimmer } from '@/components/ai-elements/shimmer';
@@ -39,6 +40,35 @@ const isCommunityCreditError = (message: string) =>
     message
   );
 
+
+const UploadButton = () => {
+  const attachments = usePromptInputAttachments();
+  return (
+    <Button type="button" variant="ghost" size="icon-sm" aria-label="Upload photos or documents" title="Upload photos or documents (PDF)" onClick={() => attachments.openFileDialog()}>
+      <Paperclip />
+    </Button>
+  );
+};
+
+const AttachmentList = () => {
+  const attachments = usePromptInputAttachments();
+  if (!attachments.files.length) return null;
+  return (
+    <div className="flex w-full flex-wrap gap-2 px-3 pt-3">
+      {attachments.files.map((file) => (
+        <span key={file.id} className="inline-flex max-w-[12rem] items-center gap-2 rounded-md border border-border bg-secondary px-2 py-1 text-xs text-foreground">
+          {file.mediaType?.startsWith('image/') ? (
+            <img src={file.url} alt="" className="h-8 w-8 rounded object-cover" />
+          ) : (
+            <Paperclip className="h-3.5 w-3.5 shrink-0" />
+          )}
+          <span className="truncate">{file.filename ?? 'file'}</span>
+          <button type="button" aria-label={`Remove ${file.filename ?? 'file'}`} onClick={() => attachments.remove(file.id)} className="shrink-0 font-bold">×</button>
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const loadStoredMessages = (STORAGE_KEY: string): UIMessage[] => {
   if (typeof window === 'undefined') return [];
@@ -98,7 +128,15 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
     } catch {
-      /* storage full or unavailable */
+      try {
+        const slim = messages.map((m) => ({
+          ...m,
+          parts: m.parts.filter((p) => p.type === 'text'),
+        }));
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(slim));
+      } catch {
+        /* storage unavailable */
+      }
     }
   }, [messages, STORAGE_KEY]);
 
@@ -124,7 +162,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
   const voice = useDoctorVoice((text) => {
     if (!isBusy) void sendRef.current(text);
     else toast.error('Please wait for the current reply before speaking again.');
-  });
+  }, toolId);
 
   useEffect(() => {
     if (status !== 'ready') return;
@@ -141,6 +179,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
     async (text: string, files: FileUIPart[] = []) => {
       setCommunityCreditsUnavailable(false);
       voice.stopSpeaking();
+      if (voice.voiceEnabled) unlockAudio();
       const attachments: FileUIPart[] = [];
       for (const file of files) {
         if (file.url.startsWith('data:')) {
@@ -160,7 +199,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
       await sendMessage({ text, files: attachments });
       focusInput();
     },
-    [sendMessage, focusInput, voice.stopSpeaking]
+    [sendMessage, focusInput, voice.stopSpeaking, voice.voiceEnabled]
   );
   sendRef.current = (text) => { void send(text); };
 
@@ -270,6 +309,24 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
                           <MessageResponse key={index}>{part.text}</MessageResponse>
                         );
                       }
+                      if (part.type === 'tool-generate_image') {
+                        const output = (part as { state?: string; output?: { image?: string; prompt?: string }; errorText?: string });
+                        if (output.state === 'output-available' && output.output?.image) {
+                          return (
+                            <a key={index} href={output.output.image} download="medicus-image.png" className="block">
+                              <img
+                                src={output.output.image}
+                                alt={output.output.prompt ?? 'Generated image'}
+                                className="w-full max-w-md rounded-lg border border-border"
+                              />
+                            </a>
+                          );
+                        }
+                        if (output.state === 'output-error') {
+                          return <p key={index} className="text-sm text-destructive-foreground">The image could not be created: {output.errorText}</p>;
+                        }
+                        return <Shimmer key={index}>Creating image...</Shimmer>;
+                      }
                       if (part.type === 'file' && part.mediaType?.startsWith('image/')) {
                         return (
                           <img
@@ -334,6 +391,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
             maxFileSize={20 * 1024 * 1024}
             onError={(err) => toast.error(err.message)}
           >
+            <AttachmentList />
             <PromptInputTextarea placeholder={tool.placeholder} />
             <PromptInputFooter>
               <PromptInputTools>
@@ -343,6 +401,7 @@ const DoctorGPT = ({ embedded = false, toolId = 'doctor' }: { embedded?: boolean
                     <PromptInputActionAddAttachments label="Add photos or documents (PDF)" />
                   </PromptInputActionMenuContent>
                 </PromptInputActionMenu>
+                <UploadButton />
                 <Button type="button" variant={voice.isListening ? 'default' : 'ghost'} size="icon-sm" aria-label={voice.isListening ? 'Stop microphone' : 'Ask by voice'} title={voice.isListening ? 'Stop microphone' : 'Ask by voice'} onClick={voice.isListening ? voice.stopListening : voice.startListening}>
                   {voice.isListening ? <MicOff /> : <Mic />}
                 </Button>
