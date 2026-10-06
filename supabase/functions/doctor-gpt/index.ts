@@ -1,4 +1,4 @@
-import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "npm:ai@7.0.107";
+import { convertToModelMessages, stepCountIs, streamText, type UIMessage } from "npm:ai@7.0.107";
 import { z } from "npm:zod@3.25.76";
 import { createOpenAI } from "npm:@ai-sdk/openai@4.0.71";
 import {
@@ -143,7 +143,7 @@ Deno.serve(async (req) => {
     });
 
     const tools = {
-      generate_image: tool({
+      generate_image: {
         description:
           "Create an illustrative image (diagram, anatomy illustration, remedy preparation, exercise demonstration, pet care visual, etc.) when the user asks for a picture/image/diagram or when a visual would clearly help. The image is shown to the user automatically.",
         inputSchema: z.object({
@@ -157,7 +157,7 @@ Deno.serve(async (req) => {
           type: "text" as const,
           value: "The image was generated and is displayed to the user. Briefly describe what it shows.",
         }),
-      }),
+      },
     };
 
     const result = streamText({
